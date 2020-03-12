@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <script src="/node_modules/web-component-tester/browser.js"></script>
+  <title>Test bux-amount</title>
+</head>
+
+<body>
+  <test-fixture id="selectComponentFixture">
+    <template>
+      <bux-amount data-value="350" data-currency="$" size="xl" bold data-period="mois" currency-size="xl"
+        period-size="xl" align-top></bux-amount>
+    </template>
+  </test-fixture>
+  <script>
+    suite('<bux-amount>', () => {
+      let component;
+      let span;
+
+      setup(() => {
+        component = fixture('selectComponentFixture');
+        span = component.querySelector('.c-amount');
+        valueEl = component.querySelector('.c-amount__value');
+        currencyEl = component.querySelector('.c-amount__currency');
+        periodEl = component.querySelector('.c-amount__period');
+        periodValueEl = component.querySelector('.c-amount__period-value');
+        separatorEl = component.querySelector('.c-amount__period-separator');
+
+      });
+
+      a11ySuite('selectComponentFixture');
+
+      // Testing styles
+      //=================
+
+      // Testing if bold
+      test(`Value has class "c-amount--bold" ?`, () => {
+        assert.isTrue(span.classList.contains('c-amount--bold'));
+      });
+
+      // Testing if aligned top
+      test(`Value has class "c-amount--align-top" ?`, () => {
+        assert.isTrue(span.classList.contains('c-amount--align-top'));
+      });
+
+      // Testing values
+      //=================
+
+      // Testing value
+      test(`Value is "350,00" ?`, () => {
+        assert.isTrue(valueEl.textContent === '350,00');
+      });
+
+      // Testing currency value
+      test(`Currency is "$" ?`, () => {
+        assert.isTrue(currencyEl.textContent === '$');
+      });
+
+      // Testing period value
+      test(`Period is "mois"`, () => {
+        assert.isTrue(periodValueEl.textContent === 'mois');
+      });
+
+
+      // Testing period separator
+      test(`Period separator is "/"`, () => {
+        assert.isTrue(separatorEl.textContent === '/');
+      });
+
+
+      // Testing classes
+      //=================
+
+      // Testing amount size
+      test(`Value has class "c-amount--xl" ?`, () => {
+        assert.isTrue(span.classList.contains('c-amount--xl'));
+      });
+
+      // Testing currency size
+      test(`Value has class "c-currency--xl" ?`, () => {
+        assert.isTrue(currencyEl.classList.contains('c-currency--xl'));
+      });
+
+      // Testing period size
+      test(`Value has class "c-period--xl" ?`, () => {
+        assert.isTrue(periodEl.classList.contains('c-period--xl'));
+      });
+
+
+      // Testing states
+      //=================
+
+      // Testing negative value
+      test(`Value is now "-100,00 €" ?`, () => {
+        component.setAttribute('data-value', '-100');
+        component.setAttribute('data-currency', '€');
+        assert.isTrue(valueEl.textContent === '-100,00');
+        assert.isTrue(currencyEl.textContent === '€');
+      });
+
+      // Testing negative class
+      test(`Value has class "c-amount--negative" ?`, () => {
+        component.setAttribute('data-value', '-100');
+        component.setAttribute('data-currency', '€');
+        assert.isTrue(span.classList.contains('c-amount--negative'));
+      });
+    });
+
+  </script>
+</body>
+
+</html>

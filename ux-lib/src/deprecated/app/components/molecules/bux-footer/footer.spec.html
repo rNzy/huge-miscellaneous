@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <script src="/node_modules/web-component-tester/browser.js"></script>
+    <title>Test bux-footer</title>
+  </head>
+  <body>
+    <test-fixture id="componentFixture">
+      <template>
+        <bux-footer></bux-footer>
+      </template>
+    </test-fixture>
+    <script>
+      suite('<bux-footer>', () => {
+        let component;
+        let footer;
+
+        setup(() => {
+          component = fixture('componentFixture');
+          footer = component.querySelector('footer');
+        });
+
+        a11ySuite('componentFixture');
+
+        test('Footer has 7 childrens ?', () => {
+          component.data = [
+            {
+              path: '/',
+              label: 'Accessibilité'
+            },
+            {
+              path: '/',
+              label: 'Mentions légales'
+            },
+            {
+              path: '/',
+              label: 'Infos consommateurs'
+            },
+            {
+              path: '/',
+              label: 'Données personnelles'
+            },
+            {
+              path: '/',
+              label: 'Tarification des services'
+            },
+            {
+              path: '/',
+              label: 'Condition générales de banque'
+            },
+            {
+              label: '© Arkéa'
+            }
+          ];
+          assert.isTrue(
+            footer.querySelectorAll('.c-nav__list-li').length === 7
+          );
+        });
+      });
+    </script>
+  </body>
+</html>

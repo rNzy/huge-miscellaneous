@@ -1,0 +1,77 @@
+:host {
+  display: block;
+  position: relative;
+  width: 350px;
+  color: #fff;
+}
+
+.c-virtualis-name {
+  position: absolute;
+  left: 16px;
+  bottom: 15%;
+  text-transform: uppercase;
+  font-size: 1.8rem;
+}
+
+.c-virtualis-user {
+  position: absolute;
+  left: 16px;
+  bottom: 6%;
+  font-size: 1.8rem;
+}
+
+.c-virtualis-card {
+  position: absolute;
+  top: 37%;
+  left: 8px;
+  font-family: 'ocraext', monospace;
+  font-size: 2.9rem;
+}
+
+.c-virtualis-wrap {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+  top: 55%;
+  font-size: 1.8rem;
+}
+
+.c-virtualis-wrap > div {
+  display: flex;
+  flex-flow: column;
+}
+
+.c-virtualis-brand {
+  position: absolute;
+  width: 19%;
+  bottom: 7%;
+  right: 5%;
+}
+
+.c-virtualis-img {
+  display: block;
+}
+
+@media (max-width: 400px) {
+  :host {
+    width: 300px;
+  }
+
+  .c-virtualis-name {
+    font-size: 1.8rem;
+  }
+
+  .c-virtualis-user {
+    font-size: 1.6rem;
+  }
+
+  .c-virtualis-wrap {
+    font-size: 1.6rem;
+  }
+
+  .c-virtualis-card {
+    font-size: 2.5rem;
+  }
+}

@@ -1,0 +1,60 @@
+import { Meta, Props, Story, Preview } from '@storybook/addon-docs/blocks';
+import * as stories from './svg.stories.js';
+import './svg.component.js';
+
+# Icons
+
+<Meta title="Components|Images-Icones/Icons" />
+
+## Présentation
+
+Composant permettant d'afficher des icones au format svg.
+
+## Propriétés
+
+<Props of="ux-svg" />
+
+## Stories
+
+### Taille des icones
+<Preview withSource="none">
+  <Story name="Size" height="50px">
+    {stories.size()}
+  </Story>
+</Preview>
+
+```html
+<ux-svg icon="home" lib-size="sm"></ux-svg>
+<ux-svg icon="home" lib-size="md"></ux-svg>
+<ux-svg icon="home" lib-size="lg"></ux-svg>
+<ux-svg icon="home" lib-size="xl"></ux-svg>
+```
+
+### Ajouter un cercle autour de l'icone
+<Preview withSource="none">
+  <Story name="Circle" height="30px">
+    {stories.addCircle()}
+  </Story>
+</Preview>
+
+```html
+<ux-svg icon="arrow-down" circle></ux-svg>
+```
+
+### Appliquer une rotation
+<Preview withSource="none">
+  <Story name="Rotate" height="30px">
+    {stories.rotate()}
+  </Story>
+</Preview>
+
+```html
+<ux-svg icon="arrow-down" rotate="30"></ux-svg>
+```
+
+### Toutes les icones
+<Preview withSource="none">
+  <Story name="AllIcons" height="600px">
+    {stories.allIcons()}
+  </Story>
+</Preview>

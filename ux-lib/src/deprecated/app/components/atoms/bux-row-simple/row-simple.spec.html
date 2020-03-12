@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <script src="/node_modules/web-component-tester/browser.js"></script>
+    <title>Test bux-range</title>
+  </head>
+  <body>
+    <test-fixture id="componentFixture">
+      <template>
+        <bux-row-simple> <p>Lorem</p> </bux-row-simple>
+      </template>
+    </test-fixture>
+    <script>
+      suite('<bux-row-simple>', () => {
+        let component;
+        let div;
+        setup(() => {
+          component = fixture('componentFixture');
+          div = component.children[0];
+        });
+
+        a11ySuite('componentFixture');
+
+        test('Has class "c-row-simple" ?', () => {
+          assert.isTrue(div.classList.contains('c-row-simple'));
+        });
+
+        test('Inside text is "Lorem" ?', () => {
+          assert.isAtLeast(div.textContent.indexOf('Lorem'), 0);
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,13 @@
+.c-shortlink {
+  display: inline-flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  color: var(--color-text);
+  text-decoration: none;
+  text-align: center;
+  padding: var(--spacing-xs);
+}
+
+.c-shortlink__label {
+  font-size: var(--text-font-size-sm);
+}

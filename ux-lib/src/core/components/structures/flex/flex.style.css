@@ -1,0 +1,43 @@
+:host {
+  display: block;
+  position: relative;
+}
+
+.c-flex {
+  display: flex;
+  flex-flow: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.c-flex.c-flex--column {
+  flex-flow: column;
+}
+
+.c-flex.c-flex--nowrap {
+  flex-wrap: nowrap;
+}
+
+.c-flex.c-flex--justify-end {
+  justify-content: flex-end;
+}
+.c-flex.c-flex--justify-center {
+  justify-content: center;
+}
+.c-flex.c-flex--justify-space-evenly {
+  justify-content: space-evenly;
+}
+.c-flex.c-flex--justify-space-around {
+  justify-content: space-around;
+}
+.c-flex.c-flex--justify-space-between {
+  justify-content: space-between;
+}
+
+.c-flex.c-flex--align-end {
+  align-items: flex-end;
+}
+.c-flex.c-flex--align-start {
+  align-items: flex-start;
+}

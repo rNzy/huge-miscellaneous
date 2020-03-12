@@ -1,0 +1,31 @@
+.c-checkbox-group {
+  display: flex;
+  flex-flow: column;
+}
+
+/* !important sert à overrider la StackMixin chargée après */
+::slotted([slot='group-label']) {
+  margin-bottom: var(--spacing-md) !important;
+}
+
+@media (min-width: 590px) {
+  .c-checkbox-group.c-checkbox-group--inline {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto;
+  }
+
+  .c-checkbox-group--inline ::slotted(*) {
+    grid-column-start: 2;
+  }
+
+  .c-checkbox-group--inline ::slotted([slot='group-label']) {
+    grid-column-start: 1;
+    grid-column-end: 2;
+  }
+
+  .c-checkbox-group--inline ::slotted(div) {
+    grid-column-start: 2;
+    grid-column-end: 5;
+  }
+}

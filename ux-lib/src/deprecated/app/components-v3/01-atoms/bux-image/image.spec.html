@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <script src="/node_modules/web-component-tester/browser.js"></script>
+    <title>Test bux2-image</title>
+  </head>
+
+  <body>
+    <test-fixture id="componentFixture">
+      <template>
+        <bux2-image src="logo.png" alt="je suis un alt"></bux2-image>
+      </template>
+    </test-fixture>
+    <script>
+      suite('<bux2-image>', () => {
+        let component;
+        let img;
+
+        setup(() => {
+          component = fixture('componentFixture');
+          img = component.$.querySelector('img');
+        });
+
+        a11ySuite('componentFixture');
+
+        test(`Src is "/assets/images/logo.png" ?`, () => {
+          assert.isTrue(img.src.includes('/assets/images/logo.png'));
+        });
+
+        test(`Alt is "je suis un alt" ?`, () => {
+          assert.isTrue(img.alt === 'je suis un alt');
+        });
+      });
+    </script>
+  </body>
+</html>

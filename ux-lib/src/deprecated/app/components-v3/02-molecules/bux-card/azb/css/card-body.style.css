@@ -1,0 +1,18 @@
+.c-card-body {
+  font-size: var(--text-font-size-md, 16px);
+  padding: 10px 5px;
+}
+
+.c-card-body--background {
+  padding-top: var(--spacing-sm);
+}
+
+@media (min-width: 49rem) {
+  /* .c-card-body {
+    padding: 0 var(--spacing-md);
+  } */
+
+  .c-card-body--background {
+    padding-top: var(--spacing-sm);
+  }
+}

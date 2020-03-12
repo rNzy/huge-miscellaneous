@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <script src="/node_modules/web-component-tester/browser.js"></script>
+    <title>Test end-process</title>
+  </head>
+  <body>
+    <test-fixture id="componentFixture">
+      <template>
+        <bux-end-process
+          type="success"
+          data-label="Votre demande d’étalement a bien été prise en compte"
+          data-sublabel="Vous pouvez modifier cet étalement tant que le premier prélèvement n’a pas été effectué."
+          data-label-button="Terminer"
+        >
+        </bux-end-process>
+      </template>
+    </test-fixture>
+    <script>
+      suite('<bux-end-process>', () => {
+        let component;
+
+        setup(() => {
+          component = fixture('componentFixture');
+        });
+
+        a11ySuite('componentFixture');
+
+        test('CHANGE THIS. WRITE TEST !!!!!', () => {
+          assert.isTrue(true);
+        });
+      });
+    </script>
+  </body>
+</html>

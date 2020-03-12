@@ -1,0 +1,134 @@
+:host {
+  --button-height: 3.5rem;
+  --button-min-width: 23rem;
+}
+
+.c-btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  vertical-align: middle;
+  font: inherit;
+  text-align: center;
+  margin: 0;
+  cursor: pointer;
+  height: var(--button-height);
+  min-width: var(--button-min-width);
+  line-height: 1.2;
+  padding: 0 var(--spacing-sm);
+  border-color: black;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: var(--border-radius-sm);
+  background-color: transparent;
+  color: var(--color-text);
+  font-weight: bold;
+  font-size: 1.3rem;
+  box-sizing: border-box;
+}
+
+a.c-btn {
+  display: flex !important;
+  width: var(--button-min-width);
+  text-decoration: none;
+}
+
+@media (min-width: 74rem) {
+  .c-btn {
+    font-size: 1.4rem;
+  }
+}
+
+/* Modifiers
+  ============================================ */
+
+.c-btn--primary {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  color: white;
+}
+
+.c-btn--primary:hover {
+  background-color: var(--color-primary-dark);
+}
+
+.c-btn--primary:active {
+  background-color: var(--color-primary-darker);
+}
+
+.c-btn--secondary {
+  background-color: var(--color-secondary);
+  border-color: var(--color-secondary);
+  color: white;
+}
+
+.c-btn--secondary:hover {
+  background-color: var(--color-secondary-dark);
+}
+
+.c-btn--secondary:active {
+  background-color: var(--color-secondary-darker);
+}
+
+.c-btn--primary ::slotted(ux-svg) {
+  color: white;
+}
+
+.c-btn--disabled {
+  background-color: var(--color-disabled);
+  border-color: var(--color-disabled);
+  color: white;
+  cursor: not-allowed;
+}
+
+.c-btn--disabled:hover,
+.c-btn--disabled:active {
+  background-color: var(--color-disabled);
+  border-color: var(--color-disabled);
+  color: white;
+}
+
+.c-btn--small {
+  min-width: 0;
+  font-size: 1.3rem;
+}
+
+/* Auth style */
+.c-btn--auth {
+  border-radius: 2rem;
+  padding: 1rem 3rem;
+  box-shadow: 0 2px 6px -2px rgba(0, 0, 0, 0.5);
+  transition: box-shadow ease-in-out 0.25s;
+}
+
+.c-btn--auth:hover {
+  box-shadow: none;
+}
+
+.c-btn--auth.c-btn--primary {
+  border: 1px solid var(--color-primary);
+  background-color: var(--color-primary);
+}
+
+.c-btn--auth.c-btn--primary:hover {
+  background-color: var(--color-primary-hover);
+}
+
+.c-btn--auth.c-btn--secondary {
+  border: 1px solid var(--color-primary);
+  background-color: #fff;
+  color: var(--color-primary);
+}
+
+@media (min-width: 740px) {
+  .c-btn--auth.c-btn--primary {
+    border: 1px solid #e03136;
+    background-color: #e03136;
+  }
+
+  .c-btn--auth.c-btn--secondary {
+    border: 1px solid #e03136;
+    background-color: #fff;
+    color: #e03136;
+  }
+}

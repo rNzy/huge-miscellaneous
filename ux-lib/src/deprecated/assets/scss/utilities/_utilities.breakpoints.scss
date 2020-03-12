@@ -1,0 +1,45 @@
+// =============================================================================
+// UTILITIES / #BREAKPOINT
+// =============================================================================
+
+// Ce fichier défini des classes utilitaires pour afficher des parties de html
+// que sur mobile ou que sur tablette et desktop
+.u-mobile-only {
+  display: inherit;
+
+  @include mq($from: medium) {
+    display: none;
+  }
+}
+
+// Ce fichier défini des classes utilitaires pour afficher des parties de html
+// que sur mobile ou que sur tablette et desktop
+.u-mobile-and-tablet {
+  display: inherit;
+
+  @include mq($from: large) {
+    display: none;
+  }
+}
+
+.u-desktop-only {
+  display: none;
+
+  @include mq($from: large) {
+    display: inherit;
+  }
+
+}
+
+.u-tablet-only {
+  display: none;
+
+  @include mq($from: medium) {
+    display: inherit;
+  }
+  
+  @include mq($from: large) {
+    display: none;
+  }
+
+}

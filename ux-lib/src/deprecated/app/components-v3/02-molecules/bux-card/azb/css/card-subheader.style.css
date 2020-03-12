@@ -1,0 +1,14 @@
+.c-card-subheader {
+  display: flex;
+  justify-content: center;
+  flex-flow: column wrap;
+  padding: var(--spacing-sm);
+  position: relative;
+  background-color: var(--brand-greybg);
+}
+
+@media (min-width: 49rem) {
+  .c-card-subheader {
+    padding: var(--spacing-sm);
+  }
+}

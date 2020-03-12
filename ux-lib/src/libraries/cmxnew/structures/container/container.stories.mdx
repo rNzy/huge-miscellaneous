@@ -1,0 +1,84 @@
+import {
+  Meta,
+  Description,
+  Props,
+  Story,
+  Preview
+} from '@storybook/addon-docs/blocks';
+import './container.component.js';
+import '../../typography/text/text.component.js';
+
+# ux-container
+
+<Meta title="Components|Structures/Container" />
+
+## Description
+
+<Description of="ux-container" />
+
+## Propriétés
+
+<Props of="ux-container" />
+
+## Stories
+
+### Container simple
+
+<Preview>
+  <Story name="container" height="120px">
+    {`
+    <ux-container>
+      <ux-text>Lorem ipsum dolores claiborne</ux-text>
+    </ux-container>
+    `}
+  </Story>
+</Preview>
+
+### Sans padding
+
+<Preview>
+  <Story name="no padding" height="40px">
+    {`
+    <ux-container nopadding>
+      <ux-text>Lorem ipsum dolores claiborne</ux-text>
+    </ux-container>
+    `}
+  </Story>
+</Preview>
+
+### Avec padding défini
+
+<Preview>
+  <Story name="padding" height="80px">
+    {`
+    <ux-container padding="md">
+      <ux-text>Lorem ipsum dolores claiborne</ux-text>
+    </ux-container>
+    `}
+  </Story>
+</Preview>
+
+### Ombre
+
+<Preview>
+  <Story name="shadow" height="120px">
+    {`
+    <ux-container shadow>
+      <ux-text>Lorem ipsum dolores claiborne</ux-text>
+    </ux-container>
+    `}
+  </Story>
+</Preview>
+
+### Avec espacement vertical
+
+<Preview>
+  <Story name="vertical space" height="180px">
+    {`
+    <ux-container space-v="lg">
+      <ux-text>Lorem ipsum dolores claiborne</ux-text>
+      <ux-text>Lorem ipsum dolores claiborne</ux-text>
+    </ux-container>
+    `}
+  </Story>
+</Preview>

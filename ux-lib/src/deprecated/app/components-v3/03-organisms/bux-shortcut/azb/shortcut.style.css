@@ -1,0 +1,184 @@
+.c-shortcut-wrap {
+  position: fixed;
+  display: block;
+  width: 100%;
+  height: 60px;
+  bottom: -60px;
+  left: 0;
+  right: auto;
+  box-shadow: 0 -2px 6px -2px rgba(0, 0, 0, 0.5);
+  z-index: 20;
+}
+
+/* Affiche le barre en bas en portable quand
+   l'utilisateur a commencer à faire un défilement */
+@media (max-width: 68.125em) {
+  .c-shortcut-wrap.is-open-mobile {
+    transition: bottom 0.4s;
+    bottom: 0;
+  }
+}
+
+.c-shortcut-nav {
+  position: relative;
+  height: 100%;
+}
+
+.c-shortcut-ul {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+  justify-content: space-around;
+  background-color: #fff;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+  z-index: 5;
+}
+
+.c-shortcut-a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+}
+
+.c-shortcut-label {
+  font-size: 12px;
+  font-family: 'Maven Pro', sans-serif;
+  color: #424242;
+}
+
+.c-shortcut-icon {
+  font-size: 25px;
+  margin-right: 0;
+  color: #424242;
+}
+
+.c-shortcut-btn {
+  display: none;
+}
+
+@media (min-width: 68.125em) {
+  .c-shortcut-wrap {
+    right: 50px;
+    left: auto;
+    bottom: 50px;
+    width: auto;
+    background-color: transparent;
+    box-shadow: none;
+    transition: box-shadow 0s 0s;
+  }
+
+  .c-shortcut-wrap.is-open-desktop {
+    bottom: 50px;
+    box-shadow: 0 -2px 6px -2px rgba(0, 0, 0, 0.5);
+    transition: box-shadow 0.4s 0.35s ease-in-out;
+  }
+
+  .c-shortcut-nav {
+    display: flex;
+    justify-content: flex-end;
+    box-shadow: none;
+    transition: box-shadow 0s 0s;
+  }
+
+  .c-shortcut-nav.is-open-desktop {
+    box-shadow: 0 2px 8px -2px rgba(0, 0, 0, 0.5);
+    transition: box-shadow 0.4s 0.35s;
+  }
+
+  .c-shortcut-ul {
+    transition: all 0.35s;
+    transform: translate(60px);
+    width: 0;
+    opacity: 0;
+    overflow: hidden;
+    background-color: var(--brand-deco);
+  }
+
+  .c-shortcut-ul.is-open-desktop {
+    width: 100%;
+    opacity: 1;
+    transform: translate(0);
+  }
+
+  .c-shortcut-li {
+    width: 120px;
+  }
+
+  .c-shortcut-label {
+    color: #fff;
+    font-weight: bold;
+  }
+
+  .c-shortcut-icon {
+    --color-svg2: white;
+  }
+
+  .c-shortcut-btn {
+    --color-svg2: white;
+    --size-svg2: 40px;
+
+    display: inline-block;
+    height: 100%;
+    width: 60px;
+    padding: 0 10px;
+    margin: 0;
+    background-color: var(--brand-deco);
+    border: none;
+    border-radius: 3px;
+    color: #fff;
+    cursor: pointer;
+    z-index: 10;
+    animation-duration: 0.65s;
+    animation-fill-mode: both;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: 1;
+    will-change: auto;
+  }
+
+  @keyframes bounce {
+    0%,
+    45%,
+    100% {
+      transform: scale(1);
+    }
+
+    30% {
+      transform: scale(0.75);
+    }
+
+    60% {
+      transform: scale(1.1);
+      box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+    }
+  }
+
+  .c-shortcut-btn:hover {
+    animation-name: bounce;
+  }
+
+  .is-open-desktop .c-shortcut-btn {
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+  }
+
+  .is-open-desktop .c-shortcut-btn:hover {
+    animation-name: none;
+  }
+
+  .c-shorcut-btn-svg {
+    display: block;
+    transform: rotate(45deg);
+    transition: all 0.25s ease-in-out;
+  }
+
+  .c-shortcut-nav.is-open-desktop .c-shorcut-btn-svg {
+    transform: rotate(90deg);
+  }
+}

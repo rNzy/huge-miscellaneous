@@ -1,0 +1,56 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+
+<Meta title="Documentation|Accessibilité/aria-rowindex" />
+
+# aria-rowindex
+
+## Intro
+
+Defines an element's row index or position with respect to the total number of rows within a table, grid, or treegrid. See related aria-rowcount and aria-rowspan.
+
+If all of the rows are present in the DOM, it is not necessary to set this attribute as the user agent can automatically calculate the index of each row. However, if only a portion of the rows is present in the DOM at a given moment, this attribute is needed to provide an explicit indication of each row's position with respect to the full table.
+
+Authors MUST set the value for aria-rowindex to an integer greater than or equal to 1, greater than the aria-rowindex value of any previous rows, and less than or equal to the number of rows in the full table. For a cell or gridcell which spans multiple rows, authors MUST set the value of aria-rowindex to the start of the span.
+
+Authors SHOULD place aria-rowindex on each row. Authors MAY also place aria-rowindex on all of the children or owned elements of each row.
+
+The following example shows a grid with 2000 rows, of which the first row and rows 100 through 102 are displayed to the user.
+
+- @SPEC
+  - @MUST
+  - @HOWTO / REFERENCES
+
+## Example
+
+```html
+<div role="grid" aria-rowcount="2000">
+  <div role="rowgroup">
+    <div role="row" aria-rowindex="1">
+      <span role="columnheader" aria-rowindex="1">First Name</span>
+      <span role="columnheader" aria-rowindex="1">Last Name</span>
+      <span role="columnheader" aria-rowindex="1">Company</span>
+      <span role="columnheader" aria-rowindex="1">Phone</span>
+    </div>
+  </div>
+  <div role="rowgroup">
+    <div role="row" aria-rowindex="100">
+      <span role="gridcell" aria-rowindex="100">Fred</span>
+      <span role="gridcell" aria-rowindex="100">Jackson</span>
+      <span role="gridcell" aria-rowindex="100">Acme, Inc.</span>
+      <span role="gridcell" aria-rowindex="100">555-1234</span>
+    </div>
+    <div role="row" aria-rowindex="101">
+      <span role="gridcell" aria-rowindex="101">Sara</span>
+      <span role="gridcell" aria-rowindex="101">James</span>
+      <span role="gridcell" aria-rowindex="101">Acme, Inc.</span>
+      <span role="gridcell" aria-rowindex="101">555-1235</span>
+    </div>
+    <div role="row" aria-rowindex="102">
+      <span role="gridcell" aria-rowindex="102">Taylor</span>
+      <span role="gridcell" aria-rowindex="102">Johnson</span>
+      <span role="gridcell" aria-rowindex="102">Acme, Inc.</span>
+      <span role="gridcell" aria-rowindex="102">555-1236</span>
+    </div>
+  </div>
+</div>
+```

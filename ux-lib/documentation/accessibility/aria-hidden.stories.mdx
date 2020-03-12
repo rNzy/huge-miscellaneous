@@ -1,0 +1,18 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+
+<Meta title="Documentation|Accessibilité/aria-hidden" />
+
+# aria-hidden
+
+## Intro
+
+Indicates whether the element is exposed to an accessibility API. See related aria-disabled.
+
+User agents determine an element's hidden status based on whether it is rendered, and the rendering is usually controlled by CSS. For example, an element whose display property is set to none is not rendered. An element is considered hidden if it, or any of its ancestors are not rendered or have their aria-hidden attribute value set to true.
+
+Authors MAY, with caution, use aria-hidden to hide visibly rendered content from assistive technologies only if the act of hiding this content is intended to improve the experience for users of assistive technologies by removing redundant or extraneous content. Authors using aria-hidden to hide visible content from screen readers MUST ensure that identical or equivalent meaning and functionality is exposed to assistive technologies.
+
+- @SPEC
+  - @MUST
+  - @HOWTO / REFERENCES
+- @EXAMPLE

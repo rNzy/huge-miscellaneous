@@ -1,0 +1,12 @@
+diff a/src/deprecated/app/components-v3/03-organisms/bux-bulle/bux-bulle-item/bulle-item.documentation.md b/src/deprecated/app/components-v3/03-organisms/bux-bulle/bux-bulle-item/bulle-item.documentation.md	(rejected hunks)
+@@ -5,3 +5,3 @@ Ce composant est défini par des attributs :
+-| Properties      | Type      | Default | Description                                                  |
+-| :-------------- | :-------- | :------ | :----------------------------------------------------------- |
+-| data-value      | `string`  | ''      | défini la valeur de l'élément                                |
++| Properties | Type     | Default | Description                   |
++| :--------- | :------- | :------ | :---------------------------- |
++| data-value | `string` | ''      | défini la valeur de l'élément |
+@@ -12,2 +12 @@ Ce composant est défini par des attributs :
+-<bux2-bulle-item>
+-</bux2-bulle-item>
++<bux2-bulle-item> </bux2-bulle-item>

@@ -1,0 +1,11 @@
+.c-link-blank {
+  color: var(--color-primary);
+}
+
+.c-link-blank:hover {
+  color: var(--color-primary-hover);
+}
+
+.c-link-blank--svg {
+  margin-left: 2px;
+}

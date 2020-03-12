@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <script src="/node_modules/web-component-tester/browser.js"></script>
+    <title>Test bux-text</title>
+  </head>
+  <body>
+    <test-fixture id="componentFixture">
+      <template>
+        <bux-text size="sm">ceci est un badge</bux-text>
+      </template>
+    </test-fixture>
+    <script>
+      suite('<bux-text>', () => {
+        let component;
+        let span;
+
+        setup(() => {
+          component = fixture('componentFixture');
+          span = component.children[0];
+        });
+
+        a11ySuite('componentFixture');
+
+        test(`Is small ?`, () => {
+          assert.isTrue(span.classList.contains('c-text--sm'));
+        });
+
+        test(`Inner text is 'ceci est un badge' ?`, () => {
+          assert.isAtLeast(span.textContent.indexOf('ceci est un badge'), 0);
+        });
+      });
+    </script>
+  </body>
+</html>

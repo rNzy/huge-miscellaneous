@@ -1,0 +1,10 @@
+.c-list {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 0;
+}
+
+.c-list--bullet {
+  padding-left: 20px;
+  list-style: disc;
+}

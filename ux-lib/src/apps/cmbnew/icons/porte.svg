@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   id="Icone_L_Porte"
+   data-name="Icone/L/Porte"
+   width="28"
+   height="28"
+   viewBox="0 0 28 28"
+   version="1.1"
+   sodipodi:docname="porte.svg"
+   inkscape:version="0.92.3 (2405546, 2018-03-11)">
+  <metadata
+     id="metadata13">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs11" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1920"
+     inkscape:window-height="1052"
+     id="namedview9"
+     showgrid="false"
+     inkscape:zoom="8.4285714"
+     inkscape:cx="-10.559322"
+     inkscape:cy="14"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="Icone_L_Porte" />
+  <path
+     style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:medium;line-height:normal;font-family:sans-serif;font-variant-ligatures:normal;font-variant-position:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-alternates:normal;font-feature-settings:normal;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;writing-mode:lr-tb;direction:ltr;text-orientation:mixed;dominant-baseline:auto;baseline-shift:baseline;text-anchor:start;white-space:normal;shape-padding:0;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;vector-effect:none;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.96297234;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+     d="M 4.8169557,0.99999977 A 0.48153431,0.48153431 0 0 0 4.3354695,1.481486 v 22.667465 a 0.48153431,0.48153431 0 0 0 0.4814862,0.481486 h 2.9208906 1.2488547 1.474551 v 1.888329 a 0.48153431,0.48153431 0 0 0 0.599978,0.46644 l 9.255443,-2.351007 h 0.0019 a 0.48153431,0.48153431 0 0 0 0.06019,-0.01129 0.48153431,0.48153431 0 0 0 0.09028,0.0075 h 2.714002 A 0.48153431,0.48153431 0 0 0 23.66453,24.148923 V 1.481486 A 0.48153431,0.48153431 0 0 0 23.183019,0.99999977 Z M 5.2984418,1.9629722 H 22.701534 V 23.667465 h -1.95792 V 5.5007669 5.2581431 A 0.48153431,0.48153431 0 0 0 20.262129,4.7766569 H 7.7378463 A 0.48153431,0.48153431 0 0 0 7.2563601,5.2581431 V 23.667465 H 5.2984418 Z m 2.9208906,3.776657 H 17.213343 L 10.829891,7.2762471 A 0.48153431,0.48153431 0 0 0 10.461252,7.7445676 V 23.667465 H 9.0205555 8.986701 8.2193324 Z M 19.780642,6.1120287 V 23.774672 l -8.356417,2.125309 v -1.673916 a 0.48153431,0.48153431 0 0 0 0,-0.156108 V 8.1244903 Z m -5.792879,9.5845843 a 0.48153431,0.48153431 0 0 0 -0.127895,0.02257 l -1.055132,0.317856 a 0.48153431,0.48153431 0 1 0 0.278359,0.921595 l 1.055132,-0.317856 a 0.48153431,0.48153431 0 0 0 -0.150465,-0.944164 z"
+     id="Tracé_420"
+     inkscape:connector-curvature="0" />
+</svg>

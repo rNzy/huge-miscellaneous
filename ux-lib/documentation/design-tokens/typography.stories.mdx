@@ -1,0 +1,38 @@
+import { Meta, Typeset } from '@storybook/addon-docs/blocks';
+
+import { typography } from './shared/styles';
+
+<Meta title="Documentation|Design tokens/Typography" />
+
+# Typography
+
+## Custom Properties
+
+```css
+--font-family
+
+--text-font-size-xxs
+--text-font-size-xs
+--text-font-size-sm
+--text-font-size-md
+--text-font-size-lg
+--text-font-size-xl
+--text-font-size-xxl
+
+--text-line-height
+```
+
+<Typeset
+  fontSizes={[
+    Number(typography.size.s1),
+    Number(typography.size.s2),
+    Number(typography.size.s3),
+    Number(typography.size.m1),
+    Number(typography.size.m2),
+    Number(typography.size.m3),
+    Number(typography.size.l1),
+    Number(typography.size.l2),
+    Number(typography.size.l3)
+  ]}
+  fontWeight={typography.weight.regular}
+/>

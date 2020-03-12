@@ -1,0 +1,75 @@
+/* ==========================================================================
+   LAYER / #bulle-block.styles.scss
+   ========================================================================== */
+
+// Settings
+$background: color(grey-90);
+
+/* Heading
+  =========================================== */
+
+/* Sub-heading
+  ---------------------------------- */
+
+/**
+ * Long-form comment.
+ *
+ * 1. Provide line-comments like this.
+ */
+.c-bulle-block {
+  padding: 10px;
+  background: $background;
+  position: relative;
+  width: 100%;
+  z-index: 1;
+  line-height: 1.2;
+  border-radius: $global-border-radius;
+
+  &::before {
+    position: absolute;
+    content: '';
+    display: inline-block;
+    width: 26px;
+    height: 26px;
+    top: 0;
+    margin-top: -13px;
+    margin-left: -14px;
+    transform: rotate(45deg);
+    background-color: $background;
+    z-index: -1;
+  }
+
+  &--1of2::before {
+    left: calc(100% / 4);
+  }
+  &--2of2::before {
+    left: calc(100% / 6 * 4.5);
+  }
+  &--1of3::before {
+    left: calc(100% / 6);
+  }
+  &--2of3::before {
+    left: calc(100% / 2);
+  }
+  &--3of3::before {
+    left: calc(100% / 6 * 5.2);
+  }
+  &--1of4::before {
+    left: calc(100% / 10);
+  }
+  &--2of4::before {
+    left: calc(100% / 6 * 2.2);
+  }
+  &--3of4::before {
+    left: calc(100% / 6 * 3.7);
+  }
+  &--4of4::before {
+    left: calc(100% / 6 * 5.4);
+  }
+  &--left::before {
+    left: calc(100% / 6);
+  }
+  &--right::before {
+    left: calc(100% / 6 * 5);
+  }
+}

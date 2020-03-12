@@ -1,0 +1,49 @@
+import { Meta, Props, Story, Preview } from '@storybook/addon-docs/blocks';
+import * as stories from './list.stories.js';
+import './list.component.js';
+
+# Listes
+
+<Meta title="Components|Listes - tables/List" />
+
+Composant liste
+
+<Props of="ux-list" />
+
+## Stories
+
+### Simple liste
+
+<Preview withSource="none">
+  <Story name="Simple liste" height="80px">
+    {stories.simpleList()}
+  </Story>
+</Preview>
+
+```html
+<ux-list>
+  <ux-text lib-size="sm">List item 1</ux-text>
+  <ux-text lib-size="sm">List item 2</ux-text>
+  <ux-text lib-size="sm">List item 3</ux-text>
+  <ux-text lib-size="sm">List item 4</ux-text>
+  <ux-text lib-size="sm">List item 5</ux-text>
+</ux-list>
+```
+
+### Bullet list
+
+<Preview withSource="none">
+  <Story name="Bullet list" height="80px">
+    {stories.bulletList()}
+  </Story>
+</Preview>
+
+```html
+<ux-list bullet>
+  <ux-text lib-size="sm">List item 1</ux-text>
+  <ux-text lib-size="sm">List item 2</ux-text>
+  <ux-text lib-size="sm">List item 3</ux-text>
+  <ux-text lib-size="sm">List item 4</ux-text>
+  <ux-text lib-size="sm">List item 5</ux-text>
+</ux-list>
+```

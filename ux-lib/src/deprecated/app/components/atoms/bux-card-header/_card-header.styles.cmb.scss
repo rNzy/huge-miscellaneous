@@ -1,0 +1,51 @@
+@if (
+  $uxEfs==cmb or
+    $uxEfs==cmso or
+    $uxEfs==cmmc or
+    $uxEfs==cmbpro or
+    $uxEfs==cmsopro or
+    $uxEfs==cmmcpro
+) {
+  /* ==========================================================================
+   LAYER / #card-header.styles.scss
+   ========================================================================== */
+
+  // Settings
+  $card-header-padding-top: $global-spacing-unit-tiny;
+
+  // base
+  .c-card__head {
+    padding-top: $card-header-padding-top;
+    color: color(brand-mobile);
+    text-align: center;
+    padding-right: $global-spacing-unit-small;
+    padding-left: $global-spacing-unit-small;
+
+    @include mq($from: medium) {
+      color: color(brand);
+    }
+  }
+
+  .c-card__title {
+    margin-bottom: 0;
+    font-size: 13px;
+    line-height: 1.5;
+    text-transform: uppercase;
+
+    @include mq($from: medium) {
+      font-size: 16px;
+      text-transform: initial;
+    }
+  }
+
+  .c-card__title--left {
+    text-align: left;
+  }
+
+  .c-card__head--toast {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+}

@@ -1,0 +1,13 @@
+:host {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 20px;
+}
+
+::slotted(div) {
+  flex: 1 1 0;
+  font-size: 1.6rem;
+  font-weight: 700;
+}

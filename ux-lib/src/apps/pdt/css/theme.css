@@ -1,0 +1,23 @@
+ux-header {
+  --t-header-outer-width: 100%;
+  --t-header-inner-width-m: 100%;
+  --t-header-inner-width-d: 730px;
+  --t-header-height: 8rem;
+  --t-header-margin: 4rem;
+  --t-header-padding: 0;
+  --t-header-flex-justify-m: space-between;
+  --t-header-flex-justify-d: flex-start;
+
+  --t-header-background: #616161;
+  --t-header-color: white;
+  --t-header-border: 1px solid #eff;
+
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+  z-index: 30;
+}
+
+ux-main {
+  display: block;
+  margin: 0 auto;
+  max-width: 730px;
+}

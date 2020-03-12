@@ -1,0 +1,80 @@
+/* HEADER */
+
+ux-header {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+}
+
+@media (max-width: 1070px) {
+  ux-header ux-logo,
+  ux-header ux-profil,
+  ux-header ux-login,
+  ux-header ux-parametrage,
+  ux-header ux-messagerie,
+  ux-header ux-espace {
+    display: none;
+    box-sizing: border-box;
+  }
+
+  ux-burger {
+    display: block;
+  }
+}
+
+ux-login,
+ux-parametrage,
+ux-messagerie {
+  align-self: flex-end;
+}
+
+@media (min-width: 1070px) {
+  ux-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 34rem;
+    min-width: 34rem;
+  }
+
+  ux-profil {
+    display: flex;
+  }
+}
+
+ux-menu#menu-secondary {
+  position: absolute;
+  top: 5rem;
+  left: 0;
+  right: 0;
+}
+
+@media (min-width: 1070px) {
+  .o-layout {
+    display: grid;
+    grid-template-columns: 32rem 73rem;
+    grid-column-gap: var(--spacing-md);
+    width: 1070px;
+    margin: 6rem auto 0;
+  }
+
+  ux-sidebar {
+    position: relative;
+  }
+}
+
+/* FOOTER */
+ux-footer {
+  display: none;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+@media (min-width: 1090px) {
+  ux-footer {
+    display: block;
+  }
+}

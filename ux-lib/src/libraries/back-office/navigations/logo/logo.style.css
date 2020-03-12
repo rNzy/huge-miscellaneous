@@ -1,0 +1,34 @@
+:host {
+  --wrap-width: var(--logo-wrap-width, 100%);
+  --wrap-height: var(--logo-wrap-height, 100%);
+  --width: var(--logo-width);
+  --height: var(--logo-height);
+
+  --background-color: var(--logo-background-color);
+
+  position: relative;
+  display: inline-block;
+  width: 0;
+  height: var(--wrap-height);
+  background-color: var(--background-color);
+  transition: transform 0.25s, width 0.25s;
+  transform: translateX(-100%);
+}
+
+img {
+  width: var(--width);
+  height: var(--height);
+}
+
+:host(.c-logo-center-center) {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media only screen and (min-width: 770px) {
+  :host {
+    transform: none;
+    width: var(--wrap-width);
+  }
+}

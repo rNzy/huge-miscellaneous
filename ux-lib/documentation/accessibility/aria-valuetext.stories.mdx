@@ -1,0 +1,22 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+
+<Meta title="Documentation|Accessibilité/aria-valuetext" />
+
+# aria-valuetext
+
+## Intro
+
+Defines the human readable text alternative of aria-valuenow for a range widget.
+
+This property is used, for example, on a range widget such as a slider or progress bar.
+
+If the aria-valuetext attribute is set, authors SHOULD also set the aria-valuenow attribute, unless that value is unknown (for example, on an indeterminate progressbar).
+
+Authors SHOULD only set the aria-valuetext attribute when the rendered value cannot be meaningfully represented as a number. For example, a slider may have rendered values of small, medium, and large. In this case, the values of aria-valuenow could range from 1 through 3, which indicate the position of each value in the value space, but the aria-valuetext would be one of the strings: small, medium, or large. If the aria-valuetext attribute is absent, the assistive technologies will rely solely on the aria-valuenow attribute for the current value.
+
+If aria-valuetext is specified, assistive technologies SHOULD render that value instead of the value of aria-valuenow.
+
+- @SPEC
+  - @MUST
+  - @HOWTO / REFERENCES
+- @EXAMPLE

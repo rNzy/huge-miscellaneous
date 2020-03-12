@@ -1,0 +1,13 @@
+.c-wmax-center {
+  display: block;
+  position: relative;
+  max-width: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width: 46.25em) {
+  .c-wmax-center {
+    max-width: 480px;
+  }
+}

@@ -1,0 +1,58 @@
+:host {
+  --background-color: var(--cnil-background-color, #616161);
+  --font-color: var(--cnil-font-color, #fff);
+
+  --btn-background-color: var(--cnil-btn-background-color, #ddd);
+  --btn-background-color-hover: var(--cnil-btn-background-color-hover, #e6e6e6);
+  --btn-text-color: var(--cnil-btn-text-color, #616161);
+  --btn-border-radius: var(--cnil-btn-border-radius, 3px);
+
+  --link-text-color: var(--cnil-link-text-color, #fff);
+}
+
+.c-cnil {
+  display: flex;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  transform: translateY(100%) translateZ(0);
+  z-index: 1000;
+  background-color: var(--background-color);
+  color: var(--font-color);
+  padding: 5px 10px;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.25s ease-out;
+  opacity: 0;
+  box-sizing: border-box;
+}
+
+.c-cnil.is-visible {
+  transform: translateX(0) translateZ(0);
+  opacity: 1;
+}
+
+.c-cnil__button {
+  position: relative;
+  margin-left: 20px;
+  text-align: center;
+  padding: 10px 30px;
+  border-radius: 3px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  color: var(--btn-text-color);
+  background-color: var(--btn-background-color);
+}
+
+.c-cnil__button:hover,
+.c-cnil__button:focus {
+  background-color: var(--btn-background-color-hover);
+}
+
+::slotted(a) {
+  color: var(--link-text-color) !important;
+  text-decoration: underline !important;
+}

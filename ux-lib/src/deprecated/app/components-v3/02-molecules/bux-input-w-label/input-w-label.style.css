@@ -1,0 +1,26 @@
+#wrap {
+  /* margin-bottom: 10px; */
+}
+
+#wrap-input {
+  display: flex;
+  align-items: center;
+}
+
+#label-left-wrap ::slotted([slot='label-left']) {
+  margin-right: 10px;
+}
+
+#label-right-wrap ::slotted([slot='label-right']) {
+  margin-left: 10px;
+}
+
+@media (min-width: 740px) {
+  #wrap {
+    /* margin-bottom: 20px; */
+  }
+
+  #wrap-input {
+    font-size: 14px;
+  }
+}

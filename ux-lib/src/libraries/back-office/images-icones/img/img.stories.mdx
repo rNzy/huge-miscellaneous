@@ -1,0 +1,27 @@
+import { Meta, Props, Story, Preview } from '@storybook/addon-docs/blocks';
+import './img.component.js';
+
+# Image
+
+<Meta title="Components|Images-Icones/Img" />
+
+## Présentation
+
+Affiche une image
+
+<Props of="ux-img" />
+
+## Stories
+
+### Image
+
+<Preview withSource="yes">
+  <Story name="empty" height="60px">
+    {() => `
+      <ux-img src="./logo.png" alt="logo"> </ux-img>`}
+  </Story>
+</Preview>
+
+```html
+<ux-img src="./logo.png" alt="logo"> </ux-img>
+```

@@ -1,0 +1,48 @@
+:host {
+  --color-empty: var(--color-background);
+
+  position: relative;
+}
+
+.c-select {
+  display: inline-block;
+  height: 35px;
+  width: 100%;
+  padding: 5px 30px 5px 5px;
+  box-sizing: border-box;
+  line-height: 1.5;
+  color: var(--color-text);
+  vertical-align: middle;
+  background: #fff
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='50' height='50' viewBox='0 0 1024 1024'%3E%3Cpath fill='%23616161' d='M297.984 425.984h427.989l-214.016 214.016z'/%3E%3C/svg%3E")
+    no-repeat right 2px center;
+  background-size: auto auto;
+  background-size: 30px 30px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-radius: 3px;
+  border: 1px solid var(--color-empty);
+}
+
+.c-select-empty {
+  border: 1px solid var(--color-empty);
+}
+
+.c-select-success {
+  border: solid 1px var(--color-success);
+}
+
+.c-select-error {
+  border: solid 1px var(--color-error);
+}
+
+.c-select-error-msg {
+  position: absolute;
+  bottom: -2rem;
+}
+
+::slotted([slot='error']) {
+  color: var(--color-error);
+  font-size: var(--text-font-size-sm);
+}

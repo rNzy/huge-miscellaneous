@@ -1,0 +1,42 @@
+.o-container--auth {
+  background-image: url('./authent.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100% !important;
+  height: 100vh;
+  background-position-x: 70%;
+  overflow: hidden;
+}
+
+.auth__header {
+  width: 100%;
+  background-color: #fff;
+}
+
+.auth__header-container {
+  max-width: 1070px;
+  margin: 0 auto;
+  padding: 5px 20px;
+  color: #007ab3;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 2rem;
+
+  @media (max-width: 510px) {
+    display: block;
+    text-align: center;
+  }
+}
+
+.mire-authent {
+  display: flex;
+  height: calc(100vh - 60px);
+  justify-content: center;
+  align-items: center;
+}
+
+.na-header__logo {
+  font-size: 8em;
+  height: 40px;
+}

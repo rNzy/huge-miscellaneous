@@ -1,0 +1,15 @@
+.c-card-tile {
+  position: relative;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  padding: var(--spacing-xs);
+  border-radius: var(--border-radius-sm);
+}
+
+::slotted(bux2-notification) {
+  position: relative;
+  top: -55px;
+  right: -25px;
+}

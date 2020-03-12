@@ -1,0 +1,19 @@
+.c-modal-header {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-flow: row wrap;
+  padding: var(--spacing-sm);
+  position: relative;
+}
+
+/* Style spécifique à la modale avec l'attribut "popin" */
+.c-popin-header {
+  justify-content: center;
+}
+
+@media (min-width: 49rem) {
+  .c-modal-header {
+    padding: var(--spacing-sm);
+  }
+}

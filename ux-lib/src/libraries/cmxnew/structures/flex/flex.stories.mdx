@@ -1,0 +1,153 @@
+import {
+  Meta,
+  Description,
+  Props,
+  Story,
+  Preview
+} from '@storybook/addon-docs/blocks';
+import './flex.component.js';
+import '../../typography/text/text.component.js';
+
+# ux-flex
+
+<Meta title="Components|Structures/Flex" />
+
+## Description
+
+<Description of="ux-flex" />
+
+## Propriétés
+
+<Props of="ux-flex" />
+
+## Stories
+
+### Exemple par défault row - wrap - justify-content: flex-start - align-items: center
+
+<Preview>
+  <Story name="row wrap" height="60px">
+    {`
+    <ux-flex>
+      <ux-text>Lorem ipsum dolores claiborne</ux-text>
+      <ux-text>Lorem ipsum dolores claiborne</ux-text>
+    </ux-flex>
+    `}
+  </Story>
+</Preview>
+
+### flex-wrap: nowrap
+
+<Preview>
+  <Story name="row no wrap" height="60px">
+    {`
+    <ux-flex nowrap>
+      <ux-text>Lorem ipsum dolores claiborne</ux-text>
+      <ux-text>Lorem ipsum dolores claiborne</ux-text>
+    </ux-flex>
+    `}
+  </Story>
+</Preview>
+
+### flex-flow: column
+
+<Preview>
+  <Story name="column" height="60px">
+    {`
+    <ux-flex column>
+      <ux-text>Lorem ipsum dolores claiborne</ux-text>
+      <ux-text>Lorem ipsum dolores claiborne</ux-text>
+    </ux-flex>
+    `}
+  </Story>
+</Preview>
+
+### justify-content: center
+
+<Preview>
+  <Story name="justify center" height="60px">
+    {`
+    <ux-flex justify-content="center">
+      <ux-text>Lorem ipsum dolores claiborne</ux-text>
+      <ux-text>Lorem ipsum dolores claiborne</ux-text>
+    </ux-flex>
+    `}
+  </Story>
+</Preview>
+
+### justify-content: end
+
+<Preview>
+  <Story name="justify end" height="60px">
+    {`
+    <ux-flex justify-content="end">
+      <ux-text>Lorem ipsum dolores claiborne</ux-text>
+      <ux-text>Lorem ipsum dolores claiborne</ux-text>
+    </ux-flex>
+    `}
+  </Story>
+</Preview>
+
+### justify-content: space-around
+
+<Preview>
+  <Story name="justify space around" height="60px">
+    {`
+    <ux-flex justify-content="space-around">
+      <ux-text>Lorem ipsum dolores claiborne</ux-text>
+      <ux-text>Lorem ipsum dolores claiborne</ux-text>
+    </ux-flex>
+    `}
+  </Story>
+</Preview>
+
+### justify-content: space-between
+
+<Preview>
+  <Story name="justify space between" height="60px">
+    {`
+    <ux-flex justify-content="space-between">
+      <ux-text>Lorem ipsum dolores claiborne</ux-text>
+      <ux-text>Lorem ipsum dolores claiborne</ux-text>
+    </ux-flex>
+    `}
+  </Story>
+</Preview>
+
+### justify-content: space-evenly
+
+<Preview>
+  <Story name="justify space evenly" height="60px">
+    {`
+    <ux-flex justify-content="space-evenly">
+      <ux-text>Lorem ipsum dolores claiborne</ux-text>
+      <ux-text>Lorem ipsum dolores claiborne</ux-text>
+    </ux-flex>
+    `}
+  </Story>
+</Preview>
+
+### align-items: flex-start
+
+<Preview>
+  <Story name="align start" height="60px">
+    {`
+    <ux-flex align-items="start">
+      <ux-text>Lorem ipsum dolores claiborne</ux-text>
+      <ux-text>Lorem ipsum dolores claiborne</ux-text>
+    </ux-flex>
+    `}
+  </Story>
+</Preview>
+
+### align-items: flex-end
+
+<Preview>
+  <Story name="align end" height="60px">
+    {`
+    <ux-flex align-items="end">
+      <ux-text>Lorem ipsum dolores claiborne</ux-text>
+      <ux-text>Lorem ipsum dolores claiborne</ux-text>
+    </ux-flex>
+    `}
+  </Story>
+</Preview>

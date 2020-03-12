@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <script src="/node_modules/web-component-tester/browser.js"></script>
+    <title>Test bux2-progressbar</title>
+  </head>
+
+  <body>
+    <test-fixture id="componentFixture">
+      <template>
+        <bux2-progressbar value="25"></bux2-progressbar>
+      </template>
+    </test-fixture>
+    <script>
+      suite('<bux2-progressbar>', () => {
+        let component;
+
+        setup(() => {
+          component = fixture('componentFixture');
+        });
+
+        a11ySuite('componentFixture');
+
+        // Testing value && aria-valuenow
+        test(`Has value '25' in aria-valuenow ?`, () => {
+          const pbar = component.$.querySelector('.c-progress__bar');
+          assert.isTrue(pbar.getAttribute('aria-valuenow') === '25');
+        });
+
+        // Testing value && style width
+        test(`Has value '25' in style width ?`, () => {
+          const pbar = component.$.querySelector('.c-progress__bar');
+          assert.isTrue(pbar.style.width === '25%');
+        });
+      });
+    </script>
+
+    <test-fixture id="componentFixture2">
+      <template>
+        <bux2-progressbar
+          value-primary="25"
+          value-secondary="12"
+        ></bux2-progressbar>
+      </template>
+    </test-fixture>
+    <script>
+      suite('<bux2-progressbar> double', () => {
+        let component2;
+
+        setup(() => {
+          component2 = fixture('componentFixture2');
+        });
+
+        a11ySuite('componentFixture2');
+
+        // Testing value && aria-valuenow in primary progress bar
+        test(`Has value '25' in aria-valuenow ?`, () => {
+          const pbarp = component2.$.querySelector('.c-progress__bar--primary');
+          assert.isTrue(pbarp.getAttribute('aria-valuenow') === '25');
+        });
+
+        // Testing value && style width in primary progress bar
+        test(`Has value '25' in style width ?`, () => {
+          const pbarp = component2.$.querySelector('.c-progress__bar--primary');
+          assert.isTrue(pbarp.style.width === '25%');
+        });
+
+        // Testing value && aria-valuenow in secondary progress bar
+        test(`Has value '12' in aria-valuenow ?`, () => {
+          const pbars = component2.$.querySelector(
+            '.c-progress__bar--secondary'
+          );
+          assert.isTrue(pbars.getAttribute('aria-valuenow') === '12');
+        });
+
+        // Testing value && style width in secondary progress bar
+        test(`Has value '25' in style width ?`, () => {
+          const pbars = component2.$.querySelector(
+            '.c-progress__bar--secondary'
+          );
+          assert.isTrue(pbars.style.width === '12%');
+        });
+      });
+    </script>
+  </body>
+</html>

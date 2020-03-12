@@ -1,0 +1,19 @@
+.c-card-header {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-flow: column wrap;
+  padding: var(--spacing-sm);
+  position: relative;
+  border-radius: 3px 3px 0 0;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--white);
+  background-color: var(--brand-deco);
+}
+
+@media (min-width: 49rem) {
+  .c-card-header {
+    padding: var(--spacing-sm);
+  }
+}

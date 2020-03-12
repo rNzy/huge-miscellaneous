@@ -1,0 +1,71 @@
+/* ==========================================================================
+   COMPONENTS / #CARD
+   ========================================================================== */
+
+/*
+  // Settings
+  $amount-color: #424242;
+  $amount-color-negative: color(error);
+  $amount-font-size-mobile: 16px;
+  $amount-font-size-desktop: 16px; */
+
+/* Base
+  ============================================ */
+
+.c-amount {
+  display: inline-flex;
+  align-items: baseline;
+  font-size: var(--text-font-size-md);
+  line-height: inherit;
+  color: var(--color-text);
+  white-space: nowrap;
+}
+
+.c-amount__currency,
+.c-amount__value,
+.c-amount__period {
+  margin-right: 5px;
+}
+
+.c-amount__period::before {
+  content: '/';
+  margin-right: 5px;
+  speak: none;
+}
+
+/* Modifiers
+  ============================================ */
+
+.c-amount--negative {
+  color: var(--color-error);
+}
+
+.c-amount--sm,
+.c-currency--sm,
+.c-period--sm {
+  font-size: 13px;
+
+  /* @include mq($from: medium) {
+      font-size: 14px;
+    } */
+}
+
+.c-amount--md,
+.c-currency--md,
+.c-period--md {
+  font-size: 16px;
+}
+
+.c-amount--xxl,
+.c-currency--xxl,
+.c-period--xxl {
+  font-size: 36px;
+
+  /* @include mq($from: medium) {
+      font-size: 46px;
+    } */
+}
+
+.c-amount--bold {
+  font-weight: bold;
+}

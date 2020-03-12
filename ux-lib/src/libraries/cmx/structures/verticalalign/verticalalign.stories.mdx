@@ -1,0 +1,74 @@
+import { Meta, Props, Story, Preview } from '@storybook/addon-docs/blocks';
+import * as stories from './verticalalign.stories.js';
+import './verticalalign.component.js';
+
+# ux-interspace
+
+<Meta title="Components|Structures/VerticalAlign" />
+
+Un conteneur alignant ses enfants l'un à coté de l'autre, de la gauche vers la droite et qui centre verticalement.
+Le contenu des enfants est aligné verticalement.
+
+## Stories
+
+### Exemple simple
+
+Chaque div dans `ux-verticalalign` est une colonne. Ce qui s'y trouve, même si c'est un élément inline, se comporte comme une div.
+
+<Preview withSource="none">
+  <Story name="simple" height="60px">
+    {stories.simple()}
+  </Story>
+</Preview>
+
+```html
+<ux-verticalalign>
+  <div>
+    <strong>Ceci est un texte !</strong></<strong>
+    <small>Et ceci un sous-texte !</small></<small>
+  </div>
+  <div>
+    <strong>Ceci est un texte !</strong></<strong>
+    <small>Et ceci un sous-texte !</small></<small>
+  </div>
+  <div>
+    <strong>Ceci est un texte !</strong></<strong>
+    <small>Et ceci un sous-texte !</small></<small>
+  </div>
+</ux-verticalalign>
+```
+
+### Combinaison avec ux-interspace
+
+On peut combiner différents conteneurs, par exemple ici le `ux-interspace` et le `ux-verticalalign`;
+
+<Preview withSource="none">
+  <Story name="complexe" height="60px">
+    {stories.complexe()}
+  </Story>
+</Preview>
+
+```html
+<ux-grid columns="3-1">
+  <ux-verticalalign slot="1">
+    <div>
+      <strong>Ceci est un texte !</strong>
+      <small>Et ceci un sous-texte !</small>
+    </div>
+    <div>
+      <strong>Ceci est un texte !</strong></<strong>
+      <small>Et ceci un sous-texte !</small></<small>
+    </div>
+    <div>
+      <strong>Ceci est un texte !</strong></<strong>
+      <small>Et ceci un sous-texte !</small></<small>
+    </div>
+  </ux-verticalalign>
+  <ux-verticalalign slot="2">
+    <div>
+    <ux-amount value="25005154.50" lib-size="lg" round>primary</ux-amount>
+      <ux-text>Échéance</ux-text>
+    </div>
+  </ux-verticalalign>
+</ux-grid>
+```

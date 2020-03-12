@@ -1,0 +1,8 @@
+.c-card-header--full {
+  width: calc(100% + 40px);
+  margin-top: -10px;
+  margin-left: -20px;
+  border-top-left-radius: var(--border-radius-md);
+  border-top-right-radius: var(--border-radius-md);
+  overflow: hidden;
+}

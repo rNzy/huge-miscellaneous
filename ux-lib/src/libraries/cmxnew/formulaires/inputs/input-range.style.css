@@ -1,0 +1,241 @@
+:host {
+  --height: 8px;
+  --border-radius: 6px;
+
+  --track-color: #e6e6e6;
+  --track-color-hover: #cdcbcb;
+
+  --cursor-color: var(--color-primary);
+  --cursor-color-hover: var(--color-primary-dark);
+
+  --lower-shadow: none;
+  --lower-color: var(--color-primary);
+  --lower-color-hover: var(--color-primary-dark);
+
+  --upper-shadow: none;
+  --upper-color: black;
+}
+
+.c-input-range {
+  display: block;
+  position: relative;
+  width: 100%;
+  margin-bottom: 7px;
+  box-sizing: border-box;
+}
+
+.c-input-range * {
+  box-sizing: border-box;
+}
+
+.c-input-range__input {
+  display: block;
+  position: absolute;
+  background: none;
+  outline: none;
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  -webkit-appearance: none;
+}
+
+.c-input-range__wrap {
+  display: block;
+  position: relative;
+  padding-top: 30px;
+}
+
+.c-input-range__wrap2 {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+/* La legende */
+.c-input-range__legend {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+}
+
+/* La legende au milieu */
+.c-input-range__middle {
+  transform: translateX(-25%);
+}
+
+/* Barre rouge qui suit le cursor */
+.c-input-range__lower {
+  position: absolute;
+  cursor: pointer;
+  height: 8px;
+  background-color: var(--lower-color);
+  border-radius: var(--border-radius);
+  pointer-events: none;
+  z-index: 2;
+}
+
+.c-input-range:hover .c-input-range__lower,
+.c-input-range:focus-within .c-input-range__lower {
+  background: var(--lower-color-hover);
+}
+
+/* La valeur actuelle */
+.c-input-range__val {
+  position: relative;
+  top: -35px;
+  color: var(--color-primary);
+  font-weight: bold;
+}
+
+.c-input-range:hover .c-input-range__val,
+.c-input-range:focus-within .c-input-range__val {
+  color: var(--cursor-color-hover);
+}
+
+/* ////////////////////////////////////////// IE */
+
+/* la zone de déplacement */
+.c-input-range__input::-ms-track {
+  background: var(--track-color);
+  box-shadow: var(--shadow);
+  border-radius: var(--border-radius);
+  height: var(--height);
+}
+
+.c-input-range:hover .c-input-range__input::-ms-track,
+.c-input-range:focus-within .c-input-range__input::-ms-track {
+  background: var(--track-color-hover);
+}
+
+/* barre progression avant */
+.c-input-range__input::-ms-fill-lower {
+  background: var(--track-color);
+  box-shadow: var(--shadow);
+  border-radius: var(--border-radius);
+  height: var(--height);
+}
+
+.c-input-range:hover .c-input-range__input::-ms-fill-lower,
+.c-input-range:focus-within .c-input-range__input::-ms-fill-lower {
+  background: var(--track-color-hover);
+}
+
+/* barre progression après */
+.c-input-range__input::-ms-fill-upper {
+  background: var(--track-color);
+  box-shadow: var(--shadow);
+  border-radius: var(--border-radius);
+  height: var(--height);
+}
+
+.c-input-range:hover .c-input-range__input::-ms-fill-upper,
+.c-input-range:focus-within .c-input-range__input::-ms-fill-upper {
+  background: var(--track-color-hover);
+}
+
+/* le curseur */
+.c-input-range__input::-ms-thumb {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  z-index: 2;
+  background: var(--cursor-color);
+  border-radius: 50%;
+  height: 26px;
+  width: 26px;
+  border: 4px solid white;
+  margin-top: -9px;
+}
+
+.c-input-range:hover .c-input-range__input::-ms-thumb,
+.c-input-range:focus-within .c-input-range__input::-ms-thumb {
+  background: var(--cursor-color-hover);
+}
+
+/* ////////////////////////////////////////// FIN IE */
+
+/* ////////////////////////////////////////// CHROME */
+
+/* la zone de déplacement */
+.c-input-range__input::-webkit-slider-runnable-track {
+  background: var(--track-color);
+  box-shadow: var(--shadow);
+  border-radius: var(--border-radius);
+  height: var(--height);
+}
+
+.c-input-range:hover .c-input-range__input::-webkit-slider-runnable-track,
+.c-input-range:focus-within
+  .c-input-range__input::-webkit-slider-runnable-track {
+  background: var(--track-color-hover);
+}
+
+/* le curseur */
+.c-input-range__input::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  display: block;
+  position: relative;
+  cursor: pointer;
+  z-index: 2;
+  background: var(--cursor-color);
+  border-radius: 50%;
+  height: 26px;
+  width: 26px;
+  border: 4px solid white;
+  margin-top: -9px;
+}
+
+.c-input-range:hover .c-input-range__input::-webkit-slider-thumb,
+.c-input-range:focus-within .c-input-range__input::-webkit-slider-thumb {
+  background: var(--cursor-color-hover);
+  height: 30px;
+  width: 30px;
+  border: 4px solid white;
+  margin-top: -11px;
+}
+
+/* /////////////////////////////////// FIREFOX */
+
+/* la zone de déplacement */
+.c-input-range__input::-moz-range-track {
+  background: var(--track-color);
+  box-shadow: var(--shadow);
+  border-radius: var(--border-radius);
+  height: var(--height);
+}
+
+.c-input-range:hover .c-input-range__input:hover::-moz-range-track,
+.c-input-range:focus-within .c-input-range__input:hover::-moz-range-track {
+  background: var(--track-color-hover);
+}
+
+/* le curseur */
+.c-input-range__input::-moz-range-thumb {
+  -webkit-appearance: none;
+  display: block;
+  position: relative;
+  cursor: pointer;
+  background: var(--color-primary);
+  border-radius: 50%;
+  height: 26px;
+  width: 26px;
+  border: 4px solid white;
+  margin-top: -9px;
+}
+
+.c-input-range:hover .c-input-range__input::-moz-range-thumb,
+.c-input-range:focus-within .c-input-range__input::-moz-range-thumb {
+  background: var(--cursor-color-hover);
+  height: 30px;
+  width: 30px;
+  border: 4px solid white;
+  margin-top: -11px;
+}
+
+/* .c-input-range__input::-moz-focus-outer {
+  border: 0;
+} */
+
+/* ////////////////////////////////// */

@@ -1,0 +1,44 @@
+:host {
+  --grid-column-gap: var(--spacing-md);
+}
+
+.grid-masonry {
+  display: flex;
+  flex-flow: column;
+}
+
+@media (min-width: 740px) {
+  .grid-masonry {
+    display: grid;
+    grid-column-gap: var(--grid-column-gap, 20px);
+    grid-row-gap: 1px;
+
+    /* nous remonte un warning pour IE qu'on ne supporte pas */
+
+    /* autoprefixer: off */
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  }
+}
+::slotted(.grid-item) {
+  display: table;
+  width: 100%;
+  padding-bottom: 9px;
+}
+
+@media (min-width: 740px) {
+  ::slotted(.grid-item) {
+    padding-bottom: 19px;
+  }
+}
+
+.flex-masonry {
+  display: flex;
+  flex-flow: column nowrap;
+  width: 60%;
+  margin: 0 auto;
+}
+
+::slotted(.layout-item) {
+  width: 100%;
+  margin-bottom: 20px;
+}

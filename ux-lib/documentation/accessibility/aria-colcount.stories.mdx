@@ -1,0 +1,47 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+
+<Meta title="Documentation|Accessibilité/aria-colcount" />
+
+# aria-colcount
+
+## Intro
+
+Defines the total number of columns in a table, grid, or treegrid. See related aria-colindex.
+
+If all of the columns are present in the DOM, it is not necessary to set this attribute as the user agent can automatically calculate the total number of columns. However, if only a portion of the columns is present in the DOM at a given moment, this attribute is needed to provide an explicit indication of the number of columns in the full table.
+
+Authors MUST set the value of aria-colcount to an integer equal to the number of columns in the full table. If the total number of columns is unknown, authors MUST set the value of aria-colcount to -1 to indicate that the value should not be calculated by the user agent.
+
+- @SPEC
+  - @MUST
+  - @HOWTO / REFERENCES
+
+## Examples
+
+```html
+<div role="grid" aria-colcount="16">
+  <div role="rowgroup">
+    <div role="row">
+      <span role="columnheader" aria-colindex="2">First Name</span>
+      <span role="columnheader" aria-colindex="3">Last Name</span>
+      <span role="columnheader" aria-colindex="4">Company</span>
+      <span role="columnheader" aria-colindex="9">Phone</span>
+    </div>
+  </div>
+  <div role="rowgroup">
+    <div role="row">
+      <span role="gridcell" aria-colindex="2">Fred</span>
+      <span role="gridcell" aria-colindex="3">Jackson</span>
+      <span role="gridcell" aria-colindex="4">Acme, Inc.</span>
+      <span role="gridcell" aria-colindex="9">555-1234</span>
+    </div>
+    <div role="row">
+      <span role="gridcell" aria-colindex="2">Sara</span>
+      <span role="gridcell" aria-colindex="3">James</span>
+      <span role="gridcell" aria-colindex="4">Acme, Inc.</span>
+      <span role="gridcell" aria-colindex="9">555-1235</span>
+    </div>
+    …
+  </div>
+</div>
+```

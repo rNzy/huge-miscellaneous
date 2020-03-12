@@ -1,0 +1,45 @@
+import { Meta, Props, Story, Preview } from '@storybook/addon-docs/blocks';
+import * as stories from './amount.stories.js';
+import './amount.component.js';
+
+# Buttons
+
+<Meta title="Components|Typography/Amount" />
+
+## Présentation
+
+### Montant positif
+
+<Preview withSource="none" withToolbar>
+  <Story name="Amount" height="40px">
+    {stories.amount()}
+  </Story>
+</Preview>
+
+```html
+<ux-amount value="250" lib-size="md">primary</ux-amount>
+```
+
+### Montant negatif
+
+<Preview withSource="none" withToolbar>
+  <Story name="Amount negative" height="40px">
+    {stories.amountNegative()}
+  </Story>
+</Preview>
+
+```html
+<ux-amount value="-250" lib-size="lg">primary</ux-amount>
+```
+
+### Montant arrondi
+
+<Preview withSource="none" withToolbar>
+  <Story name="Amount round" height="40px">
+    {stories.amountRound()}
+  </Story>
+</Preview>
+
+```html
+<ux-amount value="25005154.50" lib-size="lg" round>primary</ux-amount>
+```

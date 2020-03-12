@@ -1,0 +1,8 @@
+.c-frame {
+  background-color: #fff;
+}
+@media (min-width: 740px) {
+  .c-frame {
+    padding: var(--spacing-md);
+  }
+}

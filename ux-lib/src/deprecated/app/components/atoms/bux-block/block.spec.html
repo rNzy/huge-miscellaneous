@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <script src="/node_modules/web-component-tester/browser.js"></script>
+  <title>Test block</title>
+</head>
+
+<body>
+  <test-fixture id="componentFixture">
+    <template>
+      <bux-block layout="nopadding" noshadow nomarginbottom center wmax480 nopaddingbottom nobackground>Voici un block
+      </bux-block>
+    </template>
+  </test-fixture>
+  <script>
+    suite('<bux-block>', () => {
+      let component;
+      setup(() => {
+        component = fixture('componentFixture');
+        span = component.querySelector('.c-block');
+        textEl = span.querySelector("div");
+      });
+
+      a11ySuite('componentFixture');
+
+      // test('First child have class "c-block c-block--padding-default"', () => {
+      //   assert.isTrue(
+      //     component.childNodes[0].className ===
+      //     'c-block c-block--padding-default'
+      //   );
+      // });
+
+      // Testing value
+      test(`Value is "Voici un block" ?`, () => {
+        assert.isTrue(span.textContent === 'Voici un block');
+      });
+
+      // Testing if no shadow
+      test(`Value has class "u-noshadow" ?`, () => {
+        assert.isTrue(span.classList.contains('u-noshadow'));
+      });
+
+      // Testing if no margin bottom
+      test(`Value has class "u-nomarginbottom" ?`, () => {
+        assert.isTrue(span.classList.contains('u-nomarginbottom'));
+      });
+
+      // Testing if center
+      test(`Value has class "c-block--center"?`, () => {
+        assert.isTrue(span.classList.contains('c-block--center'));
+      });
+
+      // Testing if max width is 480px
+      test(`Value has class "c-block--wmax480" ?`, () => {
+        assert.isTrue(span.classList.contains('c-block--wmax480'));
+      });
+
+      // Testing if no padding bottom
+      test(`Value has class "c-block--nopaddingbottom" ?`, () => {
+        assert.isTrue(span.classList.contains('c-block--nopaddingbottom'));
+      });
+
+      // Testing if no background
+      test(`Value has class "c-block--nobackground" ?`, () => {
+        assert.isTrue(span.classList.contains('c-block--nobackground'));
+      });
+
+      // Testing kayouts
+      //=================
+
+      // Testing undefined layout
+      test(`Value has class "c-block--padding-default" ?`, () => {
+        component.setAttribute('layout', 'undefined');
+        assert.isTrue(span.classList.contains('c-block--padding-default'));
+      });
+
+      // Testing nopadding layout
+      test(`Value has class "c-block--nopadding" ?`, () => {
+        component.setAttribute('layout', 'nopadding');
+        assert.isTrue(span.classList.contains('c-block--nopadding'));
+      });
+
+      // Testing small layout
+      test(`Value has class "c-block--padding-sm" ?`, () => {
+        component.setAttribute('layout', 'small');
+        assert.isTrue(span.classList.contains('c-block--padding-sm'));
+      });
+
+      // Testing medium layout
+      test(`Value has class "c-block--nopadding-md" ?`, () => {
+        component.setAttribute('layout', 'medium');
+        assert.isTrue(span.classList.contains('c-block--nopadding-md'));
+      });
+
+      // Testing large layout
+      test(`Value has class "c-block--nopadding-large" ?`, () => {
+        component.setAttribute('layout', 'large');
+        assert.isTrue(span.classList.contains('c-block--nopadding-large'));
+      });
+
+    });
+
+  </script>
+</body>
+
+</html>

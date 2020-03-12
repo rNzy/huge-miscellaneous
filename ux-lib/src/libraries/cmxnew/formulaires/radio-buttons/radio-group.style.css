@@ -1,0 +1,13 @@
+:host {
+  display: flex;
+  flex-direction: column;
+}
+
+.c-radio-group {
+  display: flex;
+  flex-direction: column;
+}
+
+::slotted(*:not(:last-of-type)) {
+  margin-bottom: var(--spacing-sm);
+}

@@ -1,0 +1,53 @@
+import { Meta, Props, Story, Preview } from '@storybook/addon-docs/blocks';
+import * as stories from './tabs-one-panel.stories';
+import './tabs-one-panel.component';
+
+# tabs
+
+<Meta title="Components|Interactions/Tabs-one-panel" />
+
+## Présentation
+
+Ce composant permet de faire des tabs un peu comme l'ux-tabs sont que l'on a
+que un panel. Ceci facilite l'intégration dans les framefork js.
+
+A chaque changement de tabs par l'utilisateur (ce qui se fait quand il clique sur la tab ou quand il
+la selecitonne par la touche entrer ou espace) il y a deux actions qui sont réalisées :
+
+- l'attribut tab-active du ux-tabs-one-panel change
+- le ux-tabs-one-panel emet un custom Event avec :
+
+```js
+new CustomEvent('uxTabActive', {
+  detail: {
+    tab: newTab,
+    tabNumber: this.\_getNumberOfTab(newTab)
+  },
+  bubbles: true
+});
+```
+
+<Preview withSource="none" withToolbar>
+  <Story name="All tabs" height="400px">
+    {stories.tabs()}
+  </Story>
+</Preview>
+
+```html
+<ux-tabs-one-panel>
+  <ux-tabs-one-panel-btn>
+    1
+  </ux-tabs-one-panel-btn>
+  <ux-tabs-one-panel-btn>
+    2
+  </ux-tabs-one-panel-btn>
+  <ux-tabs-one-panel-btn>
+    3
+  </ux-tabs-one-panel-btn>
+  <ux-tabs-one-panel-panel>
+    <div>
+      mon panel
+    </div>
+  </ux-tabs-one-panel-panel>
+</ux-tabs-one-panel>
+```

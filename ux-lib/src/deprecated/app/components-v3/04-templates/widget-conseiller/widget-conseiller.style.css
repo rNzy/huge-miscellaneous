@@ -1,0 +1,29 @@
+.c-widget-conseiller {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+}
+
+.c-widget-conseiller__content {
+  box-sizing: border-box;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 10px 20px;
+}
+
+.c-widget-conseiller__phone {
+  margin: 0 auto 20px;
+}
+
+.c-widget-conseiller__nav {
+  padding-top: 5px;
+  border-top: 1px solid #dedede;
+  width: 100%;
+}
+
+::slotted(span) {
+  font-weight: bold;
+}

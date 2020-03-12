@@ -1,0 +1,47 @@
+import {
+  Meta,
+  Description,
+  Props,
+  Story,
+  Preview
+} from '@storybook/addon-docs/blocks';
+import './form.component.js';
+import '../inputs/input-item.component.js';
+import '../label/label.component.js';
+import '../inputs/input-text.component.js';
+import '../inputs/input-password.component.js';
+import '../buttons/button.component.js';
+
+# ux-form
+
+<Meta title="Components|Formulaires/Form" />
+
+## Description
+
+<Description of="ux-form" />
+
+## Propriétés
+
+<Props of="ux-form" />
+
+## Stories
+
+## Formulaire
+
+<Preview>
+  <Story name="form" height="200px">
+    {`
+    <ux-form space-v="md">
+      <ux-input-item>
+        <ux-label for="text">Email</ux-label>
+        <ux-input-text id="text" name="text" placeholder="Entrer un texte"></ux-input-text>
+      </ux-input-item>
+      <ux-input-item>
+        <ux-label for="password">Mot de passe</ux-label>
+        <ux-input-password id="password" name="password" placeholder="Entrer un mot de passe"></ux-input-password>
+      </ux-input-item>
+      <ux-btn model="primary">Valider</ux-btn>
+    </ux-form>
+    `}
+  </Story>
+</Preview>

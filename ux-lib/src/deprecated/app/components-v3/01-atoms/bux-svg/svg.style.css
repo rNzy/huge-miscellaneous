@@ -1,0 +1,40 @@
+:host {
+  display: inline-block;
+}
+
+.c-svg2 {
+  color: var(--color-svg2);
+  font-size: var(--size-svg2);
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.15em;
+  fill: currentColor;
+  overflow: hidden;
+}
+
+.c-svg2--sm {
+  --size-svg2: 1.4rem;
+}
+
+.c-svg2--md {
+  --size-svg2: 1.8rem;
+}
+
+.c-svg2--lg {
+  --size-svg2: 2.5rem;
+}
+
+.c-svg2--xl {
+  --size-svg2: 5rem;
+}
+
+.c-svg2--center {
+  display: block;
+  margin: 0 auto;
+}
+
+.c-svg2--circle {
+  border: 1px solid;
+  border-color: inherit;
+  border-radius: var(--border-radius-circle);
+}

@@ -1,0 +1,33 @@
+.c-text {
+  margin: 0;
+}
+
+.c-text--xs {
+  font-size: var(--text-font-size-xs);
+  line-height: var(--text-line-height-xs);
+}
+
+.c-text--sm {
+  font-size: var(--text-font-size-sm);
+  line-height: var(--text-line-height-sm);
+}
+
+.c-text--md {
+  font-size: var(--text-font-size-md);
+  line-height: var(--text-line-height-md);
+}
+
+.c-text--lg {
+  font-size: var(--text-font-size-lg);
+  line-height: var(--text-line-height-lg);
+}
+
+.c-text--xl {
+  font-size: var(--text-font-size-xl);
+  line-height: var(--text-line-height-xl);
+}
+
+.c-text--xxl {
+  font-size: var(--text-font-size-xxl);
+  line-height: var(--text-line-height-xxl);
+}

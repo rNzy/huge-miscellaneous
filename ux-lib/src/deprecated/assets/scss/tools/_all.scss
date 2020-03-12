@@ -1,0 +1,19 @@
+/* =============================================================================
+   TOOLS
+  ============================================================================= */
+
+// Ce fichiers sert à pouvoir utiliser les variables scss dans
+// les composants.
+// TRES IMPORTANT pour ne pas avoir de duplication de css dans
+// tous les composants il ne faut surtout pas que tous les fichiers
+// importer ici ressorte du css.
+// Ils ne doivent que sortir des mixins, des fonctions et rien d'autre
+
+// Dependencies
+// 1. Sass MQ - Sass library for composing elegant media queries
+
+@import './../../../../../node_modules/sass-mq/mq'; // [1]
+@import 'tools.functions';
+@import 'tools.mixins';
+@import 'tools.typography';
+@import 'tools.hidden';

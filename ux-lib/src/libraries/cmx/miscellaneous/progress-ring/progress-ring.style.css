@@ -1,0 +1,35 @@
+.c-progress-ring {
+  position: relative;
+  max-width: 70px;
+  margin: 0 auto;
+}
+
+.c-progress-ring__svg {
+  position: relative;
+  font-size: 70px;
+  max-width: 100%;
+  max-height: 100%;
+  z-index: 1;
+}
+
+.c-progress-ring__svg--shadow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+
+.c-progress-ring__circle {
+  stroke: var(--color-success);
+  transition: stroke-dashoffset 0.35s;
+  transform: rotate(-90deg);
+  transform-origin: 50% 50%;
+}
+
+.c-progress-ring__shadow {
+  stroke: var(--color-secondary);
+}
+
+.c-progress-ring--content {
+  text-align: center;
+}

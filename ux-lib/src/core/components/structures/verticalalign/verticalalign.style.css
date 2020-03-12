@@ -1,0 +1,11 @@
+.c-verticalalign {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+::slotted(div) {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+}

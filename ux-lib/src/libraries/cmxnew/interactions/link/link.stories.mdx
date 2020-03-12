@@ -1,0 +1,52 @@
+import {
+  Meta,
+  Description,
+  Props,
+  Story,
+  Preview
+} from '@storybook/addon-docs/blocks';
+import './link.component.js';
+
+# ux-link
+
+<Meta title="Components|Interactions/Link" />
+
+## Description
+
+<Description of="ux-link" />
+
+## Propriétés
+
+<Props of="ux-link" />
+
+## Stories
+
+### Lien simple
+
+<Preview>
+  <Story name="link" height="40px">
+    {`
+    <ux-link lib-link="#" a11y-label="Lien simple menant vers la même page" arrow="false">Je suis un lien simple.</ux-link>
+    `}
+  </Story>
+</Preview>
+
+### Lien avec chevron
+
+<Preview>
+  <Story name="link arrow" height="60px">
+    {`
+    <ux-link lib-link="#" a11y-label="Lien chevron menant vers la même page">Je suis un lien chevron.</ux-link>
+    `}
+  </Story>
+</Preview>
+
+### Lien avec apparence de bouton
+
+<Preview>
+  <Story name="link btn" height="60px">
+    {`
+    <ux-link lib-link="#" a11y-label="Lien bouton menant vers la même page" arrow="false" btn="true">Je suis un lien bouton.</ux-link>
+    `}
+  </Story>
+</Preview>

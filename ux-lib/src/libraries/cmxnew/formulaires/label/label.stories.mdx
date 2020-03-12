@@ -1,0 +1,58 @@
+import {
+  Meta,
+  Description,
+  Props,
+  Story,
+  Preview
+} from '@storybook/addon-docs/blocks';
+import './label.component.js';
+
+# ux-label
+
+<Meta title="Components|Formulaires/Labels" />
+
+## Description
+
+<Description of="ux-label" />
+
+## Propriétés
+
+<Props of="ux-label" />
+
+## Stories
+
+### Label
+
+<Preview>
+  <Story name="label" height="40px">
+    {`
+    <ux-label>
+      Lorem ipsum dolores claiborne
+    </ux-label>
+    `}
+  </Story>
+</Preview>
+
+### Label valide
+
+<Preview>
+  <Story name="valid" height="40px">
+    {`
+    <ux-label state="valid">
+      Lorem ipsum dolores claiborne
+    </ux-label>
+    `}
+  </Story>
+</Preview>
+
+### Label erreur
+
+<Preview>
+  <Story name="error" height="40px">
+    {`
+    <ux-label state="error">
+      Lorem ipsum dolores claiborne
+    </ux-label>
+    `}
+  </Story>
+</Preview>

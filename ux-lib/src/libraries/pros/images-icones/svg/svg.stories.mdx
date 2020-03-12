@@ -1,0 +1,73 @@
+import { Meta, Props, Story, Preview } from '@storybook/addon-docs/blocks';
+import * as stories from './svg.stories.js';
+import './svg.component.js';
+
+# Icons
+
+<Meta title="Components|Images-Icones/Icons" />
+
+## Présentation
+
+Composant permettant d'afficher des icones au format svg.
+
+## Propriétés
+
+<Props of="ux-svg" />
+
+## Stories
+
+### Taille des icones
+<Preview withSource="none">
+  <Story name="Size" height="60px">
+    {stories.size()}
+  </Story>
+</Preview>
+
+```html
+<ux-svg icon="connexion" lib-size="sm"></ux-svg>
+<ux-svg icon="connexion" lib-size="md"></ux-svg>
+<ux-svg icon="connexion" lib-size="lg"></ux-svg>
+<ux-svg icon="connexion" lib-size="xl"></ux-svg>
+<ux-svg icon="connexion" lib-size="xxl"></ux-svg>
+```
+
+### Ajouter un cercle autour de l'icone
+<Preview withSource="none">
+  <Story name="Circle" height="40px">
+    {stories.addCircle()}
+  </Story>
+</Preview>
+
+```html
+<ux-svg icon="arrow" circle></ux-svg>
+```
+
+### Appliquer une rotation
+<Preview withSource="none">
+  <Story name="Rotate" height="40px">
+    {stories.rotate()}
+  </Story>
+</Preview>
+
+```html
+<ux-svg icon="arrow" rotate="30"></ux-svg>
+```
+
+<!-- Ne génère pas de shadowDOM dans le storybook
+### Ajouter une ombre
+<Preview withSource="none">
+  <Story name="Shadow" height="40px">
+    {stories.addShadow()}
+  </Story>
+</Preview>
+
+```html
+<ux-svg icon="arrow-down" shadow></ux-svg>
+``` -->
+
+### Toutes les icones
+<Preview withSource="none">
+  <Story name="AllIcons" height="600px">
+    {stories.allIcons()}
+  </Story>
+</Preview>

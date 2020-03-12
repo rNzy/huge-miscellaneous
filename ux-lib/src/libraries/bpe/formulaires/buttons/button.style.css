@@ -1,0 +1,66 @@
+:host {
+  --button-height: 3.5rem;
+  --button-min-width: 23rem;
+  --button-max-width: 28rem;
+}
+
+.c-btn {
+  display: inline-flex; /* [1] */
+  justify-content: center;
+  align-items: center;
+  vertical-align: middle; /* [2] */
+  font: inherit; /* [3] */
+  text-align: center; /* [4] */
+  margin: 0; /* [4] */
+  cursor: pointer; /* [5] */
+  min-width: var(--button-min-width);
+  max-width: var(--button-max-width);
+  line-height: 1.2;
+  padding: 1rem;
+  border: none;
+  border-radius: var(--border-radius-md);
+  background-color: transparent;
+  color: var(--color-text);
+  font-weight: bold;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  box-sizing: border-box; /* fix */
+}
+
+@media (min-width: 74rem) {
+  .c-btn {
+    padding: 1.3rem;
+    line-height: 1.6rem;
+  }
+}
+
+/* Modifiers
+  ============================================ */
+
+.c-btn--primary {
+  background-color: var(--color-primary);
+  color: white;
+}
+
+.c-btn--primary:hover,
+.c-btn--primary:focus {
+  background-color: var(--color-primary-dark);
+}
+
+.c-btn--secondary {
+  background-color: var(--color-secondary);
+  color: white;
+}
+
+.c-btn--secondary:hover,
+.c-btn--secondary:focus {
+  background-color: var(--color-secondary-dark);
+}
+
+.c-btn--disabled,
+.c-btn--disabled:hover,
+.c-btn--disabled:focus {
+  background-color: var(--color-disabled);
+  color: white;
+  cursor: not-allowed;
+}

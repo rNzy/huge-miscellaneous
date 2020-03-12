@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Components-lib</title>
+    <script src="https://unpkg.com/@webcomponents/webcomponentsjs@^2/webcomponents-bundle.js"></script>
+  </head>
+
+  <body>
+    <main>
+      <ux-text>coucou</ux-text>
+    </main>
+    <script>
+      const body = document.querySelector('body');
+      window.addEventListener('WebComponentsReady', function(e) {
+        console.log('components ready');
+        if (body.hasAttribute('hidden')) {
+          body.removeAttribute('hidden');
+        }
+      });
+    </script>
+  </body>
+</html>

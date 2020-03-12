@@ -1,0 +1,140 @@
+/* ==========================================================================
+   COMPONENTS / #FILE-DOWNLOAD
+   ========================================================================== */
+
+// Settings
+$file-operation-margin-bottom: $global-spacing-unit;
+$file-operation-margin-bottom-tiny: $global-spacing-unit-tiny;
+$file-operation-border-radius: $global-border-radius;
+$file-operation-transition: $global-transition;
+
+$file-operation-width-tile-mobile: 110px;
+$file-operation-height-tile-mobile: 125px;
+$file-operation-margin-bottom-tile: $global-spacing-unit-large;
+$file-operation-padding-tile: 10px 5px 25px 5px;
+$file-operation-margin-bottom-title: $global-spacing-unit-small;
+
+$file-operation-height-inline-mobile: 40px;
+$file-operation-padding-inline: $global-spacing-unit-tiny;
+
+$file-operation-icon-color: color(white);
+$file-operation-icon-inline-background-color: color(grey-40);
+
+/* Base
+  ============================================ */
+
+bux-file-download {
+  display: flex;
+}
+
+.c-file-operation {
+  position: relative;
+  border: 1px solid color(grey-40);
+  border-radius: $file-operation-border-radius;
+  max-width: 75%;
+}
+
+.c-file-operation--tile {
+  display: flex;
+  flex-flow: column nowrap;
+  margin-bottom: $file-operation-margin-bottom-tile;
+  padding: $file-operation-padding-tile;
+  width: $file-operation-width-tile-mobile;
+  min-height: $file-operation-height-tile-mobile;
+  text-align: center;
+  background-color: color(white);
+}
+
+.c-file-operation--nomarginbottom {
+  margin-bottom: 0 !important;
+}
+
+.c-file-operation--inline {
+  display: block;
+  margin-right: 60px;
+  margin-bottom: $file-operation-margin-bottom;
+  padding: $file-operation-padding-inline;
+  height: auto;
+  min-height: $file-operation-height-inline-mobile;
+  width: 100%;
+}
+
+/* Elements
+  ============================================ */
+
+.c-file-operation__title {
+  text-transform: uppercase;
+  font-size: 11px;
+  line-height: 1.2;
+  font-weight: bold;
+  color: color(brand-mobile);
+  overflow-wrap: break-word;
+
+  @include mq($from: medium) {
+    color: color(brand);
+  }
+}
+
+// Tile Title
+.c-file-operation__title--tile {
+  margin-bottom: $file-operation-margin-bottom-title;
+}
+
+// Inline Title
+// .c-file-operation__title--inline {}
+
+.c-file-operation__sublabel {
+  margin-bottom: $file-operation-margin-bottom-tiny;
+  text-transform: uppercase;
+  font-size: 9px;
+}
+
+.c-file-operation__icon {
+  margin: 0 auto;
+}
+
+.c-file-operation__icon-inline {
+  display: none;
+}
+
+.c-file-operation__action-button {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: color(brand-mobile);
+  border-radius: 50%;
+  box-shadow: $global-shadow;
+  transition: $file-operation-transition;
+
+  @include mq($from: medium) {
+    background-color: color(brand);
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    box-shadow: none;
+  }
+}
+
+.c-file-operation__action-button--tile {
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.c-file-operation__action-button--inline {
+  position: absolute;
+  right: -60px;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+.c-file-operation__action-icon {
+  margin-right: 0;
+  fill: $file-operation-icon-color;
+}

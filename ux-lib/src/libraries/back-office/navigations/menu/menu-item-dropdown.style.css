@@ -1,0 +1,100 @@
+:host {
+  --menu-expended-transition: all 0.25s;
+  --menu-content-margin-bottom: 1rem;
+
+  --menu-border-bottom: 1px solid #727272;
+
+  --menu-color-hover: #434343;
+  --menu-color-active: #434343;
+
+  --menu-color-txt: #ffffffba;
+  --menu-color-txt-hover: #fff;
+  --menu-color-txt-active: #fff;
+
+  display: block;
+  position: relative;
+  min-height: 64px;
+  max-width: 100%;
+  width: 100%;
+  color: var(--menu-color-txt);
+  font-size: var(--text-font-size-lg);
+  font-weight: bold;
+}
+
+.c-menu-item-dropdown__trigger {
+  text-align: left;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  min-height: 64px;
+  padding-left: 4px;
+  border-bottom: var(--menu-border-bottom);
+  font-size: var(--text-font-size-lg);
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.c-menu-item-dropdown__trigger:hover {
+  color: var(--menu-color-txt-hover);
+  background-color: var(--menu-color-hover);
+}
+
+.c-menu-item-dropdown__trigger[aria-expanded='true'] {
+  border-bottom: none;
+  background-color: var(--menu-color-active);
+  color: var(--menu-color-txt-active);
+}
+
+.c-menu-item-dropdown__header-slot {
+  display: flex;
+  align-items: center;
+  min-height: 64px;
+  margin-left: 50px;
+  margin-right: 50px;
+  width: 100%;
+}
+
+.c-menu-item-dropdown-icon {
+  display: flex;
+  min-height: 64px;
+  align-items: center;
+  position: absolute;
+  margin-left: 20px;
+}
+
+.c-menu-item-dropdown__icon {
+  position: absolute;
+  display: flex;
+  min-height: 64px;
+  align-items: center;
+  right: 0;
+  margin-right: 16px;
+  will-change: auto;
+  transform: rotate(0);
+  transition: transform 0.25s;
+}
+.c-menu-item-dropdown__icon--rotate {
+  transform: rotate(-180deg);
+}
+
+.c-menu-item-dropdown__content {
+  transition: var(--menu-expended-transition);
+  overflow: hidden;
+  margin-bottom: var(--menu-content-margin-bottom);
+}
+
+.c-menu-item-dropdown__content[aria-hidden='true'] {
+  max-height: 0;
+  opacity: 0;
+  visibility: hidden;
+}
+
+/*
+ * La valeur de la custom property --containerHeight
+ * est définie en JS par la mixin AriaExpandedMixin
+ */
+.c-menu-item-dropdown__content[aria-hidden='false'] {
+  max-height: var(--containerHeight, 1000px);
+  opacity: 1;
+  visibility: visible;
+}

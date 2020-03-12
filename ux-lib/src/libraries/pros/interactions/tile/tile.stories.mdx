@@ -1,0 +1,65 @@
+import { Meta, Props, Story, Preview } from '@storybook/addon-docs/blocks';
+import * as stories from './tile.stories.js';
+import './tile.component.js';
+
+# tabs
+
+<Meta title="Components|Interactions/Tile" />
+
+## Présentation
+
+Le composant peut avoir les attributs "addshadow" et "lib-bg-color".
+
+### Primary Tile
+
+<Preview withSource="none" withToolbar>
+  <Story name="Primary Tile" height="200px">
+    {stories.tilePrimary()}
+  </Story>
+</Preview>
+
+```html
+<ux-tile lib-bg-color="primary">Je suis une tuile à fond rouge sans ombre.</ux-tile>
+```
+
+### Secondary Tile
+
+<Preview withSource="none" withToolbar>
+  <Story name="Secondary Tile" height="200px">
+    {stories.tileSecondary()}
+  </Story>
+</Preview>
+
+```html
+<ux-tile addshadow lib-bg-color="secondary"
+  >Je suis une tuile à fond gris avec une ombre.</ux-tile
+>
+```
+
+### Tertiary Tile
+
+<Preview withSource="none" withToolbar>
+  <Story name="Tertiary Tile" height="200px">
+    {stories.tileTertiary()}
+  </Story>
+</Preview>
+
+```html
+<ux-tile addshadow lib-bg-color="tertiary"
+  >Je suis une tuile à fond gris clair avec une ombre.</ux-tile
+>
+```
+
+### Image Tile
+
+<Preview withSource="none" withToolbar>
+  <Story name="Image Tile" height="200px">
+    {stories.tileImage()}
+  </Story>
+</Preview>
+
+```html
+<ux-tile addshaddow bg-img="foobar.jpg"
+  >Je suis une truile avec une image de fond.</ux-tile
+>
+```

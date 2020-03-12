@@ -1,0 +1,58 @@
+import { Meta, Props, Story, Preview } from '@storybook/addon-docs/blocks';
+import * as stories from './radio.stories.js';
+
+# Buttons
+
+<Meta title="Components|Formulaires/Radio buttons" />
+
+## Présentation
+
+<Preview withSource="none" withToolbar>
+  <Story name="Utilisation" height="140px">
+    {stories.utilisation()}
+  </Story>
+</Preview>
+
+```html
+<fieldset>
+  <legend>Beverages:</legend>
+  <ux-radio-group id="radios" space-v="sm">
+    <ux-radio-button value="water">Water</ux-radio-button>
+    <ux-radio-button value="soda">Soda</ux-radio-button>
+    <ux-radio-button value="coffee">Coffee</ux-radio-button>
+  </ux-radio-group>
+</fieldset>
+```
+
+## Radio bouton seul
+
+<Preview withSource="none" withToolbar>
+  <Story name="Radio Bouton seul" height="60px">
+    {stories.standAlone()}
+  </Story>
+</Preview>
+
+```html
+<ux-radio-button value="water">Water</ux-radio-button>
+```
+
+## Radio group
+
+L'élément `ux-radio-group` émet un évènement `change` et remonte la valeur `value` sélectionné
+
+<Preview withSource="none" withToolbar>
+  <Story name="Radio group" height="140px">
+    {stories.group()}
+  </Story>
+</Preview>
+
+```html
+<fieldset>
+  <legend>Beverages:</legend>
+  <ux-radio-group id="radios" space-v="sm">
+    <ux-radio-button value="water">Water</ux-radio-button>
+    <ux-radio-button value="soda">Soda</ux-radio-button>
+    <ux-radio-button value="coffee">Coffee</ux-radio-button>
+  </ux-radio-group>
+</fieldset>
+```

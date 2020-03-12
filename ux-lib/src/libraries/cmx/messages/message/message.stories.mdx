@@ -1,0 +1,52 @@
+import { Meta, Props, Story, Preview } from '@storybook/addon-docs/blocks';
+import * as stories from './message.stories.js';
+import './message.component.js';
+
+# Messages
+
+<Meta title="Components|Alertes - indicateurs/Message" />
+
+## Présentation
+
+### Message de warning
+
+<Preview withSource="none" withToolbar>
+  <Story name="warning" height="80px">
+    {stories.warning()}
+  </Story>
+</Preview>
+
+```html
+<ux-message type="warning">
+  <ux-svg slot="icon" icon="warning" lib-size="md"></ux-svg>
+  warning message
+</ux-message>
+```
+
+### Message d'information
+
+<Preview withSource="none" withToolbar>
+  <Story name="information" height="80px">
+    {stories.information()}
+  </Story>
+</Preview>
+
+```html
+<ux-message type="info">
+  message à caractère informatif
+</ux-message>
+```
+
+### Message d'erreur
+
+<Preview withSource="none" withToolbar>
+  <Story name="erreur" height="80px">
+    {stories.error()}
+  </Story>
+</Preview>
+
+```html
+<ux-message type="error">
+  message d'erreur
+</ux-message>
+```

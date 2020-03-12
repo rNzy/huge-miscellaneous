@@ -1,0 +1,14 @@
+/* ==========================================================================
+   OBJECTS / #BTN-WRAPPER
+   ========================================================================== */
+
+.o-main {
+  @include mq($until: large) {
+    padding: 0 $global-spacing-unit-small;
+  }
+}
+
+.o-app-wrapper {
+  position: relative;
+  min-height: 350px;
+}

@@ -1,0 +1,115 @@
+@if ($uxEfs==azb) {
+  /* ==========================================================================
+   COMPONENTS / #TAB
+   ========================================================================== */
+
+  // Settings
+  $error-color: color(error);
+  $valid-color: color(success);
+  $text-color: color(text);
+  $arial: 'Arial', 'Helvetica Neue', 'Helvetica', 'Roboto', sans-serif;
+  $base-font-family: 'Allianz Regular', $arial;
+
+  $spacing-unit: $global-spacing-unit;
+  $spacing-unit-small: $global-spacing-unit-small;
+
+  .bux-select-wrap {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 100%;
+    margin-bottom: $spacing-unit-small;
+  }
+
+  .bux-select-align {
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  .bux-select-select {
+    color: $text-color;
+    font-family: 'Allianz Light', $arial, sans-serif;
+    font-size: 2rem;
+    line-height: 2.8rem;
+    letter-spacing: 0.2px;
+    border: 0;
+    border-bottom: 1px solid $text-color;
+    box-sizing: border-box;
+    padding: 0 48px 0 0;
+    background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZD0iTTE2LjcwNywxMC4yOTNhLjk5OTYyLjk5OTYyLDAsMCwwLTEuNDE0MDYsMEwxMiwxMy41ODU5NCw4LjcwNywxMC4yOTNBLjk5OTg5Ljk5OTg5LDAsMCwwLDcuMjkzLDExLjcwN2w0LDRhLjk5OTYzLjk5OTYzLDAsMCwwLDEuNDE0MDYsMGw0LTRBLjk5OTYyLjk5OTYyLDAsMCwwLDE2LjcwNywxMC4yOTNaIi8+PHJlY3QgeD0iMC4wIiB5PSIwLjAiIHdpZHRoPSIyNC4wIiBoZWlnaHQ9IjI0LjAiIHN0eWxlPSJmaWxsOm5vbmU7Ii8+Cjwvc3ZnPg==')
+      no-repeat
+      right;
+    -moz-appearance: none; /* Firefox */
+    -webkit-appearance: none; /* Safari and Chrome */
+    background-color: transparent;
+    appearance: none;
+    outline: none;
+    width: 100%;
+    max-width: 100%;
+    min-width: 280px;
+  }
+
+  .bux-select-label {
+    margin-right: 10px;
+  }
+
+  .bux-select-empty .bux-select-select {
+    border-bottom: 1px solid $text-color;
+    color: $text-color;
+  }
+
+  .bux-select-valid .bux-select-select {
+    border-bottom: solid 1px $valid-color;
+    color: $valid-color;
+  }
+
+  .bux-select-error .bux-select-select {
+    border-bottom: solid 1px $error-color;
+    color: $error-color;
+  }
+
+  // Error colors
+
+  .bux-input-error-msg select:focus {
+    color: $error-color;
+  }
+
+  .bux-input-error-msg select:focus ~ .bux-select-label {
+    color: $error-color;
+  }
+
+  .bux-input-error-msg select:not(:focus) {
+    color: $error-color;
+    border-color: $error-color;
+  }
+
+  .bux-select-wrap .c-message.c-message--error {
+    display: none;
+  }
+
+  .bux-input-error-msg .c-message.c-message--error {
+    display: flex;
+    position: absolute !important;
+    z-index: 1 !important;
+    padding: 0 10px !important;
+    font-weight: 800;
+  }
+
+  .bux-select-label-right {
+    margin-left: 0;
+  }
+
+  .bux-select-align .bux-select-label-right {
+    margin-left: 10px;
+  }
+
+  @include mq($from: medium) {
+    .bux-select-wrap {
+      margin-bottom: $global-spacing-unit;
+      font-size: 14px;
+    }
+  }
+}

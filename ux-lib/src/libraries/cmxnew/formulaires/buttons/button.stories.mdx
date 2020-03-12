@@ -1,0 +1,94 @@
+import {
+  Meta,
+  Description,
+  Props,
+  Story,
+  Preview
+} from '@storybook/addon-docs/blocks';
+import './button-group.component.js';
+import './button.component.js';
+
+# ux-btn
+
+<Meta title="Components|Formulaires/Buttons" />
+
+## Description
+
+<Description of="ux-btn" />
+
+## Propriétés
+
+<Props of="ux-btn" />
+
+## Stories
+
+### Primary button
+
+<Preview>
+  <Story name="primary" height="60px">
+    {`
+    <ux-btn model="primary" a11y-label="Ce bouton est de type primaire">Primary</ux-btn>
+    <ux-btn model="primary" outlined a11y-label="Ce bouton est de type primaire outlined">Outlined primary</ux-btn>
+    `}
+  </Story>
+</Preview>
+
+### Secondary button
+
+<Preview>
+  <Story name="secondary" height="60px">
+    {`
+    <ux-btn model="secondary" a11y-label="Ce bouton est de type secondaire">Secondary</ux-btn>
+    <ux-btn model="secondary" outlined a11y-label="Ce bouton est de type secondaire outlined">Outlined secondary</ux-btn>
+    `}
+  </Story>
+</Preview>
+
+### Disabled button
+
+<Preview>
+  <Story name="disabled" height="60px">
+    {`
+    <ux-btn model="primary" disabled a11y-label="Ce bouton est de type primaire disabled">Disabled primary</ux-btn>
+    <ux-btn model="secondary" disabled a11y-label="Ce bouton est de type secondaire disabled">Disabled secondary</ux-btn>
+    `}
+  </Story>
+</Preview>
+
+# ux-btn-group
+
+## Description
+
+<Description of="ux-btn-group" />
+
+## Propriétés
+
+<Props of="ux-btn-group" />
+
+## Stories
+
+### Horizontal group
+
+<Preview>
+  <Story name="horizontal group" height="100px">
+    {`
+    <ux-btn-group>
+      <ux-btn model="secondary" a11y-label="Ce bouton est de type secondaire">Secondary</ux-btn>
+      <ux-btn model="primary" a11y-label="Ce bouton est de type primaire">Primary</ux-btn>
+    </ux-btn-group>
+    `}
+  </Story>
+</Preview>
+
+### Vertical group
+
+<Preview>
+  <Story name="vertical group" height="100px">
+    {`
+    <ux-btn-group vertical>
+      <ux-btn model="secondary" a11y-label="Ce bouton est de type secondaire">Secondary</ux-btn>
+      <ux-btn model="primary" a11y-label="Ce bouton est de type primaire">Primary</ux-btn>
+    </ux-btn-group>
+    `}
+  </Story>
+</Preview>

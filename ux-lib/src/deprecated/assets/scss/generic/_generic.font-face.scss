@@ -1,0 +1,15 @@
+/* ==========================================================================
+
+   GENERIC / #FONT-FACE
+   ========================================================================== */
+
+@if (
+  $uxEfs==cmb or
+    $uxEfs==cmmc or
+    $uxEfs==cmso or
+    $uxEfs==cmbpro or
+    $uxEfs==cmmcpro or
+    $uxEfs==cmsopro
+) {
+  @import url('https://fonts.googleapis.com/css?family=Maven+Pro:400,700');
+}

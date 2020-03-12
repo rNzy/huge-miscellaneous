@@ -1,0 +1,14 @@
+/* ==========================================================================
+   GENERIC / #FOCUS
+   ==========================================================================
+
+/*
+* https://css-tricks.com/keyboard-only-focus-styles/
+* Remove outline for non-keyboard :focus
+*/
+
+*.focus-visible:focus,
+*:focus-visible {
+  outline: auto 2px Highlight;
+  outline: auto 5px -webkit-focus-ring-color;
+}

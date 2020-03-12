@@ -1,0 +1,131 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+
+<Meta title="General|Presentation" />
+
+# UX-Library
+
+> Aiguisée comme une lame, pointue comme un couteau. Chauffée comme une flamme et puissante comme un fusil d'assaut."
+
+L'UX-Library est **une librairie de web components natifs**. Elle remplit trois objectifs principaux :
+
+1. **Établir une unique source de vérité** pour la partie visuelle des applications l'utilisant afin d'éviter les deltas graphiques.
+2. **Mutualiser le code** afin de diffuser l'accessibilité, les bonnes pratiques et les améliorations à l'ensemble des applications qui l'utilisent, et ce de manière transparente.
+3. **Accueillir** facilement et avec le moins de frictions possibles de **nouvelles entitées** voulant l'utiliser.
+
+## Architecture
+
+L'UX-Library est architecturée autour de trois dossiers présents dans le dossier `/src` :
+
+- `/apps`
+- `/core`
+- `/libraries`
+
+Un dernier dossier, `deprecated` contient d'anciens web components. Ces composants sont dépréciés et vont être remplacés à terme.
+
+### Le dossier `/core`
+
+Le dossier `/core` contient le code mutualisé pour l'ensemble des entités utilisant l'UX-Library. Il s'agit généralement de code déclaratif importé dans les composants afin de réduire la verbosité de ces derniers.
+
+- `/base` contient des déclarations de classes ou d'utilitaires Javascript utilisés dans les composants. Exemple :
+  - La création du shadow dom
+  - La prise en compte des attributs custom
+  - L'import du style de chaque applications
+  - La mise à disposition de mixins
+- `/components` contient des composants essentiels, non stylisés, qui seront par la suite importés dans les différentes librairies, et ce afin de mutualiser leur code. Exemple :
+  - `button.component.js` possède des règles fonctionnelles partagées entre toutes les applications, comme son état `disabled`. Son code le rend également compatible RGAA, ce qui rend les applications qui l'utilisent conforment également.
+- `/mixins` contient du code réccurent, fonctionnel ou de style, partagé entre les différentes librairies. Exemple :
+  - Des déclarations de type `aria` pour l'accessibilité, comme la possibilité de cacher visuellement un élément tout en le maintenant vocalisé.
+  - Des déclarations de `layout`, comme la possibilité d'aligner un élément à droite, gauche ou au centre.
+  - Des déclarations de `style` ou de `typography` comme des bordures, des épaisseurs de font.
+  - Etc...
+- `/style` contient des déclarations de style partagées entre toutes les applications et librairies. Il s'agit principalement de resets graphiques afin de faciliter la stylisation.
+
+### Le dossier `/apps`
+
+Le dossier `/apps` contient du code spécifique à une entité ou application utilisant l'UX-Library. Voici des exemples d'entités :
+
+- CMB
+- Poste de Travail
+- BPE
+
+On y trouve le style partagé par l'ensemble des composants de l'entité, comme ses fonts, ses couleurs, ses règles d'espacement.
+
+### Le dossier `/libraries`
+
+Le dossier `/libraries` contient les composants spécifiques à chaque entité/application. Les composants s'y trouvant héritent pour la plupart des composants se trouvant dans `/core/components` et sont ensuite étendus au niveau fonctionnel, ou restylisés pour coller à la charte de l'entité.
+
+Chaque composant est déclaré dans un dossier propre et chaque dossier comprend ces fichiers :
+
+- `*.component.js` est le fichier du composant. Il hérite du composant parent se trouvant dans `/core`.
+- `*.stories.js` contient le fichier de démonstration du composant pour le storybook.
+- `*.stories.mdx` contient la documentation du composant.
+- `*.style.css` contient le style du composant en raccord avec la charte de l'entité.
+
+Note : si le composant doit utiliser une image, l'image doit se trouver dans le dossier du composant et y être importé via `@import`.
+
+Dans le dossier de chaque entité présent dans `/libraries`, un fichier `index.js` répertorie les composants à importer au moment du build. Ainsi si une entité n'a pas besoin d'un composant, elle peut simplement ne pas le déclarer pour alléger son livrable.
+
+## Storybook
+
+Le storybook est le catalogue des composants. Il existe autant de storybooks que d'entités dans `/apps`.
+
+Le storybook permet de visionner les composants, modifier en tant réel la valeur de leurs attributs pour les tester, et de lire la documentation qui leur sont associés.
+
+La configuration du storybook se fait dans le dossier `/.storybook` de chaque entité dans `/apps`. Toute documentation dans l'UX-Library se fait au format `.mdx`, un type de Markdown étendu qui permet l'import des composants au sein même du fichier de doc afin de les mettre en situation.
+
+## Composants dépréciés (V1, V2, V3)
+
+L'UX-Library a évolué au fur et à mesure que des projets se sont greffés dessus et que le besoin a été mieux défini. Pour cette raison, il existe un dossier `/deprecated` qui sert à stocker les anciens composants qui ne respectent pas la nouvelle architecture. Il existe trois types de composants dépréciés :
+
+- V1 dont le préfixe est `<bux-*>`
+- V2 dont le préfixe est `<bux2-*>`
+- V3 dont le préfixe est aussi `<bux2-*>`
+
+### Le fonctionnement global de l'ancienne UX-Library
+
+Dans le dossier `/deprecated` on trouve ces dossiers :
+
+- `/app` contient les composants, triés en v1, v2, V3
+- `/assets` contient les styles globaux des entitées. Il y a deux dossiers de style :
+  - scss contient le style globale utilisé dans les composants V1
+  - scss-v2 contient le style globale utilisé dans les composants V2
+    - A la racine chacun de ces dossiers se trouve un dossier `main_*.scss` qui importe pour chaque entité le code nécessaire.
+
+A la racine du dossier `/deprecated` se trouvent ces fichiers :
+
+- `\*.import.js` sert à liste les composants utilisés dans chaque entité, afin de faire un bundle spécifique qui sera moins lourd que tout embarquer
+- `bux.class.js` contient un ensemble de fonctions utilisées par les composants (à vérifier)
+- `utils.js` insère le style dans le dom
+
+### Composants dépréciés V1
+
+Les composants V1 ont été abandonnés pour les raisons suivantes :
+
+- Ils n'utilisent pas de shadow dom (initialement pour faciliter le tests), ce qui les rend suceptible d'être touchés par du style externe et ne permet pas de les associer à d'autres composants via les slots. En gros ajouter ne serait-ce que un texte dans un de ces composants signifiait ajouter un nouvel attribut et une modification du template html.
+- Ils possèdent un fichier `\*.component.js` unique pour toutes les entités, ce qui signifie que chaque développement métier spécifique à une entité se retrouve dans toutes au moment du build. Certains composants sont donc devenus très gros.
+- Le style de chaque entité se trouve dans un fichier `*.styles.entité.css` (parfois .scss) et sa sélection se fait via une variable `$uxEfs` au sein de chaque composant, ce qui rend la chose complexe et prone à l'erreur.
+- Si le style est dissocié pour chaque entité, le template était quand à lui au sein du composant et non prévu pour être différent entre les entités. Il fallait alors faire des `if($uxEfs === "entité")` au sein du composant, ce qui les rendait illisibles et verbeux.
+
+Le résultat fut donc une grande quantité de composants verbeux, massifs, difficiles à faire évoluer. Si pour les atomes cela n'était pas trop gênant, des composants molécules sont à la limite du module fonctionnel monolithique.
+
+### Composants dépréciés V2
+
+Les composants dépréciés V2 ont reçu ces changements :
+
+- Ils utilisent le shadow dom et des slots
+- Ils n'utilisent plus le scss, uniquement le css
+
+Cependant ils présentent tout de même des limitations :
+
+- Ils n'ont pas de solution correcte pour le style des différentes entités/apps
+- Ils partagent toujours le même template, bien que ce dernier soit plus facilement étendable via les slots
+- Des changements de design simples comme des backgrounds ou des border demandent toujours un attribut spécifique pour chaque composant
+
+### Composants dépréciés V3
+
+Les composants V3 apportent ces nouveautés :
+
+- Ils possèdent des mixins qui permettent d'ajouter des fonctionnalités ou des styles récurrents.
+- Les différentes entités héritent des fonctionnalités d'un composant commun et peuvent l'étendre fonctionnellement, le restyler à l'envie, changer son template.
+
+Globalement les composants V3 fonctionnent comme les composants actuels. Cependant les V3 sont dépendants de l'ancienne architecture de l'UX-Library. Les composants des entités sont ainsi mélangées dans le dossier du composant parent, rendant difficile la séparation des entités qui souhaiteraient forker l'UX-Library.

@@ -1,0 +1,18 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+
+<Meta title="Documentation|AngularJS" />
+
+# Bind de donner
+
+Normalement la directive est maintenant directement dans le [domi-angular](http://scm.s.arkea.com:8080/repos/9019/domi-angular/trunk/src/app/components/bux-library/).
+
+Il faut dans un module angularJS utiliser la directive qui est dans l'ux-lib :
+
+- [documentation/angularJS/ux-library/ux-library.directive.js]('https://gitlabtux2-a.l.infra.arkea.com/BAD/9020/ux-library/blob/develop/documentation/angularJS/ux-library/ux-library.directive.js') et
+- [documentation/angularJS/ux-library/ux-library.module.js]('https://gitlabtux2-a.l.infra.arkea.com/BAD/9020/ux-library/blob/develop/documentation/angularJS/ux-library/ux-library.module.js')
+
+Puis dans un fichier template d'anguler example.part.html :
+
+```html
+<ux-checkbox ux-model="vm.carte.checked" ux-bind="checked"></ux-checkbox>
+```

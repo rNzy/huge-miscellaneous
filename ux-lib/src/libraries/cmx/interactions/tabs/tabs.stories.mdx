@@ -1,0 +1,38 @@
+import { Meta, Props, Story, Preview } from '@storybook/addon-docs/blocks';
+import * as stories from './tabs.stories.js';
+import './tabs.component.js';
+
+# tabs
+
+<Meta title="Components|Interactions/Tabs" />
+
+## Présentation
+
+<Preview withSource="none" withToolbar>
+  <Story name="All tabs" height="400px">
+    {stories.tabs()}
+  </Story>
+</Preview>
+
+```html
+<ux-tabs>
+  <ux-tabs-button slot="tab">
+    Tab 1
+  </ux-tabs-button>
+  <ux-tabs-panel slot="panel">
+    Content 1
+  </ux-tabs-panel>
+  <ux-tabs-button slot="tab">
+    Tab 2
+  </ux-tabs-button>
+  <ux-tabs-panel slot="panel">
+    Content 2
+  </ux-tabs-panel>
+  <ux-tabs-button slot="tab">
+    Tab 3
+  </ux-tabs-button>
+  <ux-tabs-panel slot="panel">
+    Content 3
+  </ux-tabs-panel>
+</ux-tabs>
+```

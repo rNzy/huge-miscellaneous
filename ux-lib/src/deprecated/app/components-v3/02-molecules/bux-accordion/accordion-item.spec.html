@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <script src="/node_modules/web-component-tester/browser.js"></script>
+    <title>Test bux2-progressbar</title>
+  </head>
+
+  <body>
+    <test-fixture id="componentFixture">
+      <template>
+        <bux2-accordion-item>
+          <bux2-text slot="header" tag="h2">accordion title 2</bux2-text>
+          <bux2-text slot="content" tag="p">
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facilis?
+          </bux2-text>
+        </bux2-accordion-item>
+      </template>
+    </test-fixture>
+    <script>
+      suite('<bux2-accordion-item>', () => {
+        let component;
+        let button;
+        let content;
+
+        setup(() => {
+          component = fixture('componentFixture');
+          button = component.$.querySelector('.js-button');
+          content = component.$.querySelector('.js-content');
+        });
+
+        // Testing accordion closed
+        test(`Component is not expanded ?`, () => {
+          assert.isTrue(!component.hasAttribute('expanded'));
+          assert.isTrue(button.getAttribute('aria-expanded') === 'false');
+          assert.isTrue(content.style.display === '');
+        });
+
+        // Testing accordion closed
+        test(`Component is expanded after clicked ?`, () => {
+          button.click();
+          assert.isTrue(component.hasAttribute('expanded'));
+          assert.isTrue(button.getAttribute('aria-expanded') === 'true');
+          assert.isTrue(content.style.display === 'block');
+        });
+      });
+    </script>
+  </body>
+</html>

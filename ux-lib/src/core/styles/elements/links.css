@@ -1,0 +1,15 @@
+/* ==========================================================================
+   ELEMENTS / #LINKS
+   ========================================================================== */
+
+/**
+ * Our basic `<a>` elements only need very minimal styling.
+ * Anything more opinionated (e.g. buttons, calls-to-action, etc.) will need a
+ * class defining in the Components layer.
+ */
+
+a {
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}

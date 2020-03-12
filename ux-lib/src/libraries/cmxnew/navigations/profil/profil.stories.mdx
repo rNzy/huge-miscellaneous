@@ -1,0 +1,40 @@
+import { Meta, Props, Story, Preview } from '@storybook/addon-docs/blocks';
+
+import './profil.component.js';
+
+# Accordion
+
+<Meta title="Components|Navigations/profil" />
+
+## Présentation
+
+### Props
+
+<Props of="ux-profil" />
+
+### Exemple
+
+<Preview withSource="none" withToolbar>
+  <Story name="profil" height="260px">
+    {() => `<ux-profil>
+          <ux-img
+            slot="avatar"
+            src="profil.png"
+            width="40"
+            height="40"
+          ></ux-img>
+          <div>
+            Monsieur Jean
+          </div>
+        </ux-profil>`}
+  </Story>
+</Preview>
+
+```html
+<ux-profil>
+  <ux-img slot="avatar" src="profil.png" width="40" height="40"></ux-img>
+  <div>
+    Monsieur Jean
+  </div>
+</ux-profil>
+```

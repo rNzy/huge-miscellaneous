@@ -1,0 +1,23 @@
+:root {
+  --color-primary: hsl(353, 65%, 43%);
+  --color-primary-dark: hsl(353, 65%, 33%);
+  --color-primary-darker: hsl(353, 65%, 23%);
+
+  --color-secondary: hsl(0, 0%, 38%);
+  --color-secondary-dark: hsl(0, 0%, 28%);
+  --color-secondary-darker: hsl(0, 0%, 18%);
+
+  --color-success: #a8d81f;
+  --color-positive: #357b0d;
+  --color-negative: #b62737;
+  --color-error: var(--color-negative);
+
+  --color-text: #616161;
+  --color-disabled: hsl(0, 0%, 75%);
+
+  --color-background-light: #cecece;
+  --color-background: #cecece;
+  --color-background-dark: #cecece;
+
+  --color-background-body: #eaeaea;
+}

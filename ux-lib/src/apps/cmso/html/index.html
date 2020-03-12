@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Components-lib</title>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/2.0.3/fetch.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/webcomponentsjs/2.2.7/webcomponents-bundle.js"></script> -->
+    <script src="https://unpkg.com/@webcomponents/webcomponentsjs@^2/webcomponents-bundle.js"></script>
+  </head>
+
+  <body class="o-container">
+    <!-- Widget Tutoriel-->
+    <div>
+      <ux-label for="text">Texte</ux-label>
+      <ux-input-text
+        id="text"
+        name="text"
+        placeholder="Entrer un wawatext"
+      ></ux-input-text>
+    </div>
+    <div>
+      <ux-label for="number">Nombre</ux-label>
+      <ux-input-number
+        id="number"
+        name="number"
+        placeholder="Entrer un wawanombre"
+      ></ux-input-number>
+    </div>
+    <div>
+      <ux-label for="telephone">Téléphone</ux-label>
+      <ux-input-tel
+        id="telephone"
+        name="telephone"
+        placeholder="Numéro de Wawaphone"
+      ></ux-input-tel>
+    </div>
+    <div>
+      <ux-label for="email">Email</ux-label>
+      <ux-input-email
+        id="email"
+        name="email"
+        placeholder="Adresse wawamail"
+      ></ux-input-email>
+    </div>
+    <div>
+      <ux-label for="password">Mot de passe</ux-label>
+      <ux-input-password
+        id="password"
+        name="password"
+        placeholder="Entrer un mot de passe"
+      ></ux-input-password>
+    </div>
+    <bux-modal id="wmodal" class="modaltuto"></bux-modal>
+
+    <bux-btn-group>
+      <bux-btn type="primary">Valider</bux-btn>
+      <bux-btn type="secondary">Annuler</bux-btn>
+      <bux-btn disabled>Désactiver</bux-btn>
+    </bux-btn-group>
+
+    <bux2-image id="bux2image" src="logo.png"></bux2-image>
+    <bux2-progressbar id="bux2progressbar" value="5"></bux2-progressbar>
+    <bux2-list space="md">
+      <bux2-text id="bux2text" tag="div" background italic bold>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laboriosam
+        reprehenderit aspernatur incidunt quas tenetur nulla doloribus, placeat
+        accusamus maiores aliquam ducimus adipisci voluptatum nesciunt quidem
+        dolor iste iure eum laborum!
+      </bux2-text>
+      <bux2-text id="bux2text" tag="div" background italic bold>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laboriosam
+        reprehenderit aspernatur incidunt quas tenetur nulla doloribus, placeat
+        accusamus maiores aliquam ducimus adipisci voluptatum nesciunt quidem
+        dolor iste iure eum laborum!
+      </bux2-text>
+      <bux2-text id="bux2text" tag="div" background italic bold>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laboriosam
+        reprehenderit aspernatur incidunt quas tenetur nulla doloribus, placeat
+        accusamus maiores aliquam ducimus adipisci voluptatum nesciunt quidem
+        dolor iste iure eum laborum!
+      </bux2-text>
+    </bux2-list>
+
+    <bux2-btn nostyle>Bouton sans style</bux2-btn>
+
+    <bux3-tabs>
+      <bux-tabs-button slot="tab">
+        Tab 1
+      </bux-tabs-button>
+      <bux-tabs-panel slot="panel">
+        <h3>Content 1</h3>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
+          vestibulum risus ac tempus pellentesque. Nulla vel justo sed augue
+          suscipit accumsan. Nullam tincidunt tellus magna, ac fermentum arcu
+          elementum vitae. Curabitur ac ultricies tellus, et ornare lectus.
+          Phasellus lobortis in tortor ut ullamcorper. Duis a aliquet odio.
+          Praesent maximus pretium pretium.
+        </p>
+        <p>
+          Maecenas vulputate augue sagittis ultrices porttitor. Nunc venenatis
+          elit nunc, non interdum dolor semper id. Quisque vehicula aliquam
+          aliquet. Proin porta, ex sit amet lacinia pretium, erat sapien ornare
+          nibh, quis dapibus dolor sapien ut mauris. Integer vel neque urna.
+          Maecenas pulvinar cursus nisi. Nulla eu cursus orci. Etiam egestas
+          felis tempor erat pretium, vel eleifend lectus feugiat. Class aptent
+          taciti sociosqu ad litora torquent per conubia nostra, per inceptos
+          himenaeos.
+        </p>
+      </bux-tabs-panel>
+      <bux-tabs-button slot="tab">
+        Tab 2
+      </bux-tabs-button>
+      <bux-tabs-panel slot="panel">
+        <h3>Content 2</h3>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
+          vestibulum risus ac tempus pellentesque. Nulla vel justo sed augue
+          suscipit accumsan. Nullam tincidunt tellus magna, ac fermentum arcu
+          elementum vitae. Curabitur ac ultricies tellus, et ornare lectus.
+          Phasellus lobortis in tortor ut ullamcorper. Duis a aliquet odio.
+          Praesent maximus pretium pretium.
+        </p>
+        <p>
+          Maecenas vulputate augue sagittis ultrices porttitor. Nunc venenatis
+          elit nunc, non interdum dolor semper id. Quisque vehicula aliquam
+          aliquet. Proin porta, ex sit amet lacinia pretium, erat sapien ornare
+          nibh, quis dapibus dolor sapien ut mauris. Integer vel neque urna.
+          Maecenas pulvinar cursus nisi. Nulla eu cursus orci. Etiam egestas
+          felis tempor erat pretium, vel eleifend lectus feugiat. Class aptent
+          taciti sociosqu ad litora torquent per conubia nostra, per inceptos
+          himenaeos.
+        </p>
+      </bux-tabs-panel>
+      <bux-tabs-button slot="tab">
+        Tab 3
+      </bux-tabs-button>
+      <bux-tabs-panel slot="panel">
+        <h3>Content 3</h3>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
+          vestibulum risus ac tempus pellentesque. Nulla vel justo sed augue
+          suscipit accumsan. Nullam tincidunt tellus magna, ac fermentum arcu
+          elementum vitae. Curabitur ac ultricies tellus, et ornare lectus.
+          Phasellus lobortis in tortor ut ullamcorper. Duis a aliquet odio.
+          Praesent maximus pretium pretium.
+        </p>
+        <p>
+          Maecenas vulputate augue sagittis ultrices porttitor. Nunc venenatis
+          elit nunc, non interdum dolor semper id. Quisque vehicula aliquam
+          aliquet. Proin porta, ex sit amet lacinia pretium, erat sapien ornare
+          nibh, quis dapibus dolor sapien ut mauris. Integer vel neque urna.
+          Maecenas pulvinar cursus nisi. Nulla eu cursus orci. Etiam egestas
+          felis tempor erat pretium, vel eleifend lectus feugiat. Class aptent
+          taciti sociosqu ad litora torquent per conubia nostra, per inceptos
+          himenaeos.
+        </p>
+      </bux-tabs-panel>
+    </bux3-tabs>
+
+    <bux-link-tile
+      data-label="C'est un title"
+      data-sublabel="C'est un subtitle"
+      data-badges="<bux-badge large>Dernier prélèvement le <strong>23/08/2018</strong></bux-badge>"
+      data-title="Voir nos offres d'épargne long terme"
+      a11y-label="Cliquez pour afficher, dans un nouvel onglet, nos offres de produits d'épargne long terme"
+      data-link="/route/to/wawaland"
+      colored
+    >
+    </bux-link-tile>
+
+    <bux2-accordion>
+      <bux2-accordion-item>
+        <bux2-text slot="header" tag="div" italic>accordion title</bux2-text>
+        <bux2-text slot="content" tag="p" background italic
+          >Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facilis
+          eos, quaerat at pariatur temporibus laborum dicta aut iure non magni
+          sapiente officiis esse dignissimos nulla! Sint nisi dolor commodi
+          ipsa?</bux2-text
+        >
+      </bux2-accordion-item>
+      <bux2-accordion-item>
+        <bux2-text slot="header" tag="h2">accordion title 2</bux2-text>
+        <bux2-text slot="extra" tag="span">extra slot</bux2-text>
+        <bux2-text slot="content" tag="p"
+          >Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facilis
+          eos, quaerat at pariatur temporibus laborum dicta aut iure non magni
+          sapiente officiis esse dignissimos nulla! Sint nisi dolor commodi
+          ipsa?</bux2-text
+        >
+      </bux2-accordion-item>
+    </bux2-accordion>
+
+    <bux2-card>
+      <bux2-card-header slot="card-header">
+        <bux2-text tag="h2" size="md" theme="part">
+          Salut
+        </bux2-text>
+        <div>Arf arf</div>
+      </bux2-card-header>
+      <bux2-card-body slot="card-body">
+        <bux2-widget-account shortcuts>
+          <bux-amount
+            slot="widget-amount"
+            data-value="500"
+            size="xl"
+          ></bux-amount>
+          <bux2-card-bar slot="widget-nav">
+            <bux2-shortlink>
+              <bux2-svg slot="icon" icon="pendule"></bux2-svg>
+              <div slot="label" aria-hidden="true">pendule</div>
+              <bux2-link
+                slot="link"
+                data-link="nav.path"
+                data-label="nav.label"
+                block
+              ></bux2-link>
+            </bux2-shortlink>
+          </bux2-card-bar>
+        </bux2-widget-account>
+      </bux2-card-body>
+    </bux2-card>
+
+    <bux2-card v-if="widgetRaccourciesCarte.show">
+      <bux2-card-header slot="card-header">
+        <bux2-text tag="h2" size="md" theme="part"
+          >MES RACCOURCIES CARTE</bux2-text
+        >
+      </bux2-card-header>
+      <bux2-card-body>
+        <bux2-card-bar>
+          <bux2-card-tile background-hover>
+            <bux2-svg icon="virtualis"></bux2-svg>
+            <bux2-text size="xs" center>Virtualis</bux2-text>
+            <bux2-link
+              a11y-label="Accéder à Virtualis"
+              data-link="/virtualis "
+              block
+            ></bux2-link>
+          </bux2-card-tile>
+          <bux2-card-tile background-hover>
+            <bux2-svg icon="cadenas-ferme"></bux2-svg>
+            <bux2-text size="xs" center>Bloquer</bux2-text>
+            <bux2-link
+              a11y-label="Bloquer votre carte"
+              data-link="/carte"
+              block
+            ></bux2-link>
+          </bux2-card-tile>
+          <bux2-card-tile background-hover>
+            <bux2-svg icon="bouclier-utilisateur-1"></bux2-svg>
+            <bux2-text size="xs" center>Opposition</bux2-text>
+            <bux2-link
+              a11y-label="Faire opposition"
+              data-link="/bridge/OppositionPlace"
+              block
+            ></bux2-link>
+          </bux2-card-tile>
+          <bux2-card-tile background-hover>
+            <bux2-svg icon="etaler"></bux2-svg>
+            <bux2-text size="xs" center>Plafonds</bux2-text>
+            <bux2-link
+              a11y-label="Modifier mes plafonds carte"
+              data-link="/carte"
+              block
+            ></bux2-link>
+          </bux2-card-tile>
+        </bux2-card-bar>
+      </bux2-card-body>
+    </bux2-card>
+
+    <!-- 
+    <bux2-slider
+      tabindex="0"
+      loop="true"
+      pagination="true"
+      navigation="true"
+      item-active="2"
+      ><bux2-slider-item
+        tabindex="0"
+        loop="true"
+        pagination="true"
+        navigation="true"
+        item-active="0"
+        ><div class="c-tutoriel-item">
+          <img
+            class="c-tutoriel-item__img "
+            src="https://web-cmb-trunk.rec.arkea.com/banque/assurance/credit-mutuel/pro/upload/docs/image/png/2019-11/tuto_mobile_01.png"
+            alt="Nouvelle page d'accueil"
+          />
+          <div class="c-tutoriel-item__content">
+            <p class="c-tutoriel-item__text c-modal__text"></p>
+            <div class="wysiwyg classic">
+              <p class="c-modal__text">
+                <span style="font-size: x-large;">Nouvelle page d'accueil</span>
+              </p>
+              <p class="c-modal__text">
+                Une présentation sous forme de tableau de bord avec mise en
+                avant de raccourcis vous permettant de gérer plus facilement vos
+                comptes :
+              </p>
+              <ul>
+                <li>Éditer un RIB,</li>
+                <li>Gérer votre budget,</li>
+                <li>Contacter votre conseiller,</li>
+                <li>Prendre rendez-vous en agence,</li>
+                <li>...</li>
+              </ul>
+            </div>
+            <p class="c-modal__text"></p>
+          </div></div></bux2-slider-item
+      ><bux2-slider-item
+        tabindex="0"
+        loop="true"
+        pagination="true"
+        navigation="true"
+        item-active="0"
+        ><div class="c-tutoriel-item">
+          <img
+            class="c-tutoriel-item__img "
+            src="https://web-cmb-trunk.rec.arkea.com/banque/assurance/credit-mutuel/pro/upload/docs/image/png/2019-11/tuto_mobile_02.png"
+            alt="Une navigation simplifiée"
+          />
+          <div class="c-tutoriel-item__content">
+            <p class="c-tutoriel-item__text c-modal__text"></p>
+            <div class="wysiwyg classic">
+              <p class="c-modal__text">
+                <span style="font-size: x-large;"
+                  >Une navigation simplifiée</span
+                >
+              </p>
+              <p class="c-modal__text">
+                Un menu latéral présent tout au long de votre navigation.
+              </p>
+            </div>
+            <p class="c-modal__text"></p>
+          </div></div></bux2-slider-item
+      ><bux2-slider-item
+        tabindex="0"
+        loop="true"
+        pagination="true"
+        navigation="true"
+        item-active="0"
+        ><div class="c-tutoriel-item">
+          <img
+            class="c-tutoriel-item__img "
+            src="https://web-cmb-trunk.rec.arkea.com/banque/assurance/credit-mutuel/pro/upload/docs/image/png/2019-11/tuto_mobile_03.png"
+            alt="Gérez vos comptes en toute simplicité !"
+          />
+          <div class="c-tutoriel-item__content">
+            <p class="c-tutoriel-item__text c-modal__text"></p>
+            <div class="wysiwyg classic">
+              <p class="c-modal__text">
+                <span style="font-size: x-large;"
+                  >Une navigation simplifiée</span
+                >
+              </p>
+              <p class="c-modal__text">
+                Un menu latéral présent tout au long de votre navigation.
+              </p>
+            </div>
+            <p class="c-modal__text"></p>
+          </div></div></bux2-slider-item
+    ></bux2-slider> -->
+
+    <script>
+      // let count = 3;
+      // const arf = setInterval(() => {
+      //   const slider = document.querySelector('bux2-slider');
+      //   const tpl = document.createElement('template');
+      //   tpl.innerHTML =
+      //     '<bux2-slider-item>' + Math.random() + '</bux2-slider-item>';
+      //   slider.appendChild(tpl.content.cloneNode(true));
+
+      //   count--;
+      //   if (count === 0) clearInterval(arf);
+      // }, 5000);
+
+      const body = document.querySelector('body');
+      const wtuto = document.getElementById('wtuto');
+      const wmodal = document.getElementById('wmodal');
+      const wimg = document.getElementById('wimg');
+      let widgetTutorial = null;
+      let isMobileNavigation = window.innerWidth < 1090;
+
+      function getTutorial() {
+        return fetch(
+          'https://api-cmb.rec.arkea.com/cmsapi/json/tutoriel-principal?efs=01'
+        )
+          .then(res => res.json())
+          .then(res => {
+            widgetTutorial = res;
+            try {
+              if (isMobileNavigation && widgetTutorial['bouton-mobile-image']) {
+                widgetTutorial['bouton-image'] =
+                  widgetTutorial['bouton-mobile-image'];
+              } else if (widgetTutorial['bouton-desktop-image']) {
+                widgetTutorial['bouton-image'] =
+                  widgetTutorial['bouton-desktop-image'];
+              } else if (!widgetTutorial['bouton-image']) {
+                widgetTutorial['bouton-image'] = {
+                  src: '',
+                  alt: ''
+                };
+              }
+              wimg.src = widgetTutorial['bouton-image'].src;
+              wimg.alt = widgetTutorial['bouton-image'].alt;
+              return widgetTutorial;
+            } catch (e) {
+              return e;
+            }
+          });
+      }
+
+      function initTutorialModal() {
+        return wmodal.init({
+          content: buildTutorial(isMobileNavigation),
+          closable: true,
+          autoOpen: true,
+          nopadding: true
+        });
+      }
+
+      function buildItem(arr, image, texte) {
+        return arr[image].reduce((acc, img, index) => {
+          const txt = arr[texte][index].text;
+          return (
+            acc +
+            '<bux2-slider-item>' +
+            '<div class="c-tutoriel-item">' +
+            '<img ' +
+            'class="c-tutoriel-item__img ' +
+            img['css-classes'] +
+            '" ' +
+            'src="' +
+            img.src +
+            '" ' +
+            'alt="' +
+            img.alt +
+            '" ' +
+            // + img.attributes.reduce((acc, attr) => acc + attr, '') +
+            '/>' +
+            '<div class="c-tutoriel-item__content">' +
+            '<p class="c-tutoriel-item__text">' +
+            txt +
+            '</p>' +
+            '</div>' +
+            '</div>' +
+            '</bux2-slider-item>'
+          );
+        }, '');
+        // return (
+        //   '<bux2-slider-item>' +
+        //   '<div class="c-tutoriel-item">' +
+        //   '<img ' +
+        //   'class="c-tutoriel-item__img ' +
+        //   arr[image][0]['css-classes'] +
+        //   '" ' +
+        //   'src="' +
+        //   arr[image][0].src +
+        //   '" ' +
+        //   'alt="' +
+        //   arr[image][0].alt +
+        //   '" ' +
+        //   // + img.attributes.reduce((acc, attr) => acc + attr, '') +
+        //   '/>' +
+        //   '<div class="c-tutoriel-item__content">' +
+        //   '<p class="c-tutoriel-item__text">' +
+        //   arr[texte][0].text +
+        //   '</p>' +
+        //   '</div>' +
+        //   '</div>' +
+        //   '</bux2-slider-item>'
+        // );
+      }
+
+      function buildTutorial(isMobileNavigation) {
+        const image = isMobileNavigation
+          ? 'array-mobile-image'
+          : 'array-desktop-image';
+        const texte = isMobileNavigation
+          ? 'array-mobile-texte'
+          : 'array-desktop-texte';
+        if (widgetTutorial && widgetTutorial[image]) {
+          const items = buildItem(widgetTutorial, image, texte);
+          return '<bux2-slider item-active="0">' + items + '</bux2-slider>';
+        }
+        return '';
+      }
+
+      window.addEventListener('WebComponentsReady', function(e) {
+        getTutorial().then(() => {
+          wimg.addEventListener('click', initTutorialModal);
+        });
+      });
+    </script>
+  </body>
+</html>

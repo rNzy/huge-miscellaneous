@@ -1,0 +1,262 @@
+import { Meta, Props, Story, Preview } from '@storybook/addon-docs/blocks';
+import * as stories from './flex.stories.js';
+import './flex.component.js';
+
+# ux-interspace
+
+<Meta title="Components|Structures/Flex" />
+
+Un conteneur alignant ses enfants l'un à coté de l'autre, de la gauche vers la droite et qui centre verticalement.
+Le contenu des enfants est aligné horizontalement.
+
+## Stories
+
+### Exemple par défault row wrap justify-content: flex-start align-items: center
+
+<Preview withSource="none">
+  <Story name="rowWrap" height="60px">
+    {stories.rowWrap()}
+  </Story>
+</Preview>
+
+```html
+<ux-flex>
+  <div>
+    <strong>Ceci est un texte !</strong></<strong>
+    <small>Et ceci un sous-texte !</small></<small>
+  </div>
+  <div>
+    <strong>Ceci est un texte !</strong></<strong>
+    <small>Et ceci un sous-texte !</small></<small>
+  </div>
+  <div>
+    <strong>Ceci est un texte !</strong></<strong>
+    <small>Et ceci un sous-texte !</small></<small>
+  </div>
+</ux-flex>
+```
+
+### flex-wrap: nowrap
+
+<Preview withSource="none">
+  <Story name="rowNoWrap" height="60px">
+    {stories.rowNoWrap()}
+  </Story>
+</Preview>
+
+```html
+<ux-flex nowrap>
+  <div>
+    <strong>Ceci est un texte !</strong></<strong>
+    <small>Et ceci un sous-texte !</small></<small>
+  </div>
+  <div>
+    <strong>Ceci est un texte !</strong></<strong>
+    <small>Et ceci un sous-texte !</small></<small>
+  </div>
+  <div>
+    <strong>Ceci est un texte !</strong></<strong>
+    <small>Et ceci un sous-texte !</small></<small>
+  </div>
+</ux-flex>
+```
+
+### flex-flow: column
+
+<Preview withSource="none">
+  <Story name="column" height="60px">
+    {stories.column()}
+  </Story>
+</Preview>
+
+```html
+<ux-flex column>
+  <div>
+    <strong>Ceci est un texte !</strong></<strong>
+    <small>Et ceci un sous-texte !</small></<small>
+  </div>
+  <div>
+    <strong>Ceci est un texte !</strong></<strong>
+    <small>Et ceci un sous-texte !</small></<small>
+  </div>
+  <div>
+    <strong>Ceci est un texte !</strong></<strong>
+    <small>Et ceci un sous-texte !</small></<small>
+  </div>
+</ux-flex>
+```
+
+### justify-content: flex-start
+
+<Preview withSource="none">
+  <Story name="justifyStart" height="60px">
+    {stories.justifyStart()}
+  </Story>
+</Preview>
+
+```html
+<ux-flex justify-content="start">
+  <div>
+    <strong>Ceci est un texte !</strong></<strong>
+    <small>Et ceci un sous-texte !</small></<small>
+  </div>
+  <div>
+    <strong>Ceci est un texte !</strong></<strong>
+    <small>Et ceci un sous-texte !</small></<small>
+  </div>
+  <div>
+    <strong>Ceci est un texte !</strong></<strong>
+    <small>Et ceci un sous-texte !</small></<small>
+  </div>
+</ux-flex>
+```
+
+### justify-content: center
+
+<Preview withSource="none">
+  <Story name="justifyCenter" height="60px">
+    {stories.justifyCenter()}
+  </Story>
+</Preview>
+
+```html
+<ux-flex justify-content="center">
+  <div>
+    <strong>Ceci est un texte !</strong></<strong>
+    <small>Et ceci un sous-texte !</small></<small>
+  </div>
+  <div>
+    <strong>Ceci est un texte !</strong></<strong>
+    <small>Et ceci un sous-texte !</small></<small>
+  </div>
+  <div>
+    <strong>Ceci est un texte !</strong></<strong>
+    <small>Et ceci un sous-texte !</small></<small>
+  </div>
+</ux-flex>
+```
+
+### justify-content: space-around
+
+<Preview withSource="none">
+  <Story name="justifySpaceAround" height="60px">
+    {stories.justifySpaceAround()}
+  </Story>
+</Preview>
+
+```html
+<ux-flex justify-content="space-around">
+  <div>
+    <strong>Ceci est un texte !</strong></<strong>
+    <small>Et ceci un sous-texte !</small></<small>
+  </div>
+  <div>
+    <strong>Ceci est un texte !</strong></<strong>
+    <small>Et ceci un sous-texte !</small></<small>
+  </div>
+  <div>
+    <strong>Ceci est un texte !</strong></<strong>
+    <small>Et ceci un sous-texte !</small></<small>
+  </div>
+</ux-flex>
+```
+
+### justify-content: space-between
+
+<Preview withSource="none">
+  <Story name="justifySpaceBetween" height="60px">
+    {stories.justifySpaceBetween()}
+  </Story>
+</Preview>
+
+```html
+<ux-flex justify-content="space-between">
+  <div>
+    <strong>Ceci est un texte !</strong></<strong>
+    <small>Et ceci un sous-texte !</small></<small>
+  </div>
+  <div>
+    <strong>Ceci est un texte !</strong></<strong>
+    <small>Et ceci un sous-texte !</small></<small>
+  </div>
+  <div>
+    <strong>Ceci est un texte !</strong></<strong>
+    <small>Et ceci un sous-texte !</small></<small>
+  </div>
+</ux-flex>
+```
+
+### justify-content: space-evenly
+
+<Preview withSource="none">
+  <Story name="justifySpaceEvenly" height="60px">
+    {stories.justifySpaceEvenly()}
+  </Story>
+</Preview>
+
+```html
+<ux-flex justify-content="space-evenly">
+  <div>
+    <strong>Ceci est un texte !</strong></<strong>
+    <small>Et ceci un sous-texte !</small></<small>
+  </div>
+  <div>
+    <strong>Ceci est un texte !</strong></<strong>
+    <small>Et ceci un sous-texte !</small></<small>
+  </div>
+  <div>
+    <strong>Ceci est un texte !</strong></<strong>
+    <small>Et ceci un sous-texte !</small></<small>
+  </div>
+</ux-flex>
+```
+
+### align-items: flex-start
+
+<Preview withSource="none">
+  <Story name="alignStart" height="60px">
+    {stories.alignStart()}
+  </Story>
+</Preview>
+
+```html
+<ux-flex align-items="start">
+  <div>
+    <strong>Ceci est un texte !</strong></<strong>
+    <small>Et ceci un sous-texte !</small></<small>
+  </div>
+  <div>
+    <strong>Ceci est un texte !</strong></<strong>
+    <small>Et ceci un sous-texte !</small></<small>
+  </div>
+  <div>
+    <strong>Ceci est un texte !</strong></<strong>
+    <small>Et ceci un sous-texte !</small></<small>
+  </div>
+</ux-flex>
+```
+
+### align-items: flex-end
+
+<Preview withSource="none">
+  <Story name="alignEnd" height="60px">
+    {stories.alignEnd()}
+  </Story>
+</Preview>
+
+```html
+  <ux-flex align-items="end">
+  <div>
+    <strong>Ceci est un texte !</strong></<strong>
+    <small>Et ceci un sous-texte !</small></<small>
+  </div>
+  <div>
+    <strong>Ceci est un texte !</strong></<strong>
+    <small>Et ceci un sous-texte !</small></<small>
+  </div>
+  <div>
+    <strong>Ceci est un texte !</strong></<strong>
+    <small>Et ceci un sous-texte !</small></<small>
+  </div>
+</ux-flex>
+```

@@ -1,0 +1,22 @@
+:host {
+  --background-color: var(--logo-background-color);
+}
+
+.c-logo__link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: var(--t-header-height);
+  transition: background-color 0.25s;
+}
+
+.c-logo__link:hover,
+.c-logo__link:focus {
+  background: #efefef;
+}
+
+.c-img {
+  width: var(--t-logo-width);
+  height: var(--t-logo-height);
+}

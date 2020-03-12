@@ -1,0 +1,42 @@
+import {
+  Meta,
+  Description,
+  Props,
+  Story,
+  Preview
+} from '@storybook/addon-docs/blocks';
+import './link-button.component.js';
+
+# ux-link-btn
+
+<Meta title="Components|Formulaires/Link-Buttons" />
+
+## Description
+
+<Description of="ux-link-btn" />
+
+## Propriétés
+
+<Props of="ux-link-btn" />
+
+## Stories
+
+### Link button
+
+<Preview>
+  <Story name="link" height="60px">
+    {`
+    <ux-link-btn model="primary" lib-link="#" a11y-label="Ce lien a l'apparence d'un bouton">Lien</ux-link-btn>
+    `}
+  </Story>
+</Preview>
+
+### TargetBlank link button
+
+<Preview>
+  <Story name="target blank link" height="60px">
+    {`
+    <ux-link-btn model="primary" lib-link="#" target-blank a11y-label="Ce lien a l'apparence d'un bouton">Lien ouvrant dans une nouvelle fenêtre</ux-link-btn>
+    `}
+  </Story>
+</Preview>

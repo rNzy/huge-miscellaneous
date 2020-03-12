@@ -1,0 +1,164 @@
+$color: #efefef;
+$shadow: inset 0 1px 3px 0 rgba(0, 0, 0, 0.5);
+
+.c-bux-range {
+  position: relative;
+  width: 100%;
+}
+
+.c-bux-range__input {
+  background: none;
+  display: block;
+  outline: none;
+  padding: 0;
+  position: relative;
+  width: 100%;
+  -webkit-appearance: none;
+}
+
+// IE
+.c-bux-range__input::-ms-track {
+  background: transparent;
+  border-color: transparent;
+  border-width: 24px 0;
+  color: transparent;
+  height: 10px;
+}
+
+.c-bux-range__input::-ms-fill-lower {
+  background: #efefef;
+  box-shadow: $shadow;
+  border-radius: 5px;
+}
+
+.c-bux-range__input.c-bux-range__input--dash::-ms-fill-lower {
+  /* stylelint-disable-next-line function-linear-gradient-no-nonstandard-direction */
+  background-image: linear-gradient(0, #efefef 50%, #efefef 50%),
+    repeating-linear-gradient(
+      45deg,
+      #efefef,
+      #efefef 7px,
+      #616161 3px,
+      #616161 9px
+    );
+  background-repeat: no-repeat;
+}
+
+.c-bux-range__input::-ms-fill-upper {
+  background: #efefef;
+  box-shadow: $shadow;
+  border-radius: 5px;
+}
+
+.c-bux-range__input.c-bux-range__input--dash::-ms-fill-upper {
+  /* stylelint-disable-next-line function-linear-gradient-no-nonstandard-direction */
+  background-image: linear-gradient(0, #efefef 50%, #efefef 50%),
+    repeating-linear-gradient(
+      45deg,
+      #efefef,
+      #efefef 7px,
+      #616161 3px,
+      #616161 9px
+    );
+  background-repeat: no-repeat;
+}
+
+.c-bux-range__input::-ms-thumb {
+  background: url('./range.png') no-repeat left top;
+  background-size: auto 100%;
+  border-radius: 0;
+  border: 0;
+  cursor: pointer;
+  display: block;
+  height: 47px;
+  width: 40px;
+}
+
+// CHROME
+.c-bux-range__input::-webkit-slider-runnable-track {
+  background: #efefef;
+  box-shadow: $shadow;
+  border-radius: 5px;
+  height: 10px;
+}
+
+.c-bux-range__input.c-bux-range__input--dash::-webkit-slider-runnable-track {
+  /* stylelint-disable-next-line function-linear-gradient-no-nonstandard-direction */
+  background-image: linear-gradient(0, #efefef 50%, #efefef 50%),
+    repeating-linear-gradient(
+      45deg,
+      #efefef,
+      #efefef 7px,
+      #616161 3px,
+      #616161 9px
+    );
+  background-repeat: no-repeat;
+}
+
+.c-bux-range__input::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  background: url('./range.png') no-repeat left top;
+  background-size: auto 100%;
+  border-radius: 0;
+  border: 0;
+  cursor: pointer;
+  display: block;
+  margin-top: -16px;
+  height: 47px;
+  width: 40px;
+}
+
+// FIREFOX
+.c-bux-range__input::-moz-range-track {
+  background: #efefef;
+  box-shadow: $shadow;
+  border-radius: 5px;
+  height: 10px;
+}
+
+.c-bux-range__input.c-bux-range__input--dash::-moz-range-track {
+  /* stylelint-disable-next-line function-linear-gradient-no-nonstandard-direction */
+  background-image: linear-gradient(0, #efefef 50%, #efefef 50%),
+    repeating-linear-gradient(
+      45deg,
+      #efefef,
+      #efefef 7px,
+      #616161 3px,
+      #616161 9px
+    );
+  background-repeat: no-repeat;
+}
+
+.c-bux-range__input::-moz-range-thumb {
+  background: transparent url('./range.png') no-repeat left top;
+  background-size: auto 100%;
+  border-radius: 0;
+  border: 0;
+  cursor: pointer;
+  display: block;
+  height: 47px;
+  width: 40px;
+}
+
+.c-bux-range__input::-moz-focus-outer {
+  border: 0;
+}
+
+////////////////////////////////
+
+.c-bux-range__input_wrap {
+  position: relative;
+  display: block;
+  height: 22px;
+}
+
+.c-bux-range__value_wrap {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+}
+
+.c-bux-range__value--middle {
+  position: absolute;
+  transform: translateX(-50%);
+}

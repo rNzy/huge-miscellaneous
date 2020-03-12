@@ -1,0 +1,136 @@
+@if (
+  $uxEfs==cmb or
+    $uxEfs==cmso or
+    $uxEfs==cmmc or
+    $uxEfs==cmbpro or
+    $uxEfs==cmsopro or
+    $uxEfs==cmmcpro
+) {
+  /* ==========================================================================
+   LAYER / #sitemap.styles.scss
+   ========================================================================== */
+  #sitemapblock {
+    padding-bottom: 10px;
+
+    @include mq($until: medium) {
+      width: calc(100% + 40px);
+      left: -20px;
+      padding-bottom: 0;
+    }
+  }
+
+  #sitemapinputwrap {
+    display: flex;
+
+    bux-input {
+      margin-right: 10px;
+      flex-grow: 1;
+    }
+  }
+
+  .c-sitemap-item-wrap {
+    @include mq($from: large) {
+      border-bottom: solid 1px #bdbdbd;
+      padding-bottom: 30px;
+      margin-bottom: 30px;
+      display: flex;
+      width: 100%;
+      max-width: 100%;
+      position: relative;
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+  }
+
+  .c-sitemap-item-wrap__last-visible {
+    border-bottom: none;
+    padding-bottom: 0;
+    margin-bottom: 0;
+  }
+
+  .c-sitemap-item-section {
+    display: block;
+    position: relative;
+    @include mq($from: large) {
+      flex: 50%;
+    }
+  }
+
+  .c-sitemap-item-div {
+    @include mq($from: large) {
+      max-width: 335px;
+      margin-bottom: 20px;
+    }
+  }
+
+  .c-sitemap-item-header {
+    display: flex;
+    align-items: center;
+    background-color: #efefef;
+    border-bottom: solid 1px white;
+    min-height: 50px;
+
+    /* définit un height plus petit que le min-height pour régler un bug flexbox/IE11
+    src: https://github.com/philipwalton/flexbugs/issues/231
+  */
+    height: 40px;
+    font-size: 16px;
+    width: 100%;
+    padding-left: 20px;
+  }
+
+  .c-sitemap-item-header-icon {
+    margin-right: 15px;
+    font-size: 20px;
+  }
+
+  .c-sitemap-chevron {
+    font-size: 16px;
+    margin-right: 10px;
+  }
+
+  .c-sitemap-item-ul {
+    width: 100%;
+  }
+
+  .c-sitemap-item-li {
+    min-height: 50px;
+    border-bottom: 1px solid #efefef;
+    //border-bottom: 1px solid red;
+    position: relative;
+  }
+
+  .c-sitemap-item-a {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    padding-left: 20px;
+    display: flex;
+    align-items: center;
+
+    &:hover,
+    &:focus {
+      background-color: #efefef;
+      transition: background-color 0.4s;
+    }
+  }
+
+  .c-sitemap-item-label-wrap {
+    display: flex;
+    flex-grow: 1;
+    flex-flow: column;
+  }
+
+  .c-sitemap-item-sublabel {
+    font-size: 12px;
+  }
+
+  .c-sitemap__active {
+    //background-color: pink;
+  }
+
+  .c-sitemap__unactive {
+    //background-color: cyan;
+    display: none;
+  }
+}

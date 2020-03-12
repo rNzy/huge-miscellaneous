@@ -1,0 +1,78 @@
+:host {
+  --checkbox-checked-color: var(--color-text);
+  --checkbox-border-color: #999;
+  --checkbox-radius: 3px;
+
+  position: relative;
+  display: inline-block;
+  background-size: contain;
+  width: 14px;
+  height: 14px;
+  border: 1px solid var(--checkbox-border-color);
+  border-radius: var(--checkbox-radius);
+  cursor: pointer;
+  vertical-align: middle;
+  margin-right: var(--spacing-sm);
+  margin-left: var(--spacing-md);
+}
+
+:host([hidden]) {
+  display: none;
+}
+
+:host([checked='true']),
+:host([checked='checked']) {
+  border-color: var(--brand);
+  background-color: var(--brand);
+  transition: background-color 0.125s ease-in-out;
+}
+
+/* Le pseudo-sélecteur :focus ne fonctionne pas sur le :host
+** Le composant ux-checkbox sera à revoir pour pouvoir lui appliquer un focus
+:host:focus {
+  background-color: var(--brand-accessi);
+  outline: none;
+  box-shadow: 0 0 3px 1px var(--brand);
+  color: #fff;
+  border-radius: 5px;                     
+} */
+
+:host::before,
+:host::after {
+  content: '';
+  position: absolute;
+  width: 1px;
+  border-radius: 1px;
+  background-color: #fff;
+  opacity: 0;
+  transition: opacity 0.125s ease-in-out;
+}
+
+:host::before {
+  height: 4px;
+  top: 7px;
+  left: 4px;
+  transform: rotate(-45deg);
+}
+
+:host::after {
+  height: 9px;
+  top: 3px;
+  left: 8px;
+  transform: rotate(-135deg);
+}
+
+:host([checked='true'])::after,
+:host([checked='true'])::before,
+:host([checked='checked'])::after,
+:host([checked='checked'])::before {
+  opacity: 1;
+}
+
+:host([disabled]),
+:host([checked='true'][disabled]),
+:host([checked='checked'][disabled]) {
+  background: var(--checkbox-checked-color) no-repeat;
+  background-size: contain;
+  cursor: not-allowed;
+}

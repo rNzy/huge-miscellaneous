@@ -1,0 +1,30 @@
+:host {
+  --notification-color: #fff;
+  --notification-bg-color: var(--color-primary);
+}
+
+.c-notification {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: var(--text-font-size-xs);
+  background-color: var(--notification-bg-color);
+  border-radius: 50%;
+  color: var(--notification-color);
+  width: 20px;
+  height: 20px;
+  font-weight: bold;
+  animation-duration: 0.3s;
+  animation-name: scalein;
+  animation-timing-function: cubic-bezier(0.63, 2.01, 0.86, 0.87);
+}
+
+@keyframes scalein {
+  from {
+    transform: scale(0);
+  }
+
+  to {
+    transform: scale(1);
+  }
+}

@@ -1,0 +1,13 @@
+.c-message-content {
+  background-color: none;
+  border: solid 2px var(--color-warning);
+}
+
+.c-message-icon {
+  --color-svg2: white;
+
+  background-color: var(--color-warning);
+  border-radius: var(--border-radius-circle);
+  width: 25px;
+  height: 25px;
+}

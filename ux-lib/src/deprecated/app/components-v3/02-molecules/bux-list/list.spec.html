@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <script src="/node_modules/web-component-tester/browser.js"></script>
+    <title>Test bux2-list</title>
+  </head>
+
+  <body>
+    <test-fixture id="componentFixture">
+      <template>
+        <bux2-list>
+          <bux2-text>listitem 1</bux2-text>
+          <bux2-text>listitem 2</bux2-text>
+          <bux2-text>listitem 3</bux2-text>
+          <bux2-text>listitem 4</bux2-text>
+          <bux2-text>listitem 5</bux2-text>
+        </bux2-list>
+      </template>
+    </test-fixture>
+    <script>
+      suite('<bux2-list>', () => {
+        let component;
+
+        setup(() => {
+          component = fixture('componentFixture');
+        });
+
+        a11ySuite('componentFixture');
+
+        // Testing aria role
+        test(`Container role is list ?`, () => {
+          assert.isTrue(component.container.getAttribute('role') === 'list');
+        });
+
+        // Testing aria role
+        test(`Children role is listitem ?`, () => {
+          assert.isTrue(
+            component.children.forEach(element => {
+              element.getAttribute('role') === 'listitem';
+            })
+          );
+        });
+      });
+    </script>
+  </body>
+</html>

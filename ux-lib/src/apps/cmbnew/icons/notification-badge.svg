@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   id="Icone_Notification_Bagge"
+   data-name="Icone/Notification Bagge"
+   width="28"
+   height="28"
+   viewBox="0 0 28 28"
+   version="1.1"
+   sodipodi:docname="notification-badge.svg"
+   inkscape:version="0.92.3 (2405546, 2018-03-11)">
+  <metadata
+     id="metadata11">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs9" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1920"
+     inkscape:window-height="1052"
+     id="namedview7"
+     showgrid="false"
+     inkscape:zoom="15.733333"
+     inkscape:cx="11.955329"
+     inkscape:cy="4.660065"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="Icone_Notification_Bagge" />
+  <path
+     style="font-weight:700;font-size:medium;font-family:MavenPro-Bold, 'Maven Pro';fill:#000000;fill-opacity:1;stroke-width:1.85714281"
+     d="M 14,1 A 13,13 0 0 0 1,14 13,13 0 0 0 14,27 13,13 0 0 0 27,14 13,13 0 0 0 14,1 Z M 12.454799,5.1821984 H 16.4375 V 18.53404 h 3.699778 v 2.894531 H 8.7767857 V 18.53404 H 12.476563 V 8.0332024 L 8.6788504,8.8166846 v -2.851004 z"
+     id="path818"
+     inkscape:connector-curvature="0" />
+</svg>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <script src="/node_modules/web-component-tester/browser.js"></script>
+    <title>Test input</title>
+  </head>
+  <body>
+    <test-fixture id="componentFixture">
+      <template>
+        <bux-input
+          state="error"
+          required="true"
+          type="number"
+          data-value-min="50"
+          data-value-max="100"
+          data-value-step="1"
+          data-placeholder="Mon placeholder"
+          data-label="Mon label"
+          data-label-right="€"
+          data-error-msg="Mon message d'erreur"
+        >
+        </bux-input>
+      </template>
+    </test-fixture>
+    <script>
+      suite('<bux-input>', () => {
+        let component;
+        let inputEl;
+        let errorMsg;
+        let label;
+        let unit;
+
+        setup(() => {
+          component = fixture('componentFixture');
+
+          label = component.querySelector('.bux-input-label');
+          unit = component.querySelector('.bux-input-unit');
+          errorMsg = component.querySelector('.bux-input-error-msg span');
+
+          inputEl = component.querySelector('.bux-input-input');
+        });
+
+        a11ySuite('componentFixture');
+
+        test('label is "Mon label *" ?', () => {
+          assert.isTrue(label.textContent === 'Mon label *');
+        });
+
+        test('unit is "€" ?', () => {
+          assert.isTrue(unit.textContent === '€');
+        });
+
+        test('errormsg is "Mon message d\'erreur" ?', () => {
+          assert.isTrue(errorMsg.textContent === "Mon message d'erreur");
+        });
+
+        test('input type is "number" ?', () => {
+          assert.isTrue(inputEl.getAttribute('type') === 'number');
+        });
+
+        test('input placeholder is "Mon placeholder" ?', () => {
+          assert.isTrue(
+            inputEl.getAttribute('placeholder') === 'Mon placeholder'
+          );
+        });
+
+        test('Has class "bux-input-error" ?', () => {
+          assert.isTrue(
+            component.children[0].classList.contains('bux-input-error')
+          );
+        });
+      });
+    </script>
+  </body>
+</html>

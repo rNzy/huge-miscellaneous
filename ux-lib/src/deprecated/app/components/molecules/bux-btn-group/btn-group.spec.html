@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <script src="/node_modules/web-component-tester/browser.js"></script>
+    <title>Test bux-btn-group</title>
+  </head>
+  <body>
+    <test-fixture id="componentFixture">
+      <template>
+        <bux-btn-group>
+          <bux-btn>Ok</bux-btn>
+          <bux-btn>Annuler</bux-btn>
+          <bux-btn disabled>Désactiver</bux-btn>
+        </bux-btn-group>
+      </template>
+    </test-fixture>
+    <script>
+      suite('<bux-btn-group>', () => {
+        let component;
+        let btns;
+        setup(() => {
+          component = fixture('componentFixture');
+          btns = component.querySelectorAll('button');
+        });
+
+        a11ySuite('componentFixture');
+
+        test(`has 3 buttons ?`, () => {
+          assert.isTrue(btns.length === 3);
+        });
+      });
+    </script>
+  </body>
+</html>

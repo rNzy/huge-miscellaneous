@@ -1,0 +1,64 @@
+import {
+  Meta,
+  Description,
+  Props,
+  Story,
+  Preview
+} from '@storybook/addon-docs/blocks';
+import './pager.component';
+
+# ux-foo
+
+<Meta title="Components|Interactions/Pager" />
+
+## Description
+
+<Description of="ux-pager" />
+<Description of="ux-pager-item" />
+
+## Propriétés
+
+<Props of="ux-pager" />
+<Props of="ux-pager-item" />
+
+## Stories
+
+<Preview>
+  <Story name="pager" height="60px">
+    {`
+    <ux-pager>
+      <ux-pager-item
+        value="first"
+      ></ux-pager-item>
+      <ux-pager-item
+        value="prev"
+      ></ux-pager-item>
+      <ux-pager-item
+        value="1"
+      ></ux-pager-item>
+      <ux-pager-item
+        value="2"
+      ></ux-pager-item>
+      <ux-pager-item
+        value="3"
+        selected="true"
+      ></ux-pager-item>
+      <ux-pager-item
+        value="ellipsis"
+      ></ux-pager-item>
+      <ux-pager-item
+        value="4"
+      ></ux-pager-item>
+      <ux-pager-item
+        value="6"
+      ></ux-pager-item>
+      <ux-pager-item
+        value="next"
+      ></ux-pager-item>
+      <ux-pager-item
+        value="last"
+      ></ux-pager-item>
+    </ux-pager>
+    `}
+  </Story>
+</Preview>

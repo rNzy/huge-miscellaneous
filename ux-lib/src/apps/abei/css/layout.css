@@ -1,0 +1,57 @@
+/* HEADER */
+
+ux-header {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+}
+
+ux-logo,
+ux-profil {
+  display: none;
+}
+
+@media (min-width: 59rem) {
+  ux-logo {
+    display: block;
+    position: absolute;
+    top: 10px;
+    padding-left: 65px;
+    z-index: 10;
+  }
+
+  ux-profil {
+    display: flex;
+    margin-left: auto;
+    margin-right: var(--spacing-sm);
+  }
+}
+
+ux-menu#menu-secondary {
+  position: absolute;
+  top: 5rem;
+  left: 0;
+  right: 0;
+}
+
+ux-footer {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+@media (min-width: 59rem) {
+  .o-layout {
+    display: grid;
+    grid-template-columns: 23rem 73rem;
+    grid-column-gap: var(--spacing-md);
+    width: 98rem;
+    margin: 16rem auto 0;
+  }
+
+  ux-sidebar {
+    position: relative;
+  }
+}

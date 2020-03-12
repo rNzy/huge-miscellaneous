@@ -1,0 +1,43 @@
+:host {
+  --text-shadow: 1px 1px 3px #000000bd, 0 0 1px #000000b0, 0 0 30px #000000a8;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+}
+
+::slotted(a) {
+  text-decoration: underline !important;
+}
+
+.c-theme--primary {
+  color: var(--color-primary) !important;
+}
+.c-theme--light {
+  color: var(--color-theme-light) !important;
+}
+
+.c-theme--dark {
+  color: var(--color-theme-dark) !important;
+}
+
+.c-theme--success {
+  color: var(--color-success) !important;
+}
+
+.c-theme--error {
+  color: var(--color-error) !important;
+}
+
+.c-theme--white {
+  color: var(--color-white) !important;
+}
+
+.c-text--shadow {
+  text-shadow: var(--text-shadow);
+}

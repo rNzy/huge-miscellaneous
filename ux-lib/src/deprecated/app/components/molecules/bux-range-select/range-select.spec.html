@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <script src="/node_modules/web-component-tester/browser.js"></script>
+    <title>Test bux-select</title>
+  </head>
+  <body>
+    <test-fixture id="selectComponentFixture">
+      <template>
+        <bux-range-select
+          state="nodata"
+          required="false"
+          data-select-label="Durée"
+          data-select-label-right="mois"
+          data-select-width="100"
+          data-range-label-left="3mois"
+          data-range-label-right="18mois"
+          data-value-min="3"
+          data-value-max="18"
+          data-step="1"
+        >
+        </bux-range-select
+        >;
+      </template>
+    </test-fixture>
+    <script>
+      suite('<bux-range-select>', () => {
+        let component;
+        let wrap;
+        let labelEl;
+        let unitEl;
+
+        setup(() => {
+          component = fixture('selectComponentFixture');
+          wrap = component.querySelector('.bux-select-wrap');
+          labelEl = component.querySelector('.bux-select-label');
+          unitEl = component.querySelector('.bux-select-label-right');
+        });
+
+        a11ySuite('selectComponentFixture');
+
+        test(`Label Select : "Durée" ?`, () => {
+          assert.isTrue(labelEl.textContent === 'Durée');
+        });
+
+        test(`Label Right Select : "mois" ?`, () => {
+          assert.isTrue(unitEl.textContent === 'mois');
+        });
+      });
+    </script>
+  </body>
+</html>

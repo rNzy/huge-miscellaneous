@@ -1,0 +1,55 @@
+:host {
+  display: none;
+  position: fixed;
+  z-index: 200;
+}
+
+.c-modal {
+  position: fixed;
+  width: 100%;
+  max-width: 300px;
+  top: 50%;
+  left: 50%;
+  background-color: #fff;
+  box-shadow: 0 0 5px 0 #999;
+  border-radius: var(--border-radius-md);
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(1.1) translate(-50%, -50%);
+  transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
+  will-change: transform;
+}
+
+@media (min-width: 740px) {
+  .c-modal {
+    max-width: 520px;
+  }
+}
+
+.c-modal__close-btn {
+  position: absolute;
+  right: -0.8rem;
+  top: -1.2rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  margin: 0;
+  padding: 0;
+  background: white;
+  border-radius: var(--border-radius-circle);
+  border: none;
+  box-shadow: 0 0 5px 0 #999;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.c-modal.is-open {
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1) translate(-50%, -50%);
+  transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
+}
+
+/* Style spécifique à la modale avec l'attribut "popin" */
+.c-popin {
+  text-align: center;
+}

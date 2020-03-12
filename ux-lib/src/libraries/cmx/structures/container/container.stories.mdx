@@ -1,0 +1,35 @@
+import { Meta, Props, Story, Preview } from '@storybook/addon-docs/blocks';
+import * as stories from './container.stories.js';
+import './container.component.js';
+
+# ux-container
+
+<Meta title="Components|Structures/Container" />
+
+Permet de créer un conteneur et de lui appliquer différents styles.
+
+## Stories
+
+<Preview withSource="none">
+  <Story name="base container" height="100px">
+    {stories.baseContainer()}
+  </Story>
+</Preview>
+
+```html
+<ux-container type="base">
+  Lorem ipsum dolores claiborne
+</ux-container>
+```
+
+<Preview withSource="none">
+  <Story name="space around container" height="100px">
+    {stories.spaceAroundContainer()}
+  </Story>
+</Preview>
+
+```html
+<ux-container type="space-around">
+  Lorem ipsum dolores claiborne
+</ux-container>
+```

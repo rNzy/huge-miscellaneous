@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <script src="/node_modules/web-component-tester/browser.js"></script>
+    <title>Test back-link</title>
+  </head>
+  <body>
+    <test-fixture id="componentFixture">
+      <template>
+        <bux-back-link
+          data-label="Mes comptes"
+          data-link="/comptes"
+        ></bux-back-link>
+      </template>
+    </test-fixture>
+    <script>
+      suite('<bux-back-link>', () => {
+        let component;
+        let myEl;
+        setup(() => {
+          component = fixture('componentFixture');
+        });
+
+        test("Label is 'Mes comptes'", () => {
+          assert.isTrue(
+            component
+              .querySelector('.c-back-link-txt')
+              .textContent.indexOf('Mes comptes') >= 0
+          );
+        });
+
+        test("Link is '/comptes'", () => {
+          assert.isTrue(
+            component.children[0].getAttribute('href') === '/comptes'
+          );
+        });
+
+        test("Label is now 'Mes comptes bis'", () => {
+          component.setAttribute('data-label', 'Mes comptes bis');
+          assert.isTrue(
+            component
+              .querySelector('.c-back-link-txt')
+              .textContent.indexOf('Mes comptes bis') >= 0
+          );
+        });
+
+        test("Link is now '/comptesbis'", () => {
+          component.setAttribute('data-link', '/comptesbis');
+          assert.isTrue(
+            component.children[0].getAttribute('href') === '/comptesbis'
+          );
+        });
+
+        test('Empty link => the component is in display none', () => {
+          component.setAttribute('data-link', '');
+          assert.isTrue(component.children[0].style.display === 'none');
+        });
+      });
+    </script>
+  </body>
+</html>

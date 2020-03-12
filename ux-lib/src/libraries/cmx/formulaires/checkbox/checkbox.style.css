@@ -1,0 +1,56 @@
+:host {
+  position: relative;
+  display: inline-block;
+  background-size: contain;
+  width: 30px;
+  height: 30px;
+  border: 1px solid var(--color-text);
+  border-radius: 2px;
+  background-color: #fff;
+  cursor: pointer;
+  vertical-align: middle;
+  margin-right: var(--spacing-xs);
+}
+
+:host([hidden]) {
+  display: none;
+}
+
+:host([checked='true']),
+:host([checked='checked']) {
+  background-color: var(--color-text);
+  transition: background-color 0.125s ease-in-out;
+}
+
+:host::before {
+  content: '';
+  position: absolute;
+  width: 5px;
+  height: 12px;
+  top: 11px;
+  left: 6px;
+  transform: rotate(-45deg);
+  background-color: #fff;
+  opacity: 0;
+  transition: opacity 0.125s ease-in-out;
+}
+
+:host::after {
+  content: '';
+  position: absolute;
+  width: 5px;
+  height: 20px;
+  top: 4px;
+  left: 14px;
+  transform: rotate(-135deg);
+  background-color: #fff;
+  opacity: 0;
+  transition: opacity 0.125s ease-in-out;
+}
+
+:host([checked='true'])::after,
+:host([checked='true'])::before,
+:host([checked='checked'])::after,
+:host([checked='checked'])::before {
+  opacity: 1;
+}

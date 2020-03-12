@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <script src="/node_modules/web-component-tester/browser.js"></script>
+    <script src="/dist/bundle.js"></script>
+    <link rel="stylesheet" href="/dist/style.css" />
+    <title>Test link-tile</title>
+  </head>
+  <body>
+    <test-fixture id="cardInformation">
+      <template>
+        <bux-card-information
+          data-label="Compte chèque 1"
+          data-holder="Jean SPECIMENT"
+          data-number="XXXX656484"
+          data-image-path="/road/to/wawa/image"
+        >
+        </bux-card-information>
+      </template>
+    </test-fixture>
+
+    <script>
+      suite('<bux-card-information> with 4 information', () => {
+        let component;
+        let myEl;
+        setup(() => {
+          component = fixture('cardInformation');
+          labelEl = component.querySelector('.c-card-info__label');
+          holderEl = component.querySelector('.c-card-info__holder');
+          numberEl = component.querySelector('.c-card-info__number');
+          imgPathEl = component.querySelector('.c-card-info__img');
+        });
+
+        test('test data-label', () => {
+          assert.isTrue(labelEl.textContent === 'Compte chèque 1');
+        });
+        test('test data-holder', () => {
+          assert.isTrue(holderEl.textContent === 'Jean SPECIMENT');
+        });
+        test('test data-number', () => {
+          assert.isTrue(numberEl.textContent === 'XXXX656484');
+        });
+        test('test data-image-path', () => {
+          assert.isTrue(
+            imgPathEl.getAttribute('src') === '/road/to/wawa/image'
+          );
+        });
+      });
+    </script>
+  </body>
+</html>

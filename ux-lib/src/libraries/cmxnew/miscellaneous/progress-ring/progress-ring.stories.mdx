@@ -1,0 +1,34 @@
+import {
+  Meta,
+  Description,
+  Props,
+  Story,
+  Preview
+} from '@storybook/addon-docs/blocks';
+import './progress-ring.component.js';
+import '../../typography/text/text.component.js';
+
+# ux-progress-ring
+
+<Meta title="Components|Miscellaneous/Progress Ring" />
+
+## Description
+
+<Description of="ux-progress-ring" />
+
+## Propriétés
+
+<Props of="ux-progress-ring" />
+
+## Stories
+
+### Progress Ring
+
+<Preview>
+  <Story name="progress ring" height="100px">
+    {`<ux-progress-ring value="65" a11y-label="le processus est en cours de chargement, veuillez patienter">
+      <ux-text tag="p" slot="content">Je suis en cours de chargement.</ux-text>
+    </ux-progress-ring>
+    `}
+  </Story>
+</Preview>

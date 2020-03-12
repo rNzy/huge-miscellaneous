@@ -1,0 +1,24 @@
+/* ==========================================================================
+   OBJECTS / #COLUMNS
+   ========================================================================== */
+
+// Settings
+$column-gap: $global-spacing-unit;
+
+.o-columns\@md.o-columns--2 {
+  margin-bottom: $global-spacing-unit;
+
+  @include mq($from: medium) {
+    column-gap: $column-gap;
+    columns: 2;
+  }
+}
+
+.o-columns\@md.o-columns--4 {
+  column-gap: $column-gap;
+  columns: 2;
+
+  @include mq($from: medium) {
+    columns: 4;
+  }
+}

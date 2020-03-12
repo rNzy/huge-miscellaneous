@@ -1,0 +1,83 @@
+import { Meta, Props, Story, Preview } from '@storybook/addon-docs/blocks';
+import * as stories from './accordion.stories.js';
+import './accordion-item.component.js';
+
+# Accordion
+
+<Meta title="Components|Interactions/Accordion" />
+
+## Présentation
+
+### Props
+
+<Props of="ux-accordion-item" />
+
+### Exemple
+
+<Preview withSource="none" withToolbar>
+  <Story name="Accordions" height="260px">
+    {stories.accordions()}
+  </Story>
+</Preview>
+
+### WAI-ARIA Roles, States, and Properties:
+
+- [x] Le titre de chaque accordeon est contenu dans un élément avec le role 'button'.
+- [x] Chaque bouton de header d'accordion est inclus dans un élément avec le role `heading` et a une valeur `aria-level` appropriée à l'architecture de la page. Nous utilisons ici cette méthode plutôt qu'un élément de type `<h3>`, plus simple à définir dans un web component.
+- [ ] The button element is the only element inside the heading element. That is, if there are other visually persistent elements, they are not included inside the heading element.
+- [ ] If the accordion panel associated with an accordion header is visible, the header button element has aria-expanded set to true. If the panel is not visible, aria-expanded is set to false.
+- [x] The accordion header button element has aria-controls set to the ID of the element containing the accordion panel content.
+- [ ] If the accordion panel associated with an accordion header is visible, and if the accordion does not permit the panel to be collapsed, the header button element has aria-disabled set to true.
+- [ ] Optionally, each element that serves as a container for panel content has role region and aria-labelledby with a value that refers to the button that controls display of the panel.
+- [ ] Avoid using the region role in circumstances that create landmark region proliferation, e.g., in an accordion that contains more than approximately 6 panels that can be expanded at the same time.
+- [ ] Role region is especially helpful to the perception of structure by screen reader users when panels contain heading elements or a nested accordion.
+
+## Stories
+
+### Accordion item par défaut
+
+<Preview withSource="none" withToolbar>
+  <Story name="Accordion default" height="120px">
+    {stories.accordionDefault()}
+  </Story>
+</Preview>
+
+```html
+<ux-accordion-item>
+  <div slot="accordion-header">Titre accordeon item 1</div>
+  <div>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi beatae
+    reiciendis quia, quidem aspernatur ut suscipit enim quo tempore dolores
+    perspiciatis necessitatibus obcaecati tempora saepe natus quas omnis esse
+    voluptas? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi
+    beatae reiciendis quia, quidem aspernatur ut suscipit enim quo tempore
+    dolores perspiciatis necessitatibus obcaecati tempora saepe natus quas omnis
+    esse voluptas?
+  </div>
+</ux-accordion-item>
+```
+
+### Accordion item ouvert
+
+Il est possible d'instancier un item d'accordeon en lui ajoutant l'attribut "expanded"
+
+<Preview withSource="none" withToolbar>
+  <Story name="Accordion expanded" height="120px">
+    {stories.accordionExpanded()}
+  </Story>
+</Preview>
+
+```html
+<ux-accordion-item expanded>
+  <div slot="accordion-header">Titre accordeon item 1</div>
+  <div>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi beatae
+    reiciendis quia, quidem aspernatur ut suscipit enim quo tempore dolores
+    perspiciatis necessitatibus obcaecati tempora saepe natus quas omnis esse
+    voluptas? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi
+    beatae reiciendis quia, quidem aspernatur ut suscipit enim quo tempore
+    dolores perspiciatis necessitatibus obcaecati tempora saepe natus quas omnis
+    esse voluptas?
+  </div>
+</ux-accordion-item>
+```

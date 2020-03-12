@@ -1,0 +1,69 @@
+import { Meta, Props, Story, Preview } from '@storybook/addon-docs/blocks';
+
+import './menu.component.js';
+
+# Accordion
+
+<Meta title="Components|Navigations/menu" />
+
+## Présentation
+
+### Props
+
+<Props of="ux-menu" />
+
+### Exemple
+
+<Preview withSource="none" withToolbar>
+  <Story name="menu" height="260px">
+    {() => `<ux-menu>
+        <ux-menu-item id="5" icon="home">
+          Item 1
+        </ux-menu-item>
+        <ux-menu-item icon="home">
+          Item 2
+        </ux-menu-item>
+        <ux-menu-item>
+          Item 3 No icon
+        </ux-menu-item>
+        <ux-menu-item-dropdown icon="home">
+          <div slot="accordion-header">Menu with option</div>
+          <ux-menu-item icon="home" level="1">
+            Sub Item 1
+          </ux-menu-item>
+          <ux-menu-item level="1">
+            Sub Item 2
+          </ux-menu-item>
+          <ux-menu-item level="1">
+            Sub Item 3
+          </ux-menu-item>
+        </ux-menu-item-dropdown>
+      </ux-menu>`}
+  </Story>
+</Preview>
+
+```html
+<ux-menu>
+  <ux-menu-item id="5" icon="home">
+    Item 1
+  </ux-menu-item>
+  <ux-menu-item icon="home">
+    Item 2
+  </ux-menu-item>
+  <ux-menu-item>
+    Item 3 No icon
+  </ux-menu-item>
+  <ux-menu-item-dropdown icon="home">
+    <div slot="accordion-header">Menu with option</div>
+    <ux-menu-item icon="home" level="1">
+      Sub Item 1
+    </ux-menu-item>
+    <ux-menu-item level="1">
+      Sub Item 2
+    </ux-menu-item>
+    <ux-menu-item level="1">
+      Sub Item 3
+    </ux-menu-item>
+  </ux-menu-item-dropdown>
+</ux-menu>
+```

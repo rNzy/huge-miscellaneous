@@ -1,0 +1,144 @@
+@if ($uxEfs==azb) {
+  /* ==========================================================================
+   COMPONENTS / #TAB
+   ========================================================================== */
+
+  // Settings
+
+  $brand-disabled: color(brand-disabled);
+  $brand-pressed: color(brand-pressed);
+  $brand-hover: color(brand-hover);
+  $tab-color-selected-mobile: color(grey-70);
+  $tab-color-selected-text-mobile: color(white);
+  $tab-color-mobile: color(grey-80);
+  $tab-color-text-mobile: color(grey-70);
+
+  $tab-text-lineHeight-mobile: 14px;
+
+  $tab-text-size: 14px;
+  $tab-text-lineHeight: 16px;
+
+  $tab-color-selected: color(grey-70);
+  $tab-color-selected-text: color(white);
+  $tab-color: color(grey-80);
+  $tab-color-text: color(grey-70);
+
+  $tab-min-height-mobile: 35px;
+  $tab-min-height: 41px;
+
+  /* Base
+  ============================================ */
+
+  bux-tabs {
+    position: relative;
+    width: 100%;
+  }
+
+  .c-tabs {
+    display: block;
+    position: relative;
+    margin-bottom: $global-spacing-unit;
+    width: calc(100% + 20px);
+    margin-left: -10px;
+
+    @include mq($from: large) {
+      width: 100%;
+      margin-left: 0;
+    }
+  }
+
+  .c-tabs__list {
+    list-style-type: none;
+    display: flex;
+    transition: 0.5s;
+    margin: 60px auto;
+    justify-content: center;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  .c-tabs__item {
+    display: inline-block;
+  }
+
+  .c-tabs__item a {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    height: 100%;
+    padding: 0 20px 4px;
+    text-decoration: none;
+    background-color: transparent;
+    color: $brand-disabled;
+    border-bottom: 2px solid $brand-disabled;
+    font-size: 1.6rem;
+  }
+  @include mq($from: medium) {
+    .c-tabs__item a {
+      flex-direction: row;
+    }
+  }
+
+  .c-tabs__item a.is-active {
+    color: $brand-disabled;
+    position: relative;
+    border-bottom: 5px solid $brand-disabled;
+    padding: 0 20px 7px 20px;
+
+    &:active {
+      background-color: $brand-pressed;
+      color: white;
+      border-bottom: 5px solid white;
+    }
+
+    &:focus {
+      color: white;
+      border-bottom: 5px solid white;
+      padding: 0 20px 7px 20px;
+    }
+
+    &:focus:hover {
+      color: $brand-hover;
+      background-color: transparent;
+      border-bottom: 5px solid $brand-disabled;
+    }
+  }
+
+  .c-tabs__cont {
+    display: block;
+    position: relative;
+    height: auto;
+  }
+
+  // icons
+  .c-tabs__item .c-svg {
+    width: 100%;
+    height: 3.5rem; /* size here ! */
+    display: block;
+    margin-top: 0.5rem;
+    @include mq($from: medium) {
+      width: 2.5rem;
+      height: 2.5rem;
+      margin-top: 0;
+    }
+  }
+  .c-tabs__item bux-svg + span {
+    padding: 0.5rem 0;
+  }
+
+  //// DESKTOP
+  @include mq($from: medium) {
+    .c-tabs--noshadow .c-tabs__cont {
+      background-color: transparent;
+      box-shadow: none;
+    }
+
+    .c-tabs__item a {
+      min-height: $tab-min-height;
+      font-size: 1.6rem;
+      line-height: $tab-text-lineHeight;
+    }
+  }
+
+  //// FIN DESKTOP
+}

@@ -1,0 +1,136 @@
+import {
+  Meta,
+  Description,
+  Props,
+  Story,
+  Preview
+} from '@storybook/addon-docs/blocks';
+import './checkbox.component.js';
+import './checkbox-group.component.js';
+import '../label/label.component.js';
+import '../../typography/text/text.component.js';
+
+# ux-checkbox
+
+<Meta title="Components|Formulaires/Checkbox" />
+
+## Description
+
+<Description of="ux-checkbox" />
+
+## Propriétés
+
+<Props of="ux-checkbox" />
+
+## WAI-ARIA checklist
+
+https://www.w3.org/TR/wai-aria-practices-1.1/#checkbox
+
+## Keyboard Interaction
+
+- [x] When the checkbox has focus, pressing the Space key changes the state of the checkbox
+
+## WAI-ARIA Roles, States, and Properties
+
+- [x] The checkbox has role checkbox.
+- [x] The checkbox has an accessible label provided by one of the following:
+  - Visible text content contained within the element with role checkbox.
+  - A visible label referenced by the value of aria-labelledby set on the element with role checkbox.
+  - aria-label set on the element with role checkbox.
+- [x] When checked, the checkbox element has state aria-checked set to true.
+- [x] When not checked, it has state aria-checked set to false.
+- [ ] When partially checked, it has state aria-checked set to mixed.
+- [ ] If a set of checkboxes is presented as a logical group with a visible label, the checkboxes are included in an element with role group that has the property aria-labelledby set to the ID of the element containing the label.
+- [ ] If the presentation includes additional descriptive static text relevant to a checkbox or checkbox group, the checkbox or checkbox group has the property aria-describedby set to the ID of the element containing the description.
+
+## Stories
+
+### Unchecked
+
+<Preview>
+  <Story name="unchecked" height="60px">
+    {`
+    <ux-checkbox></ux-checkbox>
+    `}
+  </Story>
+</Preview>
+
+### Checked
+
+<Preview>
+  <Story name="checked" height="60px">
+    {`
+    <ux-checkbox checked></ux-checkbox>
+    `}
+  </Story>
+</Preview>
+
+### Disabled
+
+<Preview>
+  <Story name="disabled" height="60px">
+    {`
+    <ux-checkbox checked disabled></ux-checkbox>
+    `}
+  </Story>
+</Preview>
+
+# ux-checkbox-group
+
+## Description
+
+<Description of="ux-checkbox-group" />
+
+## Propriétés
+
+<Props of="ux-checkbox-group" />
+
+## Stories
+
+### Group
+
+<Preview>
+  <Story name="group" height="160px">
+    {`
+    <ux-checkbox-group space-v="sm">
+      <ux-text slot="group-label">Groupe de checkbox</ux-text>
+      <div>
+        <ux-checkbox id="foo"></ux-checkbox>
+        <ux-label for="foo">Unchecked</ux-label>
+      </div>
+      <div>
+        <ux-checkbox id="bar" checked></ux-checkbox>
+        <ux-label for="bar">Checked</ux-label>
+      </div>
+      <div>
+        <ux-checkbox id="baz" disabled></ux-checkbox>
+        <ux-label for="baz">Disabled</ux-label>
+      </div>
+    </ux-checkbox-group>
+    `}
+  </Story>
+</Preview>
+
+### Group inline
+
+<Preview>
+  <Story name="group inline" height="160px">
+    {`
+    <ux-checkbox-group space-v="sm" inline>
+      <ux-text slot="group-label">Groupe de checkbox</ux-text>
+      <div>
+        <ux-checkbox id="foo"></ux-checkbox>
+        <ux-label for="foo">Unchecked</ux-label>
+      </div>
+      <div>
+        <ux-checkbox id="bar" checked></ux-checkbox>
+        <ux-label for="bar">Checked</ux-label>
+      </div>
+      <div>
+        <ux-checkbox id="baz" disabled></ux-checkbox>
+        <ux-label for="baz">Disabled</ux-label>
+      </div>
+    </ux-checkbox-group>
+    `}
+  </Story>
+</Preview>

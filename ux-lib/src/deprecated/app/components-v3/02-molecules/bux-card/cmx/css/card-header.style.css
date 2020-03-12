@@ -1,0 +1,17 @@
+.c-card-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column wrap;
+  padding: var(--spacing-sm);
+  position: relative;
+  border-top-left-radius: var(--border-radius-sm);
+  border-top-right-radius: var(--border-radius-sm);
+  overflow: hidden;
+}
+
+@media (min-width: 49rem) {
+  .c-card-header {
+    padding: var(--spacing-sm);
+  }
+}

@@ -1,0 +1,93 @@
+/* ==========================================================================
+   COMPONENTS / #PROGRESS-BAR
+   ========================================================================== */
+
+$btn-color-primary: color(brand);
+$btn-color-primary-mobile: color(brand-mobile);
+$spacing-unit: $global-spacing-unit;
+$spacing-unit-small: $global-spacing-unit-small;
+
+/* Base
+  ============================================ */
+.c-progress {
+  display: flex;
+  height: 20px;
+  width: 100%;
+  background-color: color(grey-20);
+  color: color(grey-50);
+  color: white;
+  text-align: center;
+  font-weight: 600;
+  border-radius: 5px;
+  margin-bottom: $global-spacing-unit-small;
+
+  @include mq($from: medium) {
+    margin-bottom: $global-spacing-unit;
+  }
+}
+
+.c-progress__bar {
+  display: inline-block;
+  height: 20px;
+  transition-property: width;
+  transition-duration: 0.5s;
+  transition-timing-function: ease-in-out;
+  border-radius: 5px;
+}
+
+/* Modifiers
+  ============================================== */
+
+.c-progress__bar--primary {
+  background-color: $btn-color-primary-mobile;
+  @include mq($from: medium) {
+    background-color: $btn-color-primary;
+  }
+}
+
+.c-progress__bar--secondary {
+  background-color: color(highlight);
+}
+
+.c-progress--no-margin {
+  margin-bottom: 0;
+}
+
+.c-progress--no-mobile {
+  @include mq($until: medium) {
+    display: none;
+  }
+}
+
+.c-progress--state__valid {
+  & .c-progress__bar--primary {
+    background-color: #093;
+  }
+
+  & .bux-colored {
+    color: #093;
+  }
+}
+
+.c-progress--state__error {
+  & .c-progress__bar--primary {
+    background-color: $btn-color-primary;
+  }
+  & .bux-colored {
+    color: $btn-color-primary;
+  }
+}
+
+.c-progress--state__warning {
+  & .c-progress__bar--primary {
+    background-color: #c60;
+  }
+  & .bux-colored {
+    color: #c60;
+  }
+}
+
+.c-progress--size-xs,
+.c-progress--size-xs .c-progress__bar {
+  height: 5px;
+}

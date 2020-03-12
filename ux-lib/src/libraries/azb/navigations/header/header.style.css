@@ -1,0 +1,11 @@
+:host {
+  font-family: Maven Pro, sans-serif;
+}
+
+.c-header__nav-right {
+  margin-left: auto;
+  display: flex;
+  flex-flow: row nowrap;
+  border-left: 1px solid #efefef;
+  border-right: 1px solid #efefef;
+}

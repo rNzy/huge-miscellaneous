@@ -1,0 +1,46 @@
+:host {
+  display: inline-block;
+}
+
+.c-svg {
+  color: var(--color-svg);
+  font-size: var(--size-svg);
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.15em;
+  fill: currentColor;
+  overflow: hidden;
+}
+
+.c-svg-size--sm {
+  --size-svg: var(--icon-size-sm);
+}
+
+.c-svg-size--md {
+  --size-svg: var(--icon-size-md);
+}
+
+.c-svg-size--lg {
+  --size-svg: var(--icon-size-lg);
+}
+
+.c-svg-size--xl {
+  --size-svg: var(--icon-size-xl);
+}
+
+.c-svg-size--auth {
+  --size-svg: 5.5rem;
+}
+
+.c-svg--center {
+  display: block;
+  margin: 0 auto;
+}
+
+/* .c-svg--circle {
+  border: 1px solid;
+  border-color: inherit;
+  border-radius: var(--border-radius-circle);
+  width: calc(5 * var(--size-svg));
+  height: calc(5 * var(--size-svg));
+} */

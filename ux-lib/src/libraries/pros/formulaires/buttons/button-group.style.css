@@ -1,0 +1,34 @@
+.c-btn-group {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  width: 100%;
+}
+
+@media (max-width: 74rem) {
+  ::slotted(*) {
+    margin-bottom: var(--spacing-sm);
+  }
+  ::slotted(*:last-of-type) {
+    margin-bottom: 0;
+  }
+}
+@media (min-width: 74rem) {
+  .c-btn-group {
+    flex-flow: row nowrap;
+    justify-content: center;
+  }
+
+  .c-btn-group--vertical {
+    flex-flow: column nowrap;
+  }
+}
+
+@media (min-width: 74rem) {
+  ::slotted(*) {
+    margin-right: var(--spacing-md);
+  }
+  ::slotted(*:last-of-type) {
+    margin-right: 0;
+  }
+}

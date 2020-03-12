@@ -1,0 +1,124 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+
+<Meta title="General|Web Components/Properties" />
+
+# Properties and attributes
+
+## Declaration
+
+On peut définir les propriétés d'un composant en utilisant la méthode static
+`properties` hérité de notre class de base. Celle ci retourne un objet sous la
+forme suivante:
+
+```js
+static get properties() {
+  return {
+    foo: {
+      type: 'string' // On spécifie ici le type parmis boolean, text, string, number
+    },
+    bar: {
+      type: 'boolean',
+      defaultValue: true // On peut aussi spécifié la valeur par défaut
+    }
+    fooBar : {
+      type: 'number',
+    },
+    customName : {
+      type: 'number',
+      attributeName: 'mon-attribut' // Facultatif (éviter de l'utiliser)
+    }
+  }
+}
+```
+
+Cette méthode permet de déclarer nos propriétés et de les synchroniser aux attributs.
+
+Il y a une conversion de nom automatique entre le camelCase pour la propriété et le snakeCase pour les attributs.
+
+Exemple en js on accède :
+
+```js
+// On peut accéder à la propriété par
+this.fooBar = 'salut';
+```
+
+Dans l'html cela sera :
+
+```html
+<my-wc foo-bar="salut"></my-wc>
+```
+
+On peut aussi spécifier le nom d'attribut (déprécié) que l'on veut pour une propriété donné.
+Comme dans l'exemple précédent pour customName. En js on aura
+
+```js
+// On peut accéder à la propriété par
+this.customName = 'salut';
+```
+
+Dans l'html cela sera :
+
+```html
+<my-wc mon-attribut="salut"></my-wc>
+```
+
+**Il est préférable d'utiliser le comportement par défaut**
+
+## observedAttributes
+
+Les propriétés déclarées sont ajouté a un array retourné par la méthode `static get observedAttributes()`
+
+```js
+static get observedAttributes() {
+  return ['foo', 'bar']
+}
+```
+
+## Synchronisation properties / attributes
+
+[Custom elements best practices](https://developers.google.com/web/fundamentals/web-components/best-practices)
+
+Lorsqu'on déclare un `type: 'string'` le pattern qui est appliqué est le suivant:
+
+```js
+set foo(value) {
+  this.setAttribute('foo', value)
+}
+
+get foo() {
+  return this.getAttribute('foo')
+}
+```
+
+et lorsqu'on déclare un `type: 'boolean'`
+
+```js
+set bar(value) {
+  if (
+    value === 'false' ||
+    value === false ||
+    value === null ||
+    value === undefined ||
+    value === 0 ||
+    value === '0'
+  ) {
+    self.setAttribute(name, false);
+  } else if (
+    value === 'true' ||
+    value === true ||
+    value === '1' ||
+    value === 1 ||
+    value === ''
+  ) {
+    self.setAttribute(name, true);
+  } else {
+    console.error('Error when you set value');
+  }
+}
+
+get bar() {
+  return (
+    this.hasAttribute('bar') && this.getAttribute('bar') !== 'false'
+  );
+}
+```

@@ -1,0 +1,193 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+
+<Meta title="General|Efs/Travailler" />
+
+# Travailler avec les efs
+
+Maintenant le dossier `src/libraries` contient tout ce que l'on veut
+pour un efs donc on n'utilise plus de if ni dans le js ni dans le css.
+
+# DEPRECIE Travailler avec les efs
+
+**Dans tout ce qui suit remplacer EFS par l'efs voulu**
+
+## CSS général
+
+On peut intervenir dans différents endroit :
+
+src/assets/scss/main_EFS.scss dans ce fichier on peut importer ce que l'on veut en plus.
+
+On peut voir dans le fichier src/assets/scss/settings/\_settings.colors.scss que l'on a un @if pour changer
+les couleurs par efs.
+
+## Dans le composant même
+
+On va prendre par exemple le composant src/app/components/atoms/bux-amount
+
+### Dans le js du composant
+
+Par exemple : src/app/components/atoms/bux-amount/amount.component.js
+on peut faire un if :
+
+```js
+if (window.uxEfs === 'EFS') {
+  // Do something
+} else if (window.uxEfs === 'EFS2') {
+  // Do something
+}
+```
+
+Si les deux composants divergeant trop du point de vue du js alors il faut faire
+comme dans la section nommé : "Importer des composants pour un efs mais pas pour un autre" ce qui permet
+d'avoir un css, js et test complètement différents.
+
+### Dans le css du composant
+
+Par exemple : src/app/components/atoms/bux-amount/amount.styles.scss
+
+on peut faire un if :
+
+```scss
+.c-btn {
+  @if ($uxEfs == EFS) {
+    // Do something
+    background-color: blue;
+  } @else if ($uxEfs == EFS2) {
+    // Do something
+    background-color: red;
+  }
+}
+```
+
+Si les css des deux versions divergent trop :
+on créer deux fichiers :
+
+- amount.EFS2.styles.scss
+- amount.EFS.styles.scss
+
+Dans le fichiers amount.styles.scss on écrit :
+
+```scss
+@import 'amount.EFS.styles';
+@import 'amount.EFS2.styles';
+```
+
+Et par exemple pour le fichier amount.EFS.styles on doit avoir toute
+les instructions wrapper par un if (exemple):
+
+```scss
+@if ($uxEfs == EFS2) {
+  /* ==========================================================================
+   COMPONENTS / #CARD
+   ========================================================================== */
+  .myclass {
+    color: black;
+  }
+}
+```
+
+de même pour amount.EFS2.styles
+
+## Importer des composants pour un efs mais pas pour un autre
+
+Cette méthode permet d'avoir un css, js, assets et test complètement différents pour des efs différents
+mais avec le même nom.
+
+Prenons l'exemple du composant bux-btn. Si pour une raison quelconque le composant diverge beaucoup
+entre plusieurs efs : cette méthode est la bonne.
+Le code gagnera en lisibilité si l'on supprime un tas de if et que l'on duplique son contenu.
+
+Donc prenons l'exemple de bux-btn, le repertoire qui le contient avait :
+
+```bash
+src/app/components/atoms/bux-btn
+  btn.component.js
+  btn.documentation.md
+  btn.spec.html
+  btn.stories.js
+  btn.styles.scss
+```
+
+On créé deux sous répertoire et on recopie les fichiers dans les deux.
+On doit avoir quelqueche de la forme :
+
+```bash
+src/app/components/atoms/bux-btn
+  EFS
+    btn.component.js
+    btn.documentation.md
+    btn.spec.html
+    btn.stories.js
+    btn.styles.scss
+  EFS2
+    btn.component.js
+    btn.documentation.md
+    btn.spec.html
+    btn.stories.js
+    btn.styles.scss
+```
+
+Il faut maintenant modifier les index.EFS.html utilisant ce composant :
+
+- src/index_EFS2.js
+- src/index_EFS.js
+
+Prenons l'index_EFS.js
+
+Avant on avait :
+
+```js
+...
+// Atoms
+...
+import './app/components/atoms/bux-btn/btn.component';
+...
+```
+
+Après :
+
+```js
+// Atoms
+...
+import './app/components/atoms/bux-btn/EFS/btn.component';
+...
+```
+
+Prenons l'index_EFS2.js
+
+Avant on avait :
+
+```js
+...
+// Atoms
+...
+import './app/components/atoms/bux-btn/btn.component';
+...
+```
+
+Après :
+
+```js
+// Atoms
+...
+import './app/components/atoms/bux-btn/EFS2/btn.component';
+...
+```
+
+Il faut modifier le fichier test aussi :
+
+- test/EFS2/index.html
+- test/EFS/index.html
+
+```js
+...
+ WCT.loadSuites([
+        // Atoms
+        ...
+        '../../src/app/components/atoms/bux-btn/EFS/btn.spec.html',
+        ...
+ ])
+...
+```
+
+Et voilà.

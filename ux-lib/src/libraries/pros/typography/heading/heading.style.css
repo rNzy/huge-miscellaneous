@@ -1,0 +1,15 @@
+.c-heading {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 2px solid var(--color-text);
+}
+
+.c-heading__title {
+  position: relative;
+  display: flex;
+  align-items: center;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: var(--text-font-size-lg);
+  line-height: 0;
+}

@@ -1,0 +1,22 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+}
+
+::slotted(a) {
+  color: var(--color-primary) !important;
+  text-decoration: underline !important;
+}
+
+.c-text {
+  position: relative;
+}
+
+.c-text--background {
+  border-radius: var(--border-radius-md);
+  padding: var(--spacing-sm);
+}

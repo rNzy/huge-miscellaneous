@@ -1,0 +1,91 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+
+<Meta title="General|Web Components/Documentation" />
+
+# JSDoc
+
+Le couple JSDOC et [web-component-analyzer](https://www.npmjs.com/package/web-component-analyzer) permettent de générer de la doc quasi automatiquement.
+
+Il faut écrire en commentaire au dessus de la classe quelques éléments.
+
+```
+/**
+ * Here is a description of my web component.
+ *
+ * @element my-element
+ *
+ * @fires change - This jsdoc tag makes it possible to document events.
+ * @fires submit
+ *
+ * @attr {Boolean} disabled - This jsdoc tag documents an attribute.
+ * @attr {on|off} switch - Here is an attribute with either the "on" or "off" value.
+ * @attr [my-attr=default value]
+ *
+ * @prop {String} myProp - You can use this jsdoc tag to document properties.
+ * @prop {"value1"|"value2"|"value3"} possibleValues - You can define different values to property.
+ * @prop {Boolean} [defaultProp=false] - To set a default value to a property.
+ *
+ * @slot - This is an unnamed slot (the default slot)
+ * @slot start - This is a slot named "start".
+ * @slot end
+ *
+ * @cssprop --main-bg-color - This jsdoc tag can be used to document css custom properties.
+ * @cssprop [--main-color=red]
+
+ * @csspart container
+ */
+
+```
+
+Puis dans un shell on se met dans le répertoire du nouveau composant dans le dossier libraries et on execute :
+
+```bash
+npx web-component-analyzer . --format json --outFile custom-elements.json
+```
+
+Le raccourci npm est :
+
+```bash
+npm run analyze:EFS
+```
+
+Ceci va générer un fichier json qui sera ensuite importé dans storybook.
+
+# MDX
+
+Chaque composant doit comporter un fichier .mdx structuré de la façon suivante :
+
+```bash
+import {
+  Meta,
+  Description,
+  Props,
+  Story,
+  Preview
+} from '@storybook/addon-docs/blocks';
+import './foo.component.js';
+
+# ux-foo
+
+<Meta title="Components|Folder/Foo" />
+
+## Description
+
+<Description of="ux-foo" />
+
+## Propriétés
+
+<Props of="ux-foo" />
+
+## Stories
+
+### Story name
+
+<Preview>
+  <Story name="story name" height="60px">
+    {`
+    <ux-foo></ux-foo>
+    `}
+  </Story>
+</Preview>
+```

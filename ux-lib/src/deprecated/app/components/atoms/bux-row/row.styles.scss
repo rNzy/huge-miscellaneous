@@ -1,0 +1,190 @@
+/* ==========================================================================
+   COMPONENTS / #ROW
+   ========================================================================== */
+
+// Settings
+$color-black: #424242;
+
+// Settings
+$radio-btn-height: $global-spacing-unit-large;
+$radio-btn-border-color: color(grey-50);
+
+/* Base
+  ============================================ */
+
+.c-row {
+  display: grid;
+  grid-template:
+    'a c'
+    'b c' /
+    auto;
+  position: relative;
+  min-height: 40px;
+  padding: $global-spacing-unit-tiny $global-spacing-unit-small;
+  background-color: color(white);
+  border-bottom: 1px solid color(grey-10);
+
+  @include mq($from: medium) {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    min-height: 50px;
+    padding-left: $global-spacing-unit;
+  }
+}
+
+.c-row--noborderbottom {
+  border-bottom: none;
+}
+
+.c-row__cell {
+  align-self: center;
+
+  @include mq($from: medium) {
+    padding: 0 $global-spacing-unit-small;
+  }
+}
+
+.c-row__cell:nth-of-type(1) {
+  grid-area: a;
+  padding-left: 0;
+}
+
+.c-row__cell:nth-of-type(2) {
+  grid-area: b;
+}
+
+.c-row__cell:last-of-type {
+  grid-area: c;
+}
+
+.c-row__anchor {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.c-row__icon-link {
+  position: absolute;
+  top: 50%;
+  right: $global-spacing-unit-small;
+  transform: translateY(-50%);
+}
+
+.c-row__sublabel {
+  max-width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.c-row__cell--input-wrap {
+  position: absolute;
+  left: 0;
+  padding: 0 !important; // reset
+  @include mq($from: medium) {
+    left: $global-spacing-unit-tiny;
+  }
+}
+.c-row__cell--input {
+  border: 0 !important;
+  clip: rect(0 0 0 0) !important;
+  clip-path: inset(50%) !important;
+  height: 1px !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  padding: 0 !important;
+  position: absolute !important;
+  white-space: nowrap !important;
+  width: 1px !important;
+}
+
+.c-row__cell--label {
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin-bottom: $global-spacing-unit-tiny;
+  // border: 1px solid $radio-btn-border-color;
+  // border-radius: 3px;
+  padding-left: $global-spacing-unit-large;
+  height: $radio-btn-height;
+  cursor: pointer;
+
+  &::before {
+    content: '';
+    position: absolute;
+    width: $global-spacing-unit;
+    height: $global-spacing-unit;
+    left: $global-spacing-unit-small;
+    top: 50%;
+    border-radius: 50%;
+    border: 1px solid $radio-btn-border-color;
+    transform: translateY(-50%);
+  }
+}
+
+.c-row__cell--input:focus + .c-row__cell--label {
+  outline: none;
+  border: dotted 1px rgb(97, 97, 97);
+}
+
+.c-row__cell--input:checked + .c-row__cell--label {
+  // background-color: color(brand-mobile);
+  color: color(white);
+  // border: 1px solid color(brand-mobile);
+
+  // @include mq($from: medium) {
+  //   background-color: color(brand);
+  //   border: 1px solid color(brand);
+  // }
+
+  // &::before {
+  //   border: none;
+  //   background-color: color(white);
+  // }
+
+  &::after {
+    content: '';
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background-color: $radio-btn-border-color;
+    border: 1px solid $radio-btn-border-color; // debug
+    left: 14px;
+    top: 50%;
+    border-radius: 50%;
+    transform: translateY(-50%);
+  }
+}
+
+/* State
+    ============================================ */
+
+/* Modifiers
+    ============================================ */
+
+.c-row--link {
+  padding-right: $global-spacing-unit-large;
+  cursor: pointer;
+}
+
+.c-row--radio {
+  padding-left: $global-spacing-unit-large;
+  cursor: pointer;
+}
+
+.c-row__cell--date {
+  font-weight: bold;
+  color: $color-black;
+}
+
+.c-row__cell--content {
+  flex-grow: 1;
+}
+
+.c-row__cell--amount {
+  padding-right: 0;
+  text-align: right;
+}

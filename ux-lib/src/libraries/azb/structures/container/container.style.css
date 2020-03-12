@@ -1,0 +1,15 @@
+:host {
+  --container-padding: var(--spacing-lg) var(--spacing-md);
+  --container-shadow: var(--box-shadow-primary);
+  --container-radius: var(--border-radius-md);
+  --container-border: 1px solid #dadce4;
+}
+
+.c-container {
+  background: white;
+  padding: var(--container-padding);
+  box-shadow: var(--container-shadow);
+  border: var(--container-border);
+  border-radius: var(--container-radius);
+  display: block;
+}

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <script src="/node_modules/web-component-tester/browser.js"></script>
+    <title>Test bux-message</title>
+  </head>
+  <body>
+    <test-fixture id="componentFixture">
+      <template>
+        <bux-nav-bar id="nav" type="primary"></bux-nav-bar>
+      </template>
+    </test-fixture>
+    <script>
+      suite('<bux-nav-bar>', () => {
+        let component;
+        let items;
+
+        setup(() => {
+          component = fixture('componentFixture');
+          component.data = [
+            {
+              path: '#',
+              label: 'Ma situation',
+              sublabel: 'Actualité, e-documents',
+              icon: 'conseiller',
+              badge1: '5',
+              badge2: 'new',
+              a11yLabel: 'Coucou'
+            },
+            {
+              label: 'Comptes & épargne',
+              sublabel: 'Gestion des comptes, moyens de paiements',
+              icon: 'carte-billets',
+              isActive: 'true',
+              identifier: 'myid',
+              submenu: [
+                {
+                  path: '#',
+                  label: 'Mes comptes au quotidien',
+                  sublabel: 'Gérer mes comptes et mon budget'
+                },
+                {
+                  path: '#',
+                  label: 'Toute mon épargne'
+                },
+                {
+                  path: '#',
+                  label: 'Virement',
+                  isActive: 'true'
+                },
+                {
+                  path: '#',
+                  label: 'Cartes et chéquiers'
+                }
+              ]
+            }
+          ];
+
+          items = component.querySelectorAll('#nav > nav > ul > li');
+        });
+
+        a11ySuite('componentFixture');
+
+        test('Have 2 menu item ?', () => {
+          assert.isTrue(items.length === 2);
+        });
+
+        test('The 2 menu have 4 submenu items?', () => {
+          assert.isTrue(items[1].querySelectorAll('nav > ul > li').length === 4);
+        });
+
+      });
+    </script>
+  </body>
+</html>

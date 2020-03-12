@@ -1,0 +1,25 @@
+:host {
+  --color: var(--color-text);
+
+  cursor: pointer;
+}
+
+.cb1,
+.cb2,
+.cb3 {
+  transition: all 0.3s;
+  fill: var(--color);
+}
+
+.c-burger--open .cb1 {
+  transform: rotate(45deg) translate(5px, -10px);
+}
+
+.c-burger--open .cb2 {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.c-burger--open .cb3 {
+  transform: rotate(-45deg) translate(-14px, -2px);
+}

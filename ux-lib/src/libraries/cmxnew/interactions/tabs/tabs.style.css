@@ -1,0 +1,37 @@
+:host {
+  display: flex;
+  flex-wrap: wrap;
+
+  --tab-bottom-border-height: 0.1rem;
+  --tab-bottom-border-height-selected: 0.3rem;
+  --tab-bottom-border-color: #cdcbcb;
+  --tab-bottom-border-color-selected: var(--color-primary);
+
+  --tab-padding: 1.25rem;
+  --tab-margin-rigth: 0;
+  --tab-margin-margin-bottom: 2rem;
+
+  --tab-text-color: white;
+  --tab-text-color-selected: var(--color-primary);
+  --tab-text-size: 1.6rem;
+}
+
+.c-tabs {
+  width: 100%;
+}
+
+.c-tabs__list {
+  position: relative;
+  display: flex;
+  margin-bottom: var(--tab-margin-margin-bottom);
+}
+
+.c-tabs-elastic {
+  display: block;
+  position: absolute;
+  bottom: 0;
+  height: var(--tab-bottom-border-height-selected);
+  background-color: var(--tab-bottom-border-color-selected);
+  transition-duration: 0.5s;
+  transition-timing-function: cubic-bezier(1, -0.47, 0.28, 1.13);
+}

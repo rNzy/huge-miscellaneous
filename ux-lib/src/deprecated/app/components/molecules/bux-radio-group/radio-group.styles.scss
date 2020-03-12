@@ -1,0 +1,67 @@
+/* ==========================================================================
+   COMPONENTS / #RADIO-GROUP
+   ========================================================================== */
+
+// Settings
+$radio-group-margin-bottom: $global-spacing-unit;
+$radio-group-max-width: 480px;
+$radio-group-border-color: color(grey-50);
+
+/* Base
+  ============================================ */
+
+.c-radio-group {
+  margin-bottom: $radio-group-margin-bottom;
+}
+
+.c-radio-group--no-margin-bottom {
+  margin-bottom: 0;
+}
+
+/* Styles spécifiques au type row
+  ============================================ */
+
+.c-radio-group--row {
+  display: flex;
+  flex-flow: row nowrap;
+  max-width: $radio-group-max-width;
+  margin: 0 auto 20px auto;
+}
+
+.c-radio-group--row--no-margin-bottom {
+  margin-bottom: 0;
+}
+
+.c-radio-group__item {
+  flex-grow: 1;
+  flex-basis: 0;
+}
+
+.c-radio-group__item > .c-radio__label {
+  display: flex;
+  justify-content: center;
+  border-radius: 0;
+  padding-left: 0;
+  border-left: none;
+
+  &::before,
+  &::after {
+    display: none;
+  }
+}
+
+.c-radio-group__item:first-of-type > .c-radio__label {
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+  border-left: 1px solid $radio-group-border-color;
+}
+
+.c-radio-group__item:last-of-type > .c-radio__label {
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+
+.c-radio-group__item > .c-radio__input:checked + .c-radio__label {
+  font-weight: bold;
+  border: 1px solid $radio-group-border-color;
+}

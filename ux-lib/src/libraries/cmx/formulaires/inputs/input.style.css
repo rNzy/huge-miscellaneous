@@ -1,0 +1,31 @@
+.c-input {
+  box-sizing: border-box;
+  height: 3.5rem;
+  padding: 5px 5px 5px 5px;
+  border-radius: 3px;
+  border: 1px solid var(--color-text);
+  width: 100%;
+}
+
+.c-input-date {
+  width: 100%;
+}
+
+.c-input-email,
+.c-input-amount,
+.c-input-tel,
+.c-input-password {
+  width: calc(100% - 40px);
+}
+
+.c-input.valid {
+  border-color: var(--color-success);
+}
+
+.c-input.error {
+  border-color: var(--color-error);
+}
+
+.c-input-error {
+  color: var(--color-error);
+}

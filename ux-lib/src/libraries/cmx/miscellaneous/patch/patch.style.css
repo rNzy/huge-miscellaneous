@@ -1,0 +1,53 @@
+:host {
+  --patch-diameter: 12rem;
+  --base-white: #fff;
+}
+
+.c-patch {
+  height: var(--patch-diameter);
+  width: var(--patch-diameter);
+  padding: var(--spacing-md);
+  border-radius: var(--border-radius-circle);
+  display: flex;
+  flex-flow: column;
+  justify-content: space-evenly;
+}
+
+.c-patch--top,
+.c-patch--bottom {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.c-patch--top {
+  margin-bottom: var(--spacing-sm);
+}
+
+.c-patch--shadow {
+  box-shadow: var(--box-shadow-primary);
+}
+
+.c-patch--primary {
+  background-color: var(--color-primary);
+}
+
+.c-patch--secondary {
+  background-color: var(--color-theme-light);
+  color: var(--base-white);
+}
+
+.c-patch--secondary-light {
+  background-color: var(--color-secondary-light);
+}
+
+.c-patch--tertiary {
+  background-color: var(--base-white);
+}
+
+@media (max-width: 49em) {
+  .c-patch,
+  .c-patch--top {
+    margin-bottom: var(--spacing-md);
+  }
+}

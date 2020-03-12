@@ -1,0 +1,96 @@
+@if (
+  $uxEfs==cmb or
+    $uxEfs==cmso or
+    $uxEfs==cmmc or
+    $uxEfs==cmbpro or
+    $uxEfs==cmsopro or
+    $uxEfs==cmmcpro
+) {
+  /* ==========================================================================
+   COMPONENTS / #TAB
+   ========================================================================== */
+
+  // Settings
+  $error-color: color(error);
+  $valid-color: color(success);
+  $empty-color: color(text);
+  $text-color: color(text);
+
+  $spacing-unit: $global-spacing-unit;
+  $spacing-unit-small: $global-spacing-unit-small;
+
+  .bux-select-wrap {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 100%;
+    margin-bottom: $spacing-unit-small;
+    font-size: 13px;
+  }
+
+  .c-select-wrap-nomargin {
+    margin-bottom: 0 !important;
+  }
+
+  .bux-select-align {
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  .bux-select-select {
+    display: inline-block;
+    height: 35px;
+    width: 100%;
+    padding: 5px 30px 5px 5px;
+    box-sizing: border-box; // fix
+    line-height: 1.5;
+    color: $text-color;
+    vertical-align: middle;
+    background: #fff
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='50' height='50' viewBox='0 0 1024 1024'%3E%3Cpath fill='%23616161' d='M297.984 425.984h427.989l-214.016 214.016z'/%3E%3C/svg%3E")
+      no-repeat
+      right
+      2px
+      center;
+    background-size: auto auto;
+    background-size: 30px 30px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: 3px;
+  }
+
+  .bux-select-empty .bux-select-select {
+    border: 1px solid $empty-color;
+  }
+
+  .bux-select-valid .bux-select-select {
+    border: solid 1px $valid-color;
+  }
+
+  .bux-select-error .bux-select-select {
+    border: solid 1px $error-color;
+  }
+
+  .bux-select-label {
+    margin-right: 10px;
+  }
+
+  .bux-select-label-right {
+    margin-left: 0;
+  }
+
+  .bux-select-align .bux-select-label-right {
+    margin-left: 10px;
+  }
+
+  @include mq($from: medium) {
+    .bux-select-wrap {
+      margin-bottom: $global-spacing-unit;
+      font-size: 14px;
+    }
+  }
+}

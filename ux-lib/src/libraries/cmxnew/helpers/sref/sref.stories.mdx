@@ -1,0 +1,29 @@
+import { Meta, Props, Story, Preview } from '@storybook/addon-docs/blocks';
+import * as stories from './sref.stories';
+import './sref.component';
+
+# Sref
+
+<Meta title="Components|Helpers/Sref" />
+
+## Présentation
+
+Ce composant sert à utiliser les balises ui-sref dans angularjs.
+Il est en hidden et en display none.
+Quand son attribut href change il emet un evenement uxhref
+et il regarde si son élément parent a l'attribut sref si
+initialise l'attibut link du parent avec la valeur de href.
+
+<Preview withSource="none" withToolbar>
+  <Story name="Sref" height="260px">
+    {stories.sref()}
+  </Story>
+</Preview>
+
+```html
+<ux-link sref>
+  <ux-sref
+    ui-sref="detail.creernumero({cardNumber:vm.carte.cardNumber})"
+  ></ux-sref>
+</ux-link>
+```

@@ -1,0 +1,60 @@
+:host {
+  --message-border-width: 1px;
+  --message-border-color: #e6e6e6;
+  --message-border-radius: 2rem;
+  --message-padding: 1rem;
+
+  --message-font-size: 1.3rem;
+}
+
+.c-message {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: 30px;
+  background-color: #fff;
+  padding: var(--message-padding);
+  border-width: var(--message-border-width);
+  border-color: var(--message-border-color);
+  border-style: solid;
+  border-radius: var(--message-border-radius);
+  font-size: var(--message-font-size);
+}
+
+.c-message ux-svg {
+  position: absolute;
+  display: block;
+  top: 50%;
+  left: 0;
+
+  /* margin-top: var(--message-padding); */
+  transform: translateY(-50%);
+  margin-left: var(--message-padding);
+}
+
+.c-message-content {
+  margin-left: calc(var(--message-padding) + 20px);
+}
+
+/* tablet + desktop */
+@media (min-width: 740px) {
+  .c-message {
+    padding: var(--spacing-sm) var(--spacing-md);
+  }
+}
+
+/* 
+.c-message--warning {
+  border-color: #36383d;
+}
+
+.c-message--error {
+  --message-border-color: var(--color-error);
+
+  color: var(--color-error);
+} */
+
+/* .c-message--info {
+  background-color: #dadce4;
+  --message-border-color: #dadce4;
+} */

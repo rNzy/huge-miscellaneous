@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Components-lib</title>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/2.0.3/fetch.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/webcomponentsjs/2.2.7/webcomponents-bundle.js"></script> -->
+    <script src="https://unpkg.com/@webcomponents/webcomponentsjs@^2/webcomponents-bundle.js"></script>
+  </head>
+
+  <body class="o-container">
+    <!-- Widget Tutoriel-->
+
+    <ux-amount value="2245465"></ux-amount>
+
+    <fieldset>
+      <legend>Beverages:</legend>
+      <ux-radio-group id="radios" space-v="sm">
+        <ux-radio-button>Water</ux-radio-button>
+        <ux-radio-button>Soda</ux-radio-button>
+        <ux-radio-button>Coffee</ux-radio-button>
+      </ux-radio-group>
+    </fieldset>
+
+    <ux-btn type="primary" target-id="wawa">Trigger modal</ux-btn>
+
+    <ux-modal id="wawa" open>
+      <ux-text slot="modal-title" center>wawa modal title</ux-text>
+      <ux-btn-group vertical>
+        <ux-btn type="secondary">secondary</ux-btn>
+        <ux-btn type="primary">primary</ux-btn>
+      </ux-btn-group>
+      <ux-btn type="secondary">secondary</ux-btn>
+    </ux-modal>
+
+    <ux-btn type="primary" target-id="ohshit">Trigger modal</ux-btn>
+    <ux-modal id="ohshit">
+      <ux-text slot="modal-title" center>wawa modal title</ux-text>
+      <ux-btn-group vertical>
+        <ux-btn type="secondary">secondary</ux-btn>
+        <ux-btn type="primary">primary</ux-btn>
+      </ux-btn-group>
+    </ux-modal>
+
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui perspiciatis
+      iusto, accusantium esse molestias ipsum autem atque et quod dolorem quidem
+      assumenda distinctio aliquam deserunt officiis perferendis asperiores eius
+      pariatur? Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel
+      laboriosam quisquam nostrum, recusandae at sunt eum dignissimos quasi
+      cupiditate voluptate! Suscipit, tempore eveniet illo hic voluptatibus
+      assumenda adipisci. Aliquid, quas!
+    </p>
+  </body>
+</html>

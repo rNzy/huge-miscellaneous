@@ -1,0 +1,37 @@
+:host {
+  width: var(--t-header-outer-width);
+  height: var(--t-header-height);
+  background-color: var(--t-header-background);
+}
+
+.c-header {
+  display: flex;
+  flex-flow: row nowrap;
+  height: var(--t-header-height);
+  width: var(--t-header-inner-width-m);
+}
+
+.c-header__nav {
+  position: relative;
+  height: var(--t-header-height);
+  display: flex;
+  align-items: center;
+  justify-content: var(--t-header-flex-justify-m);
+  padding-left: var(--t-header-padding-left, 0);
+  width: 100%;
+}
+
+@media (min-width: 59rem) {
+  .c-header {
+    width: var(--t-header-inner-width-d);
+    margin: 0 auto;
+  }
+
+  .c-header__nav {
+    justify-content: var(--t-header-flex-justify-d);
+  }
+}
+
+::slotted(*) {
+  color: var(--t-header-color);
+}

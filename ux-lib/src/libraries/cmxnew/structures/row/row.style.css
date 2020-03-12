@@ -1,0 +1,14 @@
+.c-row {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  border-radius: var(--border-radius-md);
+  border: 1px solid #ccc;
+  padding: 1rem;
+  background-color: #fff;
+}
+
+.c-row ::slotted(*:last-child) {
+  flex-grow: 1;
+  align-self: center;
+}

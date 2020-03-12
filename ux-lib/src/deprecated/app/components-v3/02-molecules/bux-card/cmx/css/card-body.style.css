@@ -1,0 +1,18 @@
+.c-card-body {
+  position: relative;
+  font-size: var(--text-font-size-md, 16px);
+  padding: var(--spacing-sm);
+}
+
+@media (min-width: 49rem) {
+  .c-card-body {
+    padding: var(--spacing-sm) var(--spacing-lg);
+  }
+}
+
+@media (max-width: 49rem) {
+  ::slotted(bux2-message-info) {
+    max-width: 85%;
+    margin: 0 auto;
+  }
+}

@@ -1,0 +1,33 @@
+:host {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+  flex-basis: 0;
+  margin-right: var(--tab-margin-rigth);
+  padding: 0 1rem 1rem 1rem;
+  border-bottom: var(--tab-bottom-border-color) var(--tab-bottom-border-height)
+    solid;
+  border-radius: 0;
+  text-align: center;
+  font-size: var(--tab-text-size);
+  line-height: var(--text-line-height-sm);
+  cursor: pointer;
+}
+
+:host(:hover) {
+  color: var(--color-primary-hover);
+
+  /* var(--tab-bottom-border-color-selected) !important; */
+
+  /* font-weight: 700; */
+}
+
+:host([aria-selected='true']) {
+  color: var(--tab-text-color-selected);
+  font-weight: 700;
+
+  /* border-bottom: var(--tab-bottom-border-height-selected) solid
+    var(--tab-bottom-border-color-selected); */
+}

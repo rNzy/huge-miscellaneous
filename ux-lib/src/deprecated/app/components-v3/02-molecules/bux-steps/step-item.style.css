@@ -1,0 +1,28 @@
+.c-step-item {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.c-step-item__number {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30px;
+  width: 30px;
+  font-weight: bold;
+  font-size: 1.6rem;
+  color: #fff;
+  background-color: #bdbdbd;
+  border: 3px solid #fff;
+  border-radius: var(--border-radius-circle);
+
+  /* set the z-index for this item to be over the progress bar in bux-steps context */
+  z-index: 2;
+}
+
+.c-step-item__number.is-active {
+  background-color: var(--color-primary);
+  border: 3px solid var(--color-primary-lighter);
+}

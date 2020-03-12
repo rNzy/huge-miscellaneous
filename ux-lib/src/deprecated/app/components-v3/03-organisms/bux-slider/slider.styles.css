@@ -1,0 +1,46 @@
+:host {
+  display: block;
+  position: relative;
+}
+
+.c-slider__wrap {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  min-height: 30px;
+  overflow: hidden;
+  width: 100%;
+}
+
+.c-slider__content {
+  display: block;
+  position: relative;
+  flex-grow: 1;
+  min-height: 20px;
+}
+
+.c-slider__left,
+.c-slider__right {
+  position: absolute;
+  opacity: 0;
+  transition: all 1s;
+  height: 100%;
+  z-index: 2;
+}
+
+.c-slider__left {
+  left: -30px;
+}
+.c-slider__right {
+  right: -30px;
+}
+
+.c-slider__wrap:hover .c-slider__left {
+  opacity: 1;
+  left: 0;
+}
+.c-slider__wrap:hover .c-slider__right {
+  opacity: 1;
+  right: 0;
+}

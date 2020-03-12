@@ -1,0 +1,27 @@
+:root {
+  --color-primary: hsl(353, 65%, 43%);
+  --color-primary-dark: hsl(353, 65%, 33%);
+  --color-primary-darker: hsl(353, 65%, 23%);
+  --color-primary-light: hsl(353, 65%, 63%);
+  --color-primary-lighter: hsl(353, 65%, 83%);
+  --color-secondary: hsl(0, 0%, 38%);
+  --color-secondary-dark: hsl(0, 0%, 28%);
+  --color-secondary-darker: hsl(0, 0%, 18%);
+  --color-focus: hsl(280, 21%, 51%);
+  --color-disabled: hsl(0, 0%, 75%);
+  --color-success: #a8d81f;
+  --color-error: #b62737;
+  --color-warning: hsl(328, 91%, 41%);
+  --color-text: #616161;
+  --color-text-part: hsl(328, 91%, 41%);
+  --color-text-pro: hsl(187, 53%, 55%);
+  --color-background: #dedede;
+  --color-background-light: #f4f4f4;
+  --color-background-body: #eaeaea;
+  --color-theme-part: var(--color-primary);
+  --color-theme-pro: #009eb3;
+  --color-theme-light: hsl(0, 0%, 60%);
+  --color-theme-dark: hsl(0, 0%, 26%);
+  --color-border: #e6e6e6;
+  --color-svg2: hsl(0, 0%, 38%);
+}

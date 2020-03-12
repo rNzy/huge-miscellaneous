@@ -1,0 +1,20 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+
+<Meta title="Documentation|Accessibilité/aria-valuemin" />
+
+# aria-valuemin
+
+## Intro
+
+Defines the minimum allowed value for a range widget.
+
+Authors MUST ensure the value of aria-valuemin is less than or equal to the value of aria-valuemax. If the aria-valuenow has a known maximum and minimum, the author SHOULD provide properties for aria-valuemax and aria-valuemin.
+
+> **NOTE**
+
+> A range widget starts with a given value, which can be decreased until reaching the minimum value, defined by this property. Declaring the minimum and maximum values allows assistive technology to convey the size of the range to users.
+
+- @SPEC
+  - @MUST
+  - @HOWTO / REFERENCES
+- @EXAMPLE

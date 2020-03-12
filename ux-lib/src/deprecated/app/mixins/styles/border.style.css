@@ -1,0 +1,15 @@
+.c-border-top {
+  border-top: solid 1px var(--color-border);
+}
+
+.c-border-right {
+  border-right: solid 1px var(--color-border);
+}
+
+.c-border-bottom {
+  border-bottom: solid 1px var(--color-border);
+}
+
+.c-border-left {
+  border-left: solid 1px var(--color-border);
+}

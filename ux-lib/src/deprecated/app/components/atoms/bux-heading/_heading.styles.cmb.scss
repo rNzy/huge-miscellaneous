@@ -1,0 +1,98 @@
+@if (
+  $uxEfs==cmb or
+    $uxEfs==cmso or
+    $uxEfs==cmmc or
+    $uxEfs==cmbpro or
+    $uxEfs==cmsopro or
+    $uxEfs==cmmcpro
+) {
+  /* ==========================================================================
+   COMPONENTS / #TITLES
+   ========================================================================== */
+
+  // Settings
+
+  /* Base
+  ============================================ */
+  bux-heading {
+    overflow: hidden;
+    display: block;
+  }
+
+  // Ne pas afficher le titre en mode portable
+  // et desktop mais rester accessible pour le focus
+  @include mq($until: large) {
+    .c-heading-alpha {
+      border: 0 !important;
+      clip: rect(0 0 0 0) !important;
+      clip-path: inset(50%) !important;
+      height: 1px !important;
+      margin: -1px !important;
+      overflow: hidden !important;
+      padding: 0 !important;
+      position: absolute !important;
+      white-space: nowrap !important;
+      width: 1px !important;
+    }
+  }
+
+  // Afficher le titre en desktop
+  @include mq($from: large) {
+    .c-heading-alpha {
+      display: block;
+      color: color(text);
+      font-size: 28px;
+      margin: $global-spacing-unit 0;
+      line-height: 1;
+      text-transform: uppercase;
+    }
+
+    // Remove display focus on this element
+    bux-heading[id='main-title'] {
+      outline: none;
+    }
+  }
+
+  .c-heading-bravo {
+    padding-bottom: $global-spacing-unit-tiny;
+    margin-bottom: $global-spacing-unit-small;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-bottom: 1px solid color(highlight);
+
+    @include mq($from: medium) {
+      border-bottom: 2px solid currentColor;
+      margin-bottom: $global-spacing-unit;
+    }
+  }
+
+  .c-heading-charlie {
+    padding-bottom: $global-spacing-unit-tiny;
+    margin-bottom: $global-spacing-unit-small;
+    border-bottom: 2px solid color(grey-70);
+  }
+
+  .bux-drop-down {
+    transform: rotate(90deg);
+    transition: transform 0.1s;
+  }
+
+  .bux-heading-btn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .bux-heading-btn[aria-expanded='true'] .bux-drop-down {
+    transform: rotate(-90deg);
+  }
+
+  /* Toast/ Help Button
+    ============================================ */
+  bux-heading button {
+    float: right;
+  }
+
+  /* Modifiers
+    ============================================ */
+}

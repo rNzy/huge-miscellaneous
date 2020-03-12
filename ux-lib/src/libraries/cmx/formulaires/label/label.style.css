@@ -1,0 +1,7 @@
+.c-label {
+  font-size: var(--text-font-size-sm);
+}
+
+.c-label--clickable {
+  cursor: pointer;
+}

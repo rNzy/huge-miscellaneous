@@ -1,0 +1,23 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+
+<Meta title="General|Web Components/Creation composant" />
+
+# Création d'un nouveau composant
+
+Lorsqu'on a besoin de créer un nouveau composant, quel qu'il soit
+La base de notre nouveau composant se trouvera dans le dossier `src/core/components`
+
+Prenons l'exemple du composant `Button`, on va créer un sous-dossier et fichier, `button/button.component.js`,
+déclarer la class de base qui elle même va étendre notre mixin `baseShadowComponent.mixin.js`, puis l'exporter
+afin qu'elle soit disponible sur le reste du projet.
+
+```js
+import BaseShadowComponent from '../../../core/base/baseShadowComponent.mixin';
+
+const Base = BaseShadowComponent;
+
+export default class ButtonBase extends Base {}
+```
+
+La mixin `baseShadowComponent.mixin.js`étend elle même plusieurs mixin qui apportent leur lot de méthodes disponible
+pour chacun de nos composants.

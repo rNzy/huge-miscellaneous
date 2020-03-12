@@ -1,0 +1,19 @@
+/* ==========================================================================
+   LAYER / #card-footer.styles.scss
+   ========================================================================== */
+
+//settings
+$card-footer-padding-mobile: $global-spacing-unit-tiny;
+$card-footer-padding-desktop: $global-spacing-unit-small;
+
+.c-card__footer {
+  padding: $card-footer-padding-mobile;
+  background-color: color(grey-90);
+  font-size: 11px;
+  text-align: center;
+
+  @include mq($from: medium) {
+    font-size: 12px;
+    padding: $card-footer-padding-desktop;
+  }
+}

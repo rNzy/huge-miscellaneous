@@ -1,0 +1,197 @@
+@if (
+  $uxEfs==cmb or
+    $uxEfs==cmso or
+    $uxEfs==cmmc or
+    $uxEfs==cmbpro or
+    $uxEfs==cmsopro or
+    $uxEfs==cmmcpro
+) {
+  /* ==========================================================================
+   COMPONENTS / #TAB
+   ========================================================================== */
+
+  // Settings
+  $tab-color-selected-mobile: color(grey-70);
+  $tab-color-selected-text-mobile: color(white);
+  $tab-color-mobile: color(grey-80);
+  $tab-color-text-mobile: color(grey-70);
+
+  $tab-text-size-mobile: 12px;
+  $tab-text-lineHeight-mobile: 14px;
+
+  $tab-text-size: 14px;
+  $tab-text-lineHeight: 16px;
+
+  $tab-color-selected: color(grey-70);
+  $tab-color-selected-text: color(white);
+  $tab-color: color(grey-80);
+  $tab-color-text: color(grey-70);
+
+  $tab-min-height-mobile: 35px;
+  $tab-min-height: 41px;
+
+  /* Base
+  ============================================ */
+
+  bux-tabs {
+    position: relative;
+    width: 100%;
+  }
+
+  .c-tabs {
+    display: block;
+    position: relative;
+    margin-bottom: $global-spacing-unit;
+    width: calc(100% + 20px);
+    margin-left: -10px;
+
+    @include mq($from: large) {
+      width: 100%;
+      margin-left: 0;
+    }
+  }
+
+  .c-tabs__list {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    border-bottom: 5px solid $tab-color-selected-mobile;
+  }
+
+  .c-tabs__item {
+    flex-grow: 1;
+    flex-basis: 0;
+    font-size: $tab-text-size-mobile;
+    line-height: $tab-text-lineHeight-mobile;
+    color: $tab-color-text-mobile;
+    background: $tab-color-mobile;
+  }
+
+  .c-tabs__item + .c-tabs__item {
+    margin-left: 4px;
+  }
+
+  .c-tabs__item.is-active {
+    font-weight: bold;
+    background: $tab-color-selected-mobile;
+  }
+
+  .c-tabs__item a {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: $tab-min-height-mobile;
+    text-decoration: none;
+    text-align: center;
+    color: $tab-color-text-mobile;
+    margin: 0 2px;
+  }
+  @include mq($from: medium) {
+    .c-tabs__item a {
+      flex-direction: row;
+    }
+  }
+
+  .c-tabs__item a.is-active {
+    color: $tab-color-selected-text-mobile;
+  }
+
+  .c-tabs__cont {
+    display: block;
+    position: relative;
+    height: auto;
+  }
+
+  // icons
+  .c-tabs__item .c-svg {
+    width: 100%;
+    height: 3.5rem; /* size here ! */
+    display: block;
+    margin-top: 0.5rem;
+    @include mq($from: medium) {
+      width: 2.5rem;
+      height: 2.5rem;
+      margin-top: 0;
+    }
+  }
+  .c-tabs__item bux-svg + span {
+    padding: 0.5rem 0;
+  }
+
+  ////////////// DROPDOWN
+  .c-tabs-dropdown {
+    margin-left: inherit;
+    width: 100%;
+  }
+
+  .c-tabs__cont.c-tabs__cont-dropdown {
+    box-shadow: none;
+    margin-top: 20px;
+  }
+
+  .c-tabs__list-dropdown {
+    border: solid 1px #606060;
+    border-radius: 3px;
+    margin-bottom: 5px;
+  }
+
+  .c-tabs__list-dropdown .c-tabs__item {
+    background: transparent;
+  }
+
+  .c-tabs__list-dropdown .c-tabs__item:not(.c-tabs__item-last) {
+    border-right: solid 1px #606060;
+  }
+
+  .c-tabs__list-dropdown .c-tabs__item + .c-tabs__item {
+    margin-left: 0;
+  }
+
+  .c-tabs__list-dropdown .c-tabs__item a {
+    min-height: 32px;
+
+    @include mq($from: medium) {
+      min-height: 35px;
+    }
+  }
+
+  .c-tabs__list-dropdown .c-tabs__item.is-active {
+    background-color: color(brand-mobile);
+  }
+
+  .c-tabs-dropdown .c-tabs__data {
+    position: relative;
+  }
+
+  ////////////// FIN DROPDOWN
+
+  //// DESKTOP
+  @include mq($from: medium) {
+    .c-tabs__cont {
+      background-color: color(white);
+      box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+    }
+
+    .c-tabs--noshadow .c-tabs__cont {
+      background-color: transparent;
+      box-shadow: none;
+    }
+
+    .c-tabs__item a {
+      min-height: $tab-min-height;
+      font-size: $tab-text-size;
+      line-height: $tab-text-lineHeight;
+    }
+
+    ////////////// DROPDOWN
+    .c-tabs__list-dropdown .c-tabs__item.is-active {
+      background-color: color(brand);
+    }
+
+    ////////////// FIN DROPDOWN
+  }
+
+  //// FIN DESKTOP
+}

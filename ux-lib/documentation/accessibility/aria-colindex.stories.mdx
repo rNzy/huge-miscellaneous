@@ -1,0 +1,49 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+
+<Meta title="Documentation|Accessibilité/aria-colindex" />
+
+# aria-colindex
+
+## Intro
+
+Defines an element's column index or position with respect to the total number of columns within a table, grid, or treegrid. See related aria-colcount and aria-colspan.
+
+If all of the columns are present in the DOM, it is not necessary to set this attribute as the user agent can automatically calculate the column index of each cell or gridcell. However, if only a portion of the columns is present in the DOM at a given moment, this attribute is needed to provide an explicit indication of the column of each cell or gridcell with respect to the full table.
+
+Authors MUST set the value for aria-colindex to an integer greater than or equal to 1, greater than the aria-colindex value of any previous elements within the same row, and less than or equal to the number of columns in the full table. For a cell or gridcell which spans multiple columns, authors MUST set the value of aria-colindex to the start of the span.
+
+If the set of columns which is present in the DOM is contiguous, and if there are no cells which span more than one row or column in that set, then authors MAY place aria-colindex on each row, setting the value to the index of the first column of the set. Otherwise, authors SHOULD place aria-colindex on all of the children or owned elements of each row.
+
+- @SPEC
+  - @MUST
+  - @HOWTO / REFERENCES
+
+## Examples
+
+```html
+<div role="grid" aria-colcount="16">
+  <div role="rowgroup">
+    <div role="row">
+      <span role="columnheader" aria-colindex="2">First Name</span>
+      <span role="columnheader" aria-colindex="3">Last Name</span>
+      <span role="columnheader" aria-colindex="4">Company</span>
+      <span role="columnheader" aria-colindex="5">Address</span>
+    </div>
+  </div>
+  <div role="rowgroup">
+    <div role="row">
+      <span role="gridcell" aria-colindex="2">Fred</span>
+      <span role="gridcell" aria-colindex="3">Jackson</span>
+      <span role="gridcell" aria-colindex="4" aria-rowspan="2">Acme, Inc.</span>
+      <span role="gridcell" aria-colindex="5" aria-rowspan="2"
+        >123 Broad St.</span
+      >
+    </div>
+    <div role="row">
+      <span role="gridcell" aria-colindex="2">Sara</span>
+      <span role="gridcell" aria-colindex="3">James</span>
+    </div>
+    …
+  </div>
+</div>
+```

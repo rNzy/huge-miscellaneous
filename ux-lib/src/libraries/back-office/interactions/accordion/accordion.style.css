@@ -1,0 +1,47 @@
+:host {
+  --accordion-transition: all 0.25s;
+  --accordion-content-margin-bottom: 1rem;
+}
+
+.c-accordion__trigger {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  cursor: pointer;
+  text-transform: uppercase;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid var(--color-text);
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+
+.c-accordion__icon {
+  will-change: auto;
+  transform: rotate(0);
+  transition: transform 0.25s;
+}
+.c-accordion__icon--rotate {
+  transform: rotate(-180deg);
+}
+
+.c-accordion__content {
+  transition: var(--accordion-transition);
+  overflow: hidden;
+  margin-bottom: var(--accordion-content-margin-bottom);
+}
+.c-accordion__content[aria-hidden='true'] {
+  max-height: 0;
+  opacity: 0;
+  visibility: hidden;
+}
+
+/*
+ * La valeur de la custom property --containerHeight
+ * est définie en JS par la mixin AriaExpandedMixin
+ */
+.c-accordion__content[aria-hidden='false'] {
+  max-height: var(--containerHeight, 1000px);
+  opacity: 1;
+  visibility: visible;
+}

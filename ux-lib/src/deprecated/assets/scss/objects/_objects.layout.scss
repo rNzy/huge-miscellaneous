@@ -1,0 +1,153 @@
+/* ==========================================================================
+   OBJECTS / #LAYOUT
+   ========================================================================== */
+
+// Settings
+$layout-column-gap: $global-spacing-unit;
+$layout-row-gap: $global-spacing-unit;
+
+$bg-color-nav: color(bg-nav);
+$bg-color-subnav: color(bg-subnav);
+
+/**
+ * Ceci est un exemple de grid layout correspondant au layout classique visible
+ * sur mon.cmx/abei/bpe etc... avec navigation à gauche.
+ *
+ * 1. Mise en place grid système
+ * 2. Configure la taille des colonnes
+ * 3. Configure l'espacement entre les colonnes (navigation de gauche et contenu
+ *    principal
+ * 4. Réordonne visuellement le header pour qu'il se place au dessus de la
+ *    navigation
+ * 5. Permet à un block de prendre toute la largeur de la grille
+
+
+    1   2             3
+  1 +---+-------------+
+    |   |             |
+    |   |             |
+  2 +-----------------+
+    |   |             |
+    |   |             |
+    |   |             |
+    |   |             |
+    |   |             |
+    |   |             |
+  3 +-----------------+
+    |   |             |
+  4 +---+-------------+
+
+*/
+
+novatio-navbar {
+  padding-bottom: 60px;
+}
+
+.o-layout {
+  grid-template-areas: 'a b';
+  grid-template-columns: 320px 2fr;
+  grid-gap: $global-spacing-unit;
+
+  @include mq($from: large) {
+    // min-height: 100vh;
+    display: grid;
+
+    /* [1] */
+    overflow: visible;
+    padding-bottom: 50px;
+  }
+}
+
+.o-layout-navigation {
+  display: block;
+  position: absolute;
+  overflow: auto;
+  visibility: collapse;
+  z-index: 10;
+  top: 40px;
+  width: 100%;
+  height: calc(100% - 40px);
+  transform: translateX(-100%);
+  color: $bg-color-subnav;
+  background: $bg-color-nav;
+  transition: transform 0.2s ease-in-out;
+
+  &.o-layout-navigation--visible {
+    transform: translateX(0%);
+    transition: transform 0.4s ease-in-out;
+    visibility: visible;
+    z-index: 21;
+  }
+
+  @include mq($from: large) {
+    grid-area: a;
+    position: relative;
+    top: 60px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    overflow: unset;
+    width: 320px;
+    transform: none;
+    height: auto;
+    box-shadow: rgba(0, 0, 0, 0.25) 0 0 5px;
+    visibility: visible;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+  }
+}
+
+.o-layout-main {
+  grid-area: b;
+  margin-top: 50px;
+  margin-bottom: 100px; // need for shortcut bar on mobile
+  padding: 0 $global-spacing-unit-small;
+
+  @include mq($from: large) {
+    margin-top: 60px;
+    margin-bottom: auto;
+    padding: 0;
+    max-width: 730px;
+  }
+}
+
+.o-layout-main--nopadding-mobile {
+  @include mq($until: medium) {
+    padding: 0;
+  }
+}
+
+.o-layout-main--not-visible {
+  display: none;
+
+  @include mq($from: large) {
+    display: block;
+  }
+}
+
+// Modifiers
+
+.o-layout--1-column {
+  display: block;
+  margin-top: 80px;
+
+  .o-layout-main {
+    width: 100%;
+    max-width: 730px;
+    margin: 0 auto;
+  }
+}
+
+.o-rowgrid {
+  display: grid;
+  grid-row-gap: $global-spacing-unit-small;
+
+  @include mq($from: large) {
+    grid-row-gap: $global-spacing-unit;
+  }
+
+  // @todo: delete these rules after refactoring
+
+  .c-heading-bravo {
+    margin-bottom: 0;
+  }
+}

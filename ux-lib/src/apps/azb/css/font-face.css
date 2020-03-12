@@ -1,0 +1,76 @@
+@font-face {
+  font-family: 'Allianz Regular';
+  src: url('../fonts/AllianzNeoW01-Regular.woff2') format('woff2'),
+    url('../fonts/AllianzNeoW01-Regular.woff') format('woff');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Allianz Bold';
+  src: url('../fonts/AllianzNeoW01-Bold.woff2') format('woff2'),
+    url('../fonts/AllianzNeoW01-Bold.woff') format('woff');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Allianz BoldItalic';
+  src: url('../fonts/AllianzNeoW01-BoldItalic.woff2') format('woff2'),
+    url('../fonts/AllianzNeoW01-BoldItalic.woff') format('woff');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Allianz Condensed';
+  src: url('../fonts/AllianzNeoW01-Condensed.woff2') format('woff2'),
+    url('../fonts/AllianzNeoW01-Condensed.woff') format('woff');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Allianz CondensedBold';
+  src: url('../fonts/AllianzNeoW01-CondensedBold.woff2') format('woff2'),
+    url('../fonts/AllianzNeoW01-CondensedBold.woff') format('woff');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Allianz CondLight';
+  src: url('../fonts/AllianzNeoW01-CondLight.woff2') format('woff2'),
+    url('../fonts/AllianzNeoW01-CondLight.woff') format('woff');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Allianz Italic';
+  src: url('../fonts/AllianzNeoW01-Italic.woff2') format('woff2'),
+    url('../fonts/AllianzNeoW01-Italic.woff') format('woff');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Allianz Light';
+  src: url('../fonts/AllianzNeoW01-Light.woff2') format('woff2'),
+    url('../fonts/AllianzNeoW01-Light.woff') format('woff');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Allianz LightItalic';
+  src: url('../fonts/AllianzNeoW01-LightItalic.woff2') format('woff2'),
+    url('../fonts/AllianzNeoW01-LightItalic.woff') format('woff');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Allianz SemiBold';
+  src: url('../fonts/AllianzNeoW01-SemiBold.woff2') format('woff2'),
+    url('../fonts/AllianzNeoW01-SemiBold.woff') format('woff');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Allianz SemiBoldIt';
+  src: url('../fonts/AllianzNeoW01-SemiBoldIt.woff2') format('woff2'),
+    url('../fonts/AllianzNeoW01-SemiBoldIt.woff') format('woff');
+  font-display: swap;
+}

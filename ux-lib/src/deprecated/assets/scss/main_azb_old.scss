@@ -1,0 +1,42 @@
+@charset 'utf-8';
+
+/* ==========================================================================
+   MAIN
+   ========================================================================== */
+
+// Utils
+// @import 'utils_azb';
+// Ce fichier est maintenant automatiquement importé
+// grace à webpack dans : 
+//   - build-utils/webpack.development.js
+//   - build-utils/webpack.production.js
+//   - .storybookconf/abei/webpack.config.js
+//   - .storybookconf/azb/webpack.config.js
+// dans la commande data pour le loader sass cf :
+// {
+//   loader: 'sass-loader', // compiles Sass to CSS, using Node Sass by default
+//   options: {
+//     data:
+//       '$uxEfs: ' +
+//       process.env.uxEfs + // eslint-disable-line
+//       ';' +
+//       '@import "src/assets/scss/_utils_' +
+//       process.env.uxEfs + // eslint-disable-line
+//       '.scss' +
+//       '";',
+//     includePaths: [__dirname, '../../src/assets/scss'],
+//     sourceMap: true,
+//     url: false
+//   }
+// }
+//
+// Cette fonction initilialise aussi la variable scss $uxEfs que l'on peut
+// utiliser comme cela :
+// @if ($uxEfs == azb) {
+//   // Do something for azb
+// } @else if ($uxEfs == abei) {
+//   // Do something for abei
+// }
+
+// Core
+@import 'core';

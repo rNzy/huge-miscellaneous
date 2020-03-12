@@ -1,0 +1,44 @@
+/* mobile */
+:root {
+  --font-family: 'Arial', 'Helvetica Neue', 'Helvetica', 'Roboto', sans-serif;
+
+  --text-font-size-xs: 1.1rem;
+
+  /* 11px */
+  --text-font-size-sm: 1.2rem;
+
+  /* 12px */
+  --text-font-size-md: 1.4rem;
+
+  /* 14px */
+  --text-font-size-lg: 1.6rem;
+
+  /* 16px */
+  --text-font-size-xl: 1.8rem;
+
+  /* 18px */
+  --text-font-size-xxl: 2.5rem;
+
+  /* 25px */
+}
+
+/* tablet && desktop */
+@media (min-width: 49rem) {
+  :root {
+    --text-font-size-xs: 1.2rem;
+
+    /* 12px */
+    --text-font-size-sm: 1.4rem;
+
+    /* 14px */
+    --text-font-size-md: 1.6rem;
+
+    /* 16px */
+    --text-font-size-lg: 1.8rem;
+
+    /* 18px */
+    --text-font-size-xl: 2.2rem;
+
+    /* 22px */
+  }
+}

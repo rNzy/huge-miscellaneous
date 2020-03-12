@@ -1,0 +1,32 @@
+import {
+  Meta,
+  Description,
+  Props,
+  Story,
+  Preview
+} from '@storybook/addon-docs/blocks';
+import './link-blank.component.js';
+
+# ux-link-blank
+
+<Meta title="Components|Interactions/Link-Blank" />
+
+## Description
+
+<Description of="ux-link-blank" />
+
+## Propriétés
+
+<Props of="ux-link-blank" />
+
+## Stories
+
+### Lien ouvrant dans une nouvelle fenêtre
+
+<Preview>
+  <Story name="link blank" height="40px">
+    {`
+    <ux-link-blank lib-link="#" a11y-label="lien qui ouvre la même page">Je suis un lien ouvrant dans une nouvelle fenêtre.</ux-link>
+    `}
+  </Story>
+</Preview>

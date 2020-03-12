@@ -1,0 +1,202 @@
+import {
+  Meta,
+  Description,
+  Props,
+  Story,
+  Preview
+} from '@storybook/addon-docs/blocks';
+import './input-item.component.js';
+import './input-amount.component.js';
+import './input-date.component.js';
+import './input-email.component.js';
+import './input-number.component.js';
+import './input-password.component.js';
+import './input-range.component.js';
+import './input-tel.component.js';
+import './input-text.component.js';
+import '../../typography/text/text.component.js';
+
+# ux-input
+
+<Meta title="Components|Formulaires/Inputs" />
+
+## Description
+
+<Description of="ux-input" />
+
+## Propriétés
+
+<Props of="ux-input" />
+
+## Stories
+
+### Input text
+
+<Preview>
+  <Story name="text" height="60px">
+    {`
+    <ux-input-item>
+      <ux-label for="text">Entrer un texte</ux-label>
+      <ux-input-text id="text" name="text" placeholder="Texte sur une ligne"></ux-input-text>
+    </ux-input-item>
+    `}
+  </Story>
+</Preview>
+
+### Input amount
+
+<Preview>
+  <Story name="amount" height="60px">
+    {`
+    <ux-input-item>
+      <ux-label for="amount">Entrer un montant</ux-label>
+      <ux-input-amount id="amount" name="amount" currency="euro" placeholder="Valeur en euro"></ux-input-amount>
+    </ux-input-item>
+    `}
+  </Story>
+</Preview>
+
+### Input date
+
+<Preview>
+  <Story name="date" height="60px">
+    {`
+    <ux-input-item>
+      <ux-label for="date">Entrer une date</ux-label>
+      <ux-input-date id="date" name="date" placeholder="J J / M M / A A A A"></ux-input-date>
+    </ux-input-item>
+    `}
+  </Story>
+</Preview>
+
+### Input email
+
+<Preview>
+  <Story name="email" height="60px">
+    {`
+    <ux-input-item>
+      <ux-label for="email">Entrer un email</ux-label>
+      <ux-input-email id="email" name="email" placeholder="nom@domaine.truc"></ux-input-email>
+    </ux-input-item>
+    `}
+  </Story>
+</Preview>
+
+### Input number
+
+<Preview>
+  <Story name="number" height="60px">
+    {`
+    <ux-input-item>
+      <ux-label for="number">Entrer un nombre</ux-label>
+      <ux-input-number id="number" name="number" placeholder="Chiffres entre 0 et 9"></ux-input-number>
+    </ux-input-item>
+    `}
+  </Story>
+</Preview>
+
+### Input tel
+
+<Preview>
+  <Story name="tel" height="60px">
+    {`
+    <ux-input-item>
+      <ux-label for="telephone">Entrer un numéro de téléphone</ux-label>
+      <ux-input-tel id="telephone" name="telephone" placeholder="8 chiffres"></ux-input-tel>
+    </ux-input-item>
+    `}
+  </Story>
+</Preview>
+
+### Input password
+
+<Preview>
+  <Story name="password" height="60px">
+    {`
+    <ux-input-item>
+      <ux-label for="password">Entrer votre mot de passe</ux-label>
+      <ux-input-password id="password" name="password" placeholder="Minimum 8 caractères dont 1 chiffre"></ux-input-password>
+    </ux-input-item>
+    `}
+  </Story>
+</Preview>
+
+### Input range
+
+<Preview>
+  <Story name="range" height="120px">
+    {`
+    <ux-input-item>
+      <ux-label for="range">Durée de validité (entre 1 et 24 mois)</ux-label>
+      <ux-input-range
+        value="15"
+        min="1"
+        max="24"
+        unit="mois"
+        middle-position="50%"
+        id="range"
+      >
+        <span slot="left">1 mois</span>
+        <span slot="middle">12 mois</span>
+        <span slot="right">24 mois</span>
+      </ux-input-range>
+    </ux-input-item>
+    `}
+  </Story>
+</Preview>
+
+### State error
+
+<Preview>
+  <Story name="error" height="80px">
+    {`
+    <ux-input-item>
+      <ux-label for="error">Entrer un texte</ux-label>
+      <ux-input-text id="error" name="error" placeholder="Texte sur une ligne" state="error" required>
+        <ux-text slot="error">
+          Ce champ est requis
+        </ux-text>
+      </ux-input-number>
+    </ux-input-item>
+    `}
+  </Story>
+</Preview>
+
+### State valid
+
+<Preview>
+  <Story name="valid" height="60px">
+    {`
+    <ux-input-item>
+      <ux-label for="valid">Entrer un texte</ux-label>
+      <ux-input-text id="valid" name="valid" placeholder="Texte sur une ligne" state="valid"></ux-input-text>
+    </ux-input-item>
+    `}
+  </Story>
+</Preview>
+
+### Read only
+
+<Preview>
+  <Story name="read only" height="60px">
+    {`
+    <ux-input-item>
+      <ux-label for="readonly">Entrer un texte</ux-label>
+      <ux-input-text id="readonly" name="readonly" placeholder="Texte sur une ligne" readonly></ux-input-text>
+    </ux-input-item>
+    `}
+  </Story>
+</Preview>
+
+### Disabled
+
+<Preview>
+  <Story name="disabled" height="60px">
+    {`
+    <ux-input-item>
+      <ux-label for="disabled">Entrer un texte</ux-label>
+      <ux-input-text id="disabled" name="disabled" placeholder="Texte sur une ligne" disabled></ux-input-text>
+    </ux-input-item>
+    `}
+  </Story>
+</Preview>

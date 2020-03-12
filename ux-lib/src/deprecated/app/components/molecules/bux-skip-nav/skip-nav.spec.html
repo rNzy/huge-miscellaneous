@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <script src="/node_modules/web-component-tester/browser.js"></script>
+    <title>Test skip-nav</title>
+  </head>
+  <body>
+    <test-fixture id="componentFixture">
+      <template>
+        <bux-skip-nav> </bux-skip-nav>
+      </template>
+    </test-fixture>
+    <script>
+      suite('<bux-skip-nav>', () => {
+        let component;
+        let links;
+        let nav;
+
+        setup(() => {
+          component = fixture('componentFixture');
+          links = component.querySelectorAll('.c-skipnav-a');
+          nav = component.querySelector('#skipnav');
+        });
+
+        a11ySuite('componentFixture');
+
+        test('Menu is close', () => {
+          assert.isTrue(!nav.classList.contains('c-skipnav-open'));
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,82 @@
+import {
+  Meta,
+  Description,
+  Props,
+  Story,
+  Preview
+} from '@storybook/addon-docs/blocks';
+import './date.component.js';
+
+# ux-date
+
+<Meta title="Components|Typography/Date" />
+
+## Description
+
+<Description of="ux-date" />
+
+## Propriétés
+
+<Props of="ux-date" />
+
+## Stories
+
+### Format par défaut avec tiret
+
+<Preview>
+  <Story name="date" height="20px">
+    {`
+    <ux-date value="31-12-2020"></ux-date>
+    `}
+  </Story>
+</Preview>
+
+### Format avec slash
+
+<Preview>
+  <Story name="format slash" height="20px">
+    {`
+    <ux-date value="31/12/2020" format-in="dd/mm/yyyy"></ux-date>
+    `}
+  </Story>
+</Preview>
+
+### Format avec tiret mois + année
+
+<Preview>
+  <Story name="tiret mois + année" height="20px">
+    {`
+    <ux-date value="12-20" format-in="mm-yy"></ux-date>
+    `}
+  </Story>
+</Preview>
+
+### Format avec slash mois + année
+
+<Preview>
+  <Story name="slash mois + année" height="20px">
+    {`
+    <ux-date value="12/20" format-in="mm/yy"></ux-date>
+    `}
+  </Story>
+</Preview>
+
+### Date au format non-valide
+
+<Preview>
+  <Story name="format error" height="20px">
+    {`
+    <ux-date value="310-12-9999"></ux-date>
+    `}
+  </Story>
+</Preview>
+
+### Date de valeur non-valide
+
+<Preview>
+  <Story name="value error" height="20px">
+    {`
+    <ux-date value="32-12-9999"></ux-date>
+    `}
+  </Story>
+</Preview>

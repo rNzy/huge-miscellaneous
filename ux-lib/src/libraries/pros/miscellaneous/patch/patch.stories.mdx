@@ -1,0 +1,62 @@
+import { Meta, Props, Story, Preview } from '@storybook/addon-docs/blocks';
+import * as stories from './patch.stories.js';
+import './patch.component.js';
+
+# patch
+
+<Meta title="Components|Miscellaneous/Patch" />
+
+## Présentation
+
+Le composant peut avoir les attributs "addshadow" et "lib-bg-color".
+
+### Primary Patch
+
+<Preview withSource="none" withToolbar>
+  <Story name="Primary Patch" height="300px">
+    {stories.patchPrimary()}
+  </Story>
+</Preview>
+
+```html
+<ux-patch lib-bg-color="primary">
+  <ux-svg slot="top" icon="smartphone" lib-size="xxl"></ux-svg>
+  <ux-text slot="bottom" bold lib-size="lg" center
+    >Je suis un patch avec une icône de smartphone.</ux-text
+  >
+</ux-patch>
+```
+
+### Secondary Patch
+
+<Preview withSource="none" withToolbar>
+  <Story name="Secondary Patch" height="300px">
+    {stories.patchSecondary()}
+  </Story>
+</Preview>
+
+```html
+<ux-patch lib-bg-color="secondary">
+  <ux-svg slot="top" icon="agence" lib-size="xxl"></ux-svg>
+  <ux-text slot="bottom" bold lib-size="lg" center
+    >Je suis un patch avec une icône d'agence.</ux-text
+  >
+</ux-patch>
+```
+
+### Tertiary Patch
+
+<Preview withSource="none" withToolbar>
+  <Story name="Tertiary Patch" height="300px">
+    {stories.patchTertiary()}
+  </Story>
+</Preview>
+
+```html
+<ux-patch addshadow lib-bg-color="tertiary">
+  <ux-svg slot="top" icon="conseiller" lib-size="xxl"></ux-svg>
+  <ux-text slot="bottom" bold lib-size="lg" center
+    >Je suis un patch avec une icône de conseiller.</ux-text
+  >
+</ux-patch>
+```

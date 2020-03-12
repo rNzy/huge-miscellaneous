@@ -1,0 +1,57 @@
+:host {
+  width: 100%;
+  max-width: 230px;
+}
+
+.c-btn {
+  display: inline-flex; /* [1] */
+  justify-content: center;
+  align-items: center;
+  vertical-align: middle; /* [2] */
+  font: inherit; /* [3] */
+  text-align: center; /* [4] */
+  margin: 0; /* [4] */
+  cursor: pointer; /* [5] */
+  height: 35px;
+  width: 100%;
+  min-width: 230px;
+  line-height: 1.2;
+  padding: 0 var(--spacing-sm);
+  border-color: black;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: var(--border-radius-sm);
+  background-color: transparent;
+  color: var(--color-text);
+  font-weight: bold;
+  font-size: 13px;
+  box-sizing: border-box; /* fix */
+}
+
+@media (min-width: 74rem) {
+  .c-btn {
+    font-size: 14px;
+  }
+}
+
+/* Modifiers
+  ============================================ */
+
+.c-btn--primary {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  color: white;
+}
+
+.c-btn--secondary {
+  background-color: var(--color-secondary);
+  border-color: var(--color-secondary);
+  color: white;
+}
+
+.c-btn--disabled {
+  background-color: var(--color-disabled);
+  border-color: var(--color-disabled);
+  color: white;
+  cursor: not-allowed;
+}

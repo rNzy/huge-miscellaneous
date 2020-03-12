@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <script src="/node_modules/web-component-tester/browser.js"></script>
+    <title>Test bux-heading</title>
+</head>
+<body>
+    <test-fixture id="messageComponentFixture">
+        <template>
+            <bux-heading
+                data-level="1"
+                data-icon="pen">Je suis un titre
+            </bux-heading>
+        </template>
+    </test-fixture>
+    <script>
+        suite('<bux-heading>', () => {
+            let component;
+
+            setup(() => {
+                component = fixture('messageComponentFixture');
+            });
+
+            a11ySuite('messageComponentFixture');
+            
+            test('H is 1 ?', () => {
+                assert.isTrue(component.children[0].nodeName.toLowerCase() === 'h1');
+            });
+
+            test('Title is "Je suis un titre" ?', () => {
+                const index = component.textContent.indexOf('Je suis un titre');
+                assert.isAtLeast(index, 0);
+            });
+
+            test('Contains ico ?', () => {
+                assert.isTrue(component.children[0].children[0].nodeName.toLowerCase() === 'bux-svg');
+            });
+
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,100 @@
+/* ==========================================================================
+   LAYER / #step.styles.scss
+   ========================================================================== */
+
+// Settings
+$btn-background-color: transparent;
+$btn-color-primary: color(brand);
+$btn-color-primary-mobile: color(brand-mobile);
+$btn-color-secondary: color(grey-50);
+
+/* Heading
+  =========================================== */
+
+/* Sub-heading
+  ---------------------------------- */
+
+/**
+ * Long-form comment.
+ *
+ * 1. Provide line-comments like this.
+ */
+.c-step {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+}
+
+.c-step__number {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  color: white;
+  border-radius: 50%;
+  text-align: center;
+  font-weight: 700;
+  font-size: 1.4rem;
+  height: 37px;
+  width: 37px;
+  border: 3px solid #fff;
+
+  @include mq($from: medium) {
+    font-size: 2rem;
+    width: 50px;
+    height: 50px;
+    border: 5px solid #fff;
+  }
+}
+
+.c-step__number--upcoming {
+  background-color: $btn-color-secondary;
+
+  @include mq($from: medium) {
+    background-color: $btn-color-secondary;
+  }
+}
+
+.c-step__number--current {
+  background-color: $btn-color-primary-mobile;
+
+  @include mq($from: medium) {
+    background-color: $btn-color-primary;
+  }
+}
+
+.c-step__number--valid {
+  background-color: $btn-color-primary-mobile;
+
+  @include mq($from: medium) {
+    background-color: $btn-color-primary;
+  }
+}
+
+.c-step__label {
+  white-space: nowrap;
+}
+
+.c-step__label--upcoming {
+  color: $btn-color-secondary;
+
+  @include mq($from: medium) {
+    color: $btn-color-secondary;
+  }
+}
+
+.c-step__label--current {
+  color: $btn-color-primary-mobile;
+  font-weight: 700;
+
+  @include mq($from: medium) {
+    color: $btn-color-primary;
+  }
+}
+
+.c-step__label--valid {
+  color: $btn-color-primary-mobile;
+
+  @include mq($from: medium) {
+    color: $btn-color-primary;
+  }
+}

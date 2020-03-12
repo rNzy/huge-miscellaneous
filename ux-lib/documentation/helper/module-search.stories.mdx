@@ -1,0 +1,37 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+
+<Meta title="General|Helper/Module Search" />
+
+# Component Finder (python3)
+
+Pour éviter au maximum les possibilités de régression côté modules. Un script a été écrit pour chercher les occurences
+d'un composant dans les modules souhaités.
+
+## Utilisation
+
+Tous les modules sont documentés dans un fichier **repositories.json**.
+
+```json
+"profil-client-front": {
+    "name": "profil-client-front",
+    "repository": "https://gitlabtux2-a.l.infra.arkea.com/BAD/9026/profil-client-front"
+  }
+```
+
+Pour commencer à chercher un composant, il suffit d'utiliser cette commande dans le terminal :
+
+```bash
+npm run module-search
+```
+
+Le script vous demandera alors de renseigner le nom du composant et le nom du module que vous souhaitez inspecter.
+Il finira par lister tous les composants présents dans le module.
+
+## TODO
+
+Actuellement le script est à l'état de Proof Of Concept. Il permet uniquement de chercher les composants sur des
+repos GIT et pour un module demandé.
+
+1. Ajouter la prise en charge de SVN.
+2. Améliorer les logs de try&error dans le terminal.
+3. Permettre d'inspecter tous les modules. **(À définir avec la factotech)**

@@ -1,0 +1,23 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+
+<Meta title="Documentation|Accessibilité/tabindex" />
+
+# tabindex
+
+## Intro
+
+When using roving tabindex to manage focus in a composite UI component, the element that is to be included in the tab sequence has tabindex of "0" and all other focusable elements contained in the composite have tabindex of "-1". The algorithm for the roving tabindex strategy is as follows.
+
+- When the component container is loaded or created, set tabindex="0" on the element that will initially be included in the tab sequence and set tabindex="-1" on all other focusable elements it contains.
+- When the component contains focus and the user presses a navigation key that moves focus within the component, such as an arrow key:
+  - Set tabindex="-1" on the element that has tabindex="0".
+  - Set tabindex="0" on the element that will become focused as a result of the key event.
+  - Set focus, element.focus(), on the element that has tabindex="0".
+- If the design calls for a specific element to be focused the next time the user moves focus into the composite with Tab or Shift+Tab, check if that target element has tabindex="0" when the composite loses focus. If it does not, set tabindex="0" on the target element and set tabindex="-1" on the element that previously had tabindex="0".
+
+One benefit of using roving tabindex rather than aria-activedescendant to manage focus is that the user agent will scroll the newly focused element into view.
+
+- @SPEC
+  - @MUST
+  - @HOWTO / REFERENCES
+- @EXAMPLE

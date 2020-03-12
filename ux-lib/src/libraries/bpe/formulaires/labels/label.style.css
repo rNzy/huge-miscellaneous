@@ -1,0 +1,13 @@
+.c-label {
+  vertical-align: middle;
+  font-size: var(--text-font-size-xs);
+  text-transform: uppercase;
+}
+
+.c-label--clickable {
+  cursor: pointer;
+}
+
+.c-label--disabled {
+  color: var(--color-disabled);
+}

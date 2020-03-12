@@ -1,0 +1,180 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+
+<Meta title="General|Efs/Ajouter" />
+
+# Ajouter un EFS
+
+Nous allons prendre comme exemple de rajouter l'efs TEST.
+
+Faire les étapes suivantes dans l'ordre :
+
+1. Créer un répertoire test dans src/apps en s'inspirant d'un efs précédent.
+
+Il faut remplacer dans ANCIENEFS par TEST :
+
+- dans src/apps/test/index.js :
+
+```js
+// Export global var for efs
+window.uxEfs = 'ANCIENEFS';
+
+...
+
+import '../../libraries/ANCIENEFS/index';
+```
+
+- et dans src/apps/bpe/.storybook/preview.js :
+
+```js
+// charge les stories de la librairie utilisée
+const req = require.context(
+  '../../../libraries/ANCIENEFS',
+  true,
+  /\.stories\.(js|mdx)$/
+);
+```
+
+2. Créer un répertoire test dans libraries/apps en s'inspirant d'un efs précédent
+
+3. Créer les taches correspondantes dans package.json
+
+```js
+...
+  "scripts": {
+    ...
+    "dev:TEST": "uxEfs=TEST webpack-dev-server --host 0.0.0.0 --port 7500 --env.mode development --env.version 3 --hot",
+    "storybook:TEST": "uxEfs=TEST start-storybook --port 7501 -c src/apps/TEST/.storybook --env.version 3 ",
+    "build:lib:TEST": "uxEfs=TEST webpack -p --env.mode production --env.presets optimize --env.version 3 ",
+    "build:storybook:TEST": "uxEfs=TEST build-storybook -c src/apps/TEST/.storybook -o dist/TEST/storybook --env.version 3 ",
+    "build:TEST": "uxEfs=TEST npm run build:lib:TEST && npm run build:storybook:TEST --env.version 3 ",
+    "test:TEST": "uxEfs=TEST npm run build:lib:TEST && wct test/TEST/index.html -p --webserver-port 7503 --env.version 3 ",
+    ...
+  }
+```
+
+- Il faut remplacer les ANCIENEFS par test et incrémenter de mille les ports (ie. --port et --webserver-port)
+- N'oubliez pas de reporter les changements de ports dans XXX-showcase-front (server.js + html/assets/init.js)
+- Le `env.version 3` veut dire que webpack ne va pas utiliser le dossier deprecated
+
+## Variable CSS
+
+Les variables suivantes sont utilisées dans le dom donc il faut
+
+```
+--color-text
+--line-height-text
+--font-family
+--color-background-light
+```
+
+# (DEPPRECIE) Ajouter un EFS
+
+Nous allons prendre comme exemple de rajouter l'efs test.
+
+Faire les étapes suivantes dans l'ordre :
+
+1. Créer un fichier src/index_test.js en s'inspirant de l'index.ANCIENEFS.js
+
+Dans ce fichier :
+
+- remplacer les 3 ANCIENEFS par test
+- sélectionner les composants à importer
+
+```js
+// Export global var for efs
+window.uxEfs = 'ANCIENEFS';
+
+/**
+ * @description - Require all svg to make sprite
+ */
+
+function requireAll(r) {
+  r.keys().forEach(r);
+}
+requireAll(
+  require.context(`./assets/medias/ANCIENEFS/icons`, true, /\.svg$/) // eslint-disable-line
+);
+
+/**
+ * @description Loading main SCSS styles - keep this import before loading components
+ */
+import './assets/scss/main_ANCIENEFS.scss';
+```
+
+2. Créer un fichier src/assets/scss/main_test.scss en s'inspirant du fichier src/assets/scss/main_ANCIENEFS.scss
+
+3. Créer un fichier src/assets/scss/\_utils_test.scss en s'inspirant du fichier src/assets/scss/\_utils_ANCIENEFS.scss
+
+4. Créer un répertoire .storybookconf/test en recopiant le .storybookconf/ANCIENEFS
+
+Vous devez avoir 4 fichiers : addons.js, config.js, preview-head.html, webpack.configjs
+
+5.  Modifier le fichier .storybookconf/test/config.js
+
+Dans ce fichier il faut remplacer les 3 ANCIENEFS par test
+
+```js
+...
+// Export global var for efs
+window.uxEfs = 'ANCIENEFS';
+...
+// CSS
+require('../../src/assets/scss/main_ANCIENEFS.scss');
+...
+
+// Import svg icon
+...
+requireAll(require.context('../../src/assets/medias/ANCIENEFS/icons', true, /\.svg$/));
+
+```
+
+6. Créer un répertoire test/test en recopiant le test/ANCIENEFS
+
+7. Modifier le fichier test/test/inject.js
+
+Dans ce fichier il faut remplacer les 2 ANCIENEFS par test
+
+```js
+// Export global var for efs
+window.uxEfs = 'ANCIENEFS';
+
+let baseref = '/components/../../dist/ANCIENEFS/';
+```
+
+8. Modifier le fichier test/ANCIENEFS/index.html remplacer ANCIENEFS par test
+
+```html
+... <title>All test for ANCIENEFS</title> ...
+<script>
+    WCT._config.environmentScripts.push('../../dist/ANCIENEFS/bundle.js');
+    WCT._config.environmentScripts.push('../../test/ANCIENEFS/inject.js');
+  ...
+</script>
+...
+```
+
+9. Créer un répertoire src/assets/medias/test en recopiant src/assets/medias/ANCIENEFS. Ne pas oublier de supprimer le medias inutiles
+
+10. (au 26/07/2019) créer (et importer) les nouvelles de styles necessaires pour components/atoms/bux-nav-bar et components/molecules/bux-header sinon pas de styles pour le gabarit. Le logo se trouve dans assets/medias/EFS_NAME/icons/navigation/logo.svg actuellement pas de solution si pas de svg :-/
+
+11. Créer les taches correspondantes dans package.json
+
+```js
+...
+  "scripts": {
+    ....
+    "dev:test": "uxEfs=test webpack-dev-server --host 0.0.0.0 --port 9000 --env.mode development --hot",
+    "storybook:test": "uxEfs=test start-storybook --port 9001 -c .storybookconf/test",
+    "build:lib:test": "uxEfs=test webpack --env.mode production --env.presets optimize",
+    "build:storybook:test": "uxEfs=test build-storybook -c .storybook -o dist/storybook/test",
+    "build:test": "uxEfs=test npm run build:lib:test && npm run build:storybook:test",
+    "test:test": "uxEfs=test npm run build:lib:test && wct test/test/index.html -p --webserver-port 9003",
+    ...
+  }
+```
+
+- Il faut remplacer les ANCIENEFS par test et incrémenter de mille les ports (ie. --port et --webserver-port)
+- N'oubliez pas de reporter les changements de ports dans XXX-showcase-front (server.js + html/assets/init.js)
+
+12. Si erreurs du type @if not map-has-key($map, $key)......
+    Il faut éditer src/assets/settings/\_settings.colors.scss qui contient des variables SASS indispensables

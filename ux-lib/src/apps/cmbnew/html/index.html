@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Components-lib</title>
+  </head>
+
+  <body>
+    <ux-input-item>
+      <ux-label for="password">Mot de passe</ux-label>
+      <ux-input-password
+        id="password"
+        name="password"
+        placeholder="Entrer un mot de passe"
+      ></ux-input-password>
+    </ux-input-item>
+
+    <ux-label for="password">Coucou marc</ux-label>
+    <ux-input-password id="password"></ux-input-password>
+
+    <ux-modal id="arf">
+      <span slot="modal-title">Votre numéro de carte virtuelle</span>
+      Êtes-vous sûr de vouloir Supprimer cette carte virtuelle ?
+      <ux-btn-group>
+        <ux-btn model="primary" outlined="true">Annuler</ux-btn>
+        <ux-btn model="primary">Supprimer</ux-btn>
+      </ux-btn-group>
+    </ux-modal>
+
+    <ux-accordion-item expanded>
+      <div slot="accordion-header" a11y-level="3">Mes cartes</div>
+      <ux-section role="list" space-v="xxs">
+        <ux-container padding="sm" focusable="true" role="listitem">
+          <ux-flex>
+            <ux-img src="card_black.png" style="margin-right: 20px;"></ux-img>
+            <div>
+              <ux-text bold block>WORLD ELITE DEFIT DIFF</ux-text>
+              <ux-text block>n° n°XX23 5589</ux-text>
+            </div>
+          </ux-flex>
+          <ux-link sref ux-href="aa"
+            ><ux-sref
+              ui-sref="detail.creernumero({cardNumber:vm.carte.cardNumber})"
+            ></ux-sref
+          ></ux-link>
+        </ux-container>
+        <ux-container padding="sm" focusable="true" role="listitem">
+          <ux-flex>
+            <ux-img src="card_black.png" style="margin-right: 20px;"></ux-img>
+            <div>
+              <ux-text bold block>WORLD ELITE DEFIT DIFF</ux-text>
+              <ux-text block>n° n°XX23 5589</ux-text>
+            </div>
+          </ux-flex>
+          <ux-link sref
+            ><ux-sref
+              ui-sref="detail.creernumero({cardNumber:vm.carte.cardNumber})"
+            ></ux-sref>
+          </ux-link>
+        </ux-container>
+      </ux-section>
+    </ux-accordion-item>
+
+    <ux-heading tag="h2"
+      >Détail de ma carte<ux-svg slot="right" icon="home"></ux-svg>
+    </ux-heading>
+
+    <ux-section space-v="md">
+      <ux-container padding="sm">
+        <ux-flex>
+          <ux-img src="card_black.png" style="margin-right: 20px;"></ux-img>
+          <div>
+            <ux-text bold block>WORLD ELITE DEFIT DIFF</ux-text>
+            <ux-text block>n° n°XX23 5589</ux-text>
+          </div>
+        </ux-flex>
+      </ux-container>
+
+      <ux-tabs>
+        <ux-tabs-button slot="tab">
+          Créer un numéro
+        </ux-tabs-button>
+
+        <ux-tabs-panel slot="panel">
+          <ux-container space-v="sm">
+            <ux-message type="info">
+              <p>
+                Sur certains sites (Voyages-sncf.com, billetterie, réservation
+                hôtel, …), il est nécessaire de présenter la carte ayant servi
+                lors du paiement. Pour ce type d’achat, il faut utiliser son
+                numéro de carte réelle, sans enlever le blocage Internet.
+                L’utilisation d’un numéro de carte virtuel ne permettra pas de
+                récupérer le bien acheté sur ces sites.
+                <a href="#" target="_blank">FAQ Virtualis</a>
+              </p>
+            </ux-message>
+
+            <ux-input-item>
+              <ux-label for="montant"
+                >Montant <span class="a11y-hidden">en euro</span></ux-label
+              >
+              <ux-input-amount id="montant"></ux-input-amount>
+            </ux-input-item>
+
+            <ux-input-item>
+              <ux-label for="range"
+                >Durée de validité (entre 1 et 24 mois)</ux-label
+              >
+              <ux-input-range
+                id="range"
+                value="15"
+                min="1"
+                max="24"
+                unit="mois"
+                middle-position="0%"
+              >
+                <span slot="left">1 mois</span>
+                <span slot="middle">12 mois</span>
+                <span slot="right">24 mois</span>
+              </ux-input-range>
+            </ux-input-item>
+
+            <ux-btn model="primary" center>
+              Créer un numéro virtuel
+            </ux-btn>
+          </ux-container>
+        </ux-tabs-panel>
+
+        <ux-tabs-button slot="tab">
+          Numéros virtuels actifs
+        </ux-tabs-button>
+
+        <ux-tabs-panel slot="panel">
+          <ux-section space-v="xxxs">
+            <ux-message type="info"
+              >Vous n’avez pas de numéro virtuel actif.</ux-message
+            >
+            <ux-tile-operation focusable="true">
+              <ux-row-cell slot="1">
+                <ux-date value="08-10-2019" size="md" bold></ux-date>
+                <ux-text size="sm">Expire fin 02/20</ux-text>
+              </ux-row-cell>
+              <ux-row-cell slot="2">
+                <span>FD VERSEMENT\BOULOGNE BILLANCOU\92100FR</span>
+              </ux-row-cell>
+              <ux-row-cell slot="3" align="right">
+                <ux-amount value="250.55" size="md" bold></ux-amount>
+                <span>Montant restant</span>
+              </ux-row-cell>
+              <ux-link ux-href="aaa"></ux-link>
+            </ux-tile-operation>
+            <ux-tile-operation>
+              <ux-row-cell slot="1">
+                <ux-date value="08-10-2019" size="md" bold></ux-date>
+                <ux-text size="sm">Expire fin 02/20</ux-text>
+              </ux-row-cell>
+              <ux-row-cell slot="2">
+                <span>FD VERSEMENT\BOULOGNE BILLANCOU\92100FR</span>
+              </ux-row-cell>
+              <ux-row-cell slot="3" align="right">
+                <ux-amount value="250.55" size="md" bold></ux-amount>
+                <span>Montant restant</span>
+              </ux-row-cell>
+            </ux-tile-operation>
+            <ux-tile-operation>
+              <ux-row-cell slot="1">
+                <ux-date value="08-10-2019" size="md" bold></ux-date>
+                <ux-text size="sm">Expire fin 02/20</ux-text>
+              </ux-row-cell>
+              <ux-row-cell slot="2">
+                <span>FD VERSEMENT\BOULOGNE BILLANCOU\92100FR</span>
+              </ux-row-cell>
+              <ux-row-cell slot="3" align="right">
+                <ux-amount value="250.55" size="md" bold></ux-amount>
+                <span>Montant restant</span>
+              </ux-row-cell>
+            </ux-tile-operation>
+            <ux-tile-operation>
+              <ux-row-cell slot="1">
+                <ux-date value="08-10-2019" size="md" bold></ux-date>
+                <ux-text size="sm">Expire fin 02/20</ux-text>
+              </ux-row-cell>
+              <ux-row-cell slot="2">
+                <span>FD VERSEMENT\BOULOGNE BILLANCOU\92100FR</span>
+              </ux-row-cell>
+              <ux-row-cell slot="3" align="right">
+                <ux-amount value="250.55" size="md" bold></ux-amount>
+                <span>Montant restant</span>
+              </ux-row-cell>
+            </ux-tile-operation>
+            <ux-tile-operation>
+              <ux-row-cell slot="1">
+                <ux-date value="08-10-2019" size="md" bold></ux-date>
+                <ux-text size="sm">Expire fin 02/20</ux-text>
+              </ux-row-cell>
+              <ux-row-cell slot="2">
+                <span>FD VERSEMENT\BOULOGNE BILLANCOU\92100FR</span>
+              </ux-row-cell>
+              <ux-row-cell slot="3" align="right">
+                <ux-amount value="250.55" size="md" bold></ux-amount>
+                <span>Montant restant</span>
+              </ux-row-cell>
+            </ux-tile-operation>
+          </ux-section>
+        </ux-tabs-panel>
+        <ux-tabs-button slot="tab">
+          Historique des achats
+        </ux-tabs-button>
+        <ux-tabs-panel slot="panel">
+          <ux-message type="info"
+            >La liste de vos derniers achats est vide.</ux-message
+          >
+        </ux-tabs-panel>
+      </ux-tabs>
+    </ux-section>
+
+    <br /><br />
+    <hr />
+    <br /><br />
+
+    <ux-container>
+      <ux-virtualis
+        name="WORLD ELIT DEBIT DIFF XX36 2212"
+        user="M. PERREAU JEAN LOIC"
+        card="  513268717681561  5  "
+        amount="1150"
+        validity="06/15"
+        crypto="709"
+      ></ux-virtualis>
+
+      <ux-btn-group>
+        <ux-btn model="primary" outlined="true" target-id="arf">
+          Supprimer le numéro
+        </ux-btn>
+        <ux-btn model="primary">Copier le numéro</ux-btn>
+      </ux-btn-group>
+    </ux-container>
+
+    <br /><br />
+    <hr />
+    <br /><br />
+
+    <ux-btn model="primary" outlined="true" target-id="modalSup">
+      Ouvrir Supprimer le numéro
+    </ux-btn>
+
+    <ux-modal id="modalSup">
+      <span slot="modal-title"
+        >Êtes-vous sûr de vouloir supprimer cette carte virtuelle ?</span
+      >
+      <ux-btn-group>
+        <ux-btn ui-sref="cartevirtuelle" model="secondary">
+          Annuler
+        </ux-btn>
+        <ux-btn ng-click="vm.supprimerCarte()" model="primary">
+          Supprimer
+        </ux-btn>
+      </ux-btn-group>
+    </ux-modal>
+  </body>
+</html>

@@ -1,0 +1,29 @@
+import { Meta, Props, Story, Preview } from '@storybook/addon-docs/blocks';
+import * as stories from './burger.stories.js';
+import './burger.component.js';
+
+# Accordion
+
+<Meta title="Components|Navigations/Burger" />
+
+## Présentation
+
+Ce composant afficher un menu burger.
+Ci on lui affecte une `targetId` lorsque l'on clique sur le burger cela inversera le
+booléan open sur l'élément cible.
+
+### Props
+
+<Props of="ux-burger" />
+
+### Exemple
+
+<Preview withSource="none" withToolbar>
+  <Story name="Burger" height="260px">
+    {() => `<ux-burger></ux-burger>`}
+  </Story>
+</Preview>
+
+```html
+<ux-burger></ux-burger>
+```

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <script src="/node_modules/web-component-tester/browser.js"></script>
+    <title>Test bux-progress-reserve</title>
+  </head>
+  <body>
+    <test-fixture id="componentFixture">
+      <template>
+        <bux-progress-reserve
+          data-value="52"
+          data-label="Réserve disponible"
+          data-amount="950.50"
+          a11y-label="La réserve disponible est de 52%"
+        >
+        </bux-progress-reserve>
+      </template>
+    </test-fixture>
+    <script>
+      suite('<bux-progress-reserve>', () => {
+        let component;
+        let btns;
+        setup(() => {
+          component = fixture('componentFixture');
+        });
+
+        a11ySuite('componentFixture');
+
+        test(`Progress Value is 52% ?`, () => {
+          const progress = component.querySelector('.c-progress-ring__content');
+          assert.isAtLeast(progress.textContent.indexOf('52%'), 0);
+        });
+
+        test('Circle represent 52% ?', () => {
+          const progress = component.querySelector('.c-progress-ring__circle');
+          assert.isTrue(progress.style.strokeDashoffset === '138.733');
+        });
+
+        test(`reserve-label is "Réserve disponible" ?`, () => {
+          let index = component
+            .querySelector('.c-reserve__label')
+            .textContent.indexOf('Réserve disponible');
+          assert.isAtLeast(index, 0);
+        });
+
+        test(`reserve-amount is "950,50" ?`, () => {
+          let index = component
+            .querySelector('.c-amount')
+            .textContent.indexOf('950,50');
+          assert.isAtLeast(index, 0);
+        });
+
+        test(`Aria-label is "La réserve disponible est de 52%" ?`, () => {
+          let aLabel = component
+            .querySelector('.c-progress-ring')
+            .getAttribute('aria-label');
+          assert.isTrue(aLabel === 'La réserve disponible est de 52%');
+        });
+      });
+    </script>
+  </body>
+</html>

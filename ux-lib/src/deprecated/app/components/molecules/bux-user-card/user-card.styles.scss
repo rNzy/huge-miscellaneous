@@ -1,0 +1,51 @@
+// .c-user-card {
+// }
+
+.c-user-card__avatar {
+  margin-bottom: 10px;
+  border-radius: 50%;
+  height: 82px;
+}
+
+@if (
+  $uxEfs==cmb or
+    $uxEfs==cmso or
+    $uxEfs==cmmc or
+    $uxEfs==cmbpro or
+    $uxEfs==cmsopro or
+    $uxEfs==cmmcpro
+) {
+  .c-user-card__label {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 15px;
+    margin-bottom: 5px;
+    text-align: center;
+  }
+  .c-user-card__sublabel {
+    font-size: 11px;
+  }
+
+  .c-user-card__img {
+    margin-bottom: 10px;
+  }
+}
+
+@if ($uxEfs==azb) {
+  .c-user-card__label {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 5px;
+    text-align: center;
+  }
+  .c-user-card__sublabel {
+    font-size: 16px;
+  }
+}
+
+.c-user-card--profil {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+}

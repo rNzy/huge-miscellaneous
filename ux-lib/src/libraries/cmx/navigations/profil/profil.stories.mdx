@@ -1,0 +1,34 @@
+import { Meta, Props, Story, Preview } from '@storybook/addon-docs/blocks';
+
+import './profil.component.js';
+
+# Profil
+
+<Meta title="Components|Navigations/profil" />
+
+## Présentation
+
+### Props
+
+<Props of="ux-profil" />
+
+### Exemple
+
+<Preview withSource="none" withToolbar>
+  <Story name="profil" height="260px">
+    {() => `
+      <ux-profil
+        name="Mr SPECIMEN"
+        connexion="Dernière connexion le 10/02/2020 à 10h16">
+      </ux-profil>
+      `}
+  </Story>
+</Preview>
+
+```html
+<ux-profil
+  name="Mr SPECIMEN"
+  connexion="Dernière connexion le 10/02/2020 à 10h16"
+>
+</ux-profil>
+```

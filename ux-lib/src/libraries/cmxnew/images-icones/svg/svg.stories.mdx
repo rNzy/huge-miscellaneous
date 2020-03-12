@@ -1,0 +1,72 @@
+import {
+  Meta,
+  Description,
+  Props,
+  Story,
+  Preview
+} from '@storybook/addon-docs/blocks';
+import * as stories from './svg.stories.js';
+import './svg.component.js';
+
+# ux-svg
+
+<Meta title="Components|Images-Icones/Icones" />
+
+## Description
+
+Ce composant permet d'afficher des icones. Tous les icones pour une librairie doivent être enregistrés dans le dossier assets/icons au sein de la librairie. Ou importés au sein même du composant si l'icone est spécifique.
+
+## Propriétés
+
+| Name    |           Description           |                   Type                   | Default |
+| ------- | :-----------------------------: | :--------------------------------------: | :-----: |
+| icon    |         nom de l'icone          |                  String                  |         |
+| libSize |        taille de l'icone        | "xs" , "sm" , "md" , "lg" , "xl" , "xxl" |  "md"   |
+| circle  |   entoure l'icone d'un cercle   |                 Boolean                  |         |
+| rotate  | applique une rotation à l'icone |                  Number                  |         |
+| shadow  |   ajoute une ombre à l'icone    |                 Boolean                  |         |
+| center  |        centrer l'élément        |                 Boolean                  |         |
+| left    |   aligner à gauche l'élément    |                 Boolean                  |         |
+| right   |   aligner à droite l'élément    |                 Boolean                  |         |
+
+## Stories
+
+### Taille des icones
+
+<Preview>
+  <Story name="size" height="50px">
+    {`
+    <ux-svg icon="cross" lib-size="sm"></ux-svg>
+    <ux-svg icon="cross" lib-size="md"></ux-svg>
+    <ux-svg icon="cross" lib-size="lg"></ux-svg>
+    <ux-svg icon="cross" lib-size="xl"></ux-svg>
+    `}
+  </Story>
+</Preview>
+
+### Ajouter un cercle autour de l'icone
+
+<Preview>
+  <Story name="circle" height="30px">
+    {`
+    <ux-svg icon="cross" circle></ux-svg>
+    `}
+  </Story>
+</Preview>
+
+### Appliquer une rotation
+
+<Preview>
+  <Story name="rotate" height="30px">
+    {`
+    <ux-svg icon="cross" rotate="30"></ux-svg>`}
+  </Story>
+</Preview>
+
+### Toutes les icones
+
+<Preview>
+  <Story name="all icons" height="700px">
+    {stories.allIcons()}
+  </Story>
+</Preview>

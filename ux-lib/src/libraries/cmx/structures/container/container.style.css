@@ -1,0 +1,39 @@
+:host {
+  --container-padding: var(--spacing-lg) var(--spacing-md);
+  --container-shadow: var(--box-shadow-primary);
+  --container-radius: var(--border-radius-md);
+  --container-border: 1px solid #dadce4;
+}
+
+@media (min-width: 590px) {
+  .c-container {
+    background: white;
+    padding: var(--container-padding);
+    box-shadow: var(--container-shadow);
+    border: var(--container-border);
+    border-radius: var(--container-radius);
+    display: block;
+  }
+}
+
+.c-container--nopadding {
+  padding: 0 !important;
+}
+
+.c-container--margin-right {
+  margin-right: var(--spacing-sm);
+}
+
+.c-container--margin-left {
+  margin-left: var(--spacing-sm);
+}
+
+.c-container--base {
+  display: block;
+}
+
+.c-container--space-around {
+  display: flex;
+  flex-flow: row;
+  justify-content: space-around;
+}

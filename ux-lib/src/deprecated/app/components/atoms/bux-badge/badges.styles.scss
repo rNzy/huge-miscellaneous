@@ -1,0 +1,31 @@
+/* ==========================================================================
+   COMPONENTS / #BADGES
+   ========================================================================== */
+
+// Settings
+
+/* Base
+  ============================================ */
+
+.c-badge {
+  margin-right: $global-spacing-unit-tiny;
+  padding: 0 $global-spacing-unit-tiny;
+  border-radius: $global-border-radius;
+  background-color: color(grey-10);
+  font-size: 11px;
+  white-space: nowrap;
+
+  @include mq($from: medium) {
+    font-size: 12px;
+  }
+}
+
+.c-badge--large {
+  padding: 5px 10px;
+}
+
+/* State
+  ============================================ */
+
+/* Modifiers
+  ============================================ */

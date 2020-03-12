@@ -1,0 +1,10 @@
+:host {
+  display: inline-block;
+  z-index: 1;
+}
+
+img {
+  max-width: 100%;
+  font-style: italic;
+  vertical-align: middle;
+}

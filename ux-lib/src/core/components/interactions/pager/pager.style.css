@@ -1,0 +1,12 @@
+:host,
+.c-pager {
+  display: flex;
+  position: relative;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+::slotted(ux-pager-item) {
+  margin-right: 10px;
+}

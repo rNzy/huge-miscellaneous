@@ -1,0 +1,53 @@
+/* ==========================================================================
+   LAYER / #skip-nav.styles.scss
+   ========================================================================== */
+
+#skipnav {
+  position: absolute;
+  display: flex;
+  width: 100vw;
+  height: 80px;
+  left: 0;
+  color: white;
+  padding: 6px;
+  border-bottom: 1px solid white;
+  background: #bf1722;
+  transition: transform 0.35s ease-in-out;
+  transform: translateY(-160px);
+  z-index: 30;
+
+  @include mq($from: medium) {
+    height: 40px;
+    transform: translateY(-80px);
+  }
+}
+
+#skipnav.c-skipnav-open {
+  transform: translateY(0);
+}
+
+.c-skipnav-ul {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.c-skipnav-a {
+  color: white;
+  font-size: 12px;
+  padding: 5px 5px;
+
+  &:hover,
+  &:focus {
+    box-shadow: 0 0 3px 1px #4d90fe;
+    color: white;
+  }
+
+  @include mq($from: medium) {
+    font-size: 14px;
+  }
+}

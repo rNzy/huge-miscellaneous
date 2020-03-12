@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <script src="/node_modules/web-component-tester/browser.js"></script>
+    <title>Test bux-modal</title>
+  </head>
+  <body>
+    <test-fixture id="componentFixture">
+      <template>
+        <bux-modal></bux-modal>
+      </template>
+    </test-fixture>
+    <script>
+      suite('<bux-modal>', () => {
+        let component;
+        let body;
+
+        setup(() => {
+          component = fixture('componentFixture');
+        });
+
+        a11ySuite('componentFixture');
+
+        test('is Init ?', () => {
+          component.init({
+            label: 'Mon Titre',
+            content: '<p>Je suis un contenu</p><p>deuxièmeligne</p>',
+            labelFailure: 'ok',
+            labelSuccess: 'annuler',
+            onFailure: () => component.close(),
+            onSuccess: () => component.close(),
+            closable: true,
+            autoOpen: true
+          });
+
+          body = component.querySelector('.c-modal__content');
+          let index = body.innerHTML.indexOf('Je suis un contenu');
+          assert.isAtLeast(index, 0);
+        });
+      });
+    </script>
+  </body>
+</html>

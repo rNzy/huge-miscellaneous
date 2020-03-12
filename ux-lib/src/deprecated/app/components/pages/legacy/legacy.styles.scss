@@ -1,0 +1,424 @@
+/* stylelint-disable no-descending-specificity */
+
+@import 'tuto.styles.scss';
+
+@media (max-width: 599px) {
+  .legacy .epargne.mobile-rwd .synthese .page-head,
+  .legacy .comptes.mobile-rwd .synthese .page-head {
+    position: relative !important;
+    top: 0 !important;
+    margin-left: -5px !important;
+    margin-right: -5px !important;
+    width: calc(100% + 10px) !important;
+  }
+
+  .legacy .epargne.mobile-rwd .page-head ~ .page-content,
+  .legacy .comptes.mobile-rwd .page-head ~ .page-content {
+    margin-top: 0 !important;
+  }
+
+  .legacy .epargne.mobile-rwd .synthese .page-head .block-total,
+  .legacy .comptes.mobile-rwd .synthese .page-head .block-total {
+    border-radius: 3px !important;
+    width: calc(100% - 10px) !important;
+    max-width: 100%;
+    margin-left: 5px;
+    background-color: #fff !important;
+    color: #6f6f6f !important;
+    border: 1px solid #ccc !important;
+    box-shadow: none !important;
+  }
+
+  .legacy .comptes .listop3__item__bloc-total .listop3__amount--positive {
+    color: #424242 !important;
+  }
+
+  .legacy .epargne .pagehead-title .highlight,
+  .legacy .comptes .pagehead-title .highlight {
+    color: #6f6f6f !important;
+  }
+
+  .legacy .comptes.mobile-rwd .synthese .page-head {
+    margin-top: 10px !important;
+  }
+
+  .legacy .virement .block_basefond_header {
+    background-color: #fff !important;
+    color: #616161 !important;
+    box-shadow: none !important;
+    margin-top: 20px !important;
+  }
+
+  .legacy .virement .block_basefond_header .etape-num {
+    background-color: #616161 !important;
+    color: #fff !important;
+  }
+}
+
+// AUTMDSCMX-721 activation carte fond blanc
+.legacy .cartes .c-row {
+  background-color: #e3e2de;
+  border-bottom: none;
+}
+
+// AUTMDSCMX-712
+// L'étape 1/2 lors d'une premiere connexion
+// dans l'écran rentré un nouveau mot de passe
+// est collé
+#domi-connexion .legacy .pagination {
+  padding-top: 20px;
+}
+
+@media screen and (min-width: 460px) {
+  .legacy .popin.popin-standard .popin-footer.pf-btn-inline {
+    align-items: center;
+  }
+
+  .legacy .popin.popin-standard .popin-footer.pf-btn-inline .btn {
+    margin-top: 0;
+  }
+}
+
+// EPARGNE
+// BADMEPWEB-5854 [Novatio] [REG] [UX] Domi-Epargne - Bouton imprimante empiétant sur du texte
+.legacy .comptes .detail .pagehead-smalltext {
+  top: 10px;
+  font-size: 1.2rem !important;
+}
+
+.legacy .comptes .detail .pagehead-title {
+  font-size: 28px !important;
+  line-height: 1 !important;
+}
+
+.legacy .epargne .print {
+  top: 0 !important;
+}
+
+// BADDEMIGR-1378 (effet de bord suite à BADMEPWEB-5854)
+@media screen and (min-width: 600px) {
+  .legacy .comptes .detail .pagehead-smalltext {
+    right: 50px !important;
+  }
+  .legacy .epargne .detail .pagehead-smalltext {
+    // right: 50px !important;
+    top: 10px;
+    font-size: 1.2rem !important;
+  }
+
+  .legacy .epargne .detail .pagehead-title {
+    font-size: 28px !important;
+    line-height: 1 !important;
+  }
+}
+
+// BADMEPWEB-5856 [Novatio] [REG] [UX] Lignes de textes empiétant sur une ligne de titre (TOUTE MON EPARGNE)
+#domi-epargne {
+  font-family: Arial, 'Helvetica Neue', 'Helvetica', 'Roboto', sans-serif;
+}
+
+.legacy .account-head .amount-current {
+  padding: 0 !important;
+}
+
+// Eparge
+.legacy #credit .one-line-value .o-l-value-big .amount-label .amount {
+  margin-left: 2px;
+}
+
+.legacy #credit .one-line-value .o-l-value-small .amount {
+  margin-left: 2px;
+}
+
+.legacy .epargne .synthese .account-title {
+  text-align: left;
+}
+
+.legacy .grid .epargne .synthese .page-content .area-content {
+  clear: both;
+}
+
+.legacy .grid .epargne .synthese .page-content .account-title .wrap {
+  text-align: left;
+  color: #fff;
+  max-width: calc(100% - 100px);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  top: auto;
+}
+
+.legacy .epargne .pagehead-title .highlight,
+.legacy .comptes .pagehead-title .highlight {
+  color: inherit !important;
+}
+
+.legacy .epargne .detail .pagehead-title {
+  font-size: 28px;
+  font-size: 2.8rem;
+  line-height: 1;
+}
+
+$red: #b62737;
+$green: #5f7711;
+$blue: #277c97;
+$blue-1: #277c97;
+$blue-2: #11596e;
+$blue-3: #074252;
+$purple: #781057;
+
+@mixin ong-color($bgcolor: $red) {
+  & {
+    background: $bgcolor;
+  }
+
+  /*    &:before {
+          border-color: transparent transparent $bgcolor transparent;
+      }
+
+      &:after {
+          border-color: transparent transparent transparent $bgcolor;
+      } */
+}
+
+.legacy .push-account .wrapper > .icon {
+  color: $red;
+}
+.legacy .push-account .show-more .icon {
+  background-color: $red;
+}
+.legacy .grid .push-account .wrapper > .icon {
+  border: 2px solid $red;
+}
+.legacy .push-account.type-credit .wrapper > .icon {
+  color: $green;
+}
+.legacy .push-account.type-credit .show-more .icon {
+  background-color: $green;
+}
+.legacy .grid .push-account.type-credit .wrapper > .icon {
+  border: 2px solid $green;
+}
+.legacy .push-account.type-epargne .wrapper > .icon {
+  color: $blue;
+}
+.legacy .push-account.type-epargne .show-more .icon {
+  background-color: $blue;
+}
+.legacy .grid .push-account.type-epargne .wrapper > .icon {
+  border: 2px solid $blue;
+}
+.legacy .push-account.type-epargne-mt .wrapper > .icon {
+  color: $blue-2;
+}
+.legacy .push-account.type-epargne-mt .show-more .icon {
+  background-color: $blue-2;
+}
+.legacy .grid .push-account.type-epargne-mt .wrapper > .icon {
+  border: 2px solid $blue-2;
+}
+.legacy .push-account.type-epargne-lt .wrapper > .icon {
+  color: $blue-3;
+}
+.legacy .push-account.type-epargne-lt .show-more .icon {
+  background-color: $blue-3;
+}
+.legacy .grid .push-account.type-epargne-lt .wrapper > .icon {
+  border: 2px solid $blue-3;
+}
+.legacy .push-account.type-pro .wrapper > .icon {
+  color: $purple;
+}
+.legacy .push-account.type-pro .show-more .icon {
+  background-color: $purple;
+}
+.legacy .grid .push-account.type-pro .wrapper > .icon {
+  border: 2px solid $purple;
+}
+.legacy .grid .page-content .push-account.type-credit {
+  border-top-color: $green;
+}
+.legacy .grid .page-content .push-account.type-epargne {
+  border-top-color: $blue;
+}
+.legacy .grid .page-content .push-account.type-epargne-mt {
+  border-top-color: $blue-2;
+}
+.legacy .grid .page-content .push-account.type-epargne-lt {
+  border-top-color: $blue-3;
+}
+.legacy .grid .page-content .push-account.pro {
+  border-top-color: $purple;
+}
+
+/* --------------------------------------------
+   * =COULEURS DES ONGLETS
+   * -------------------------------------------- */
+
+// Univers "BOURSE"
+.legacy .bourse .nav-tab {
+  border-color: $blue-1;
+
+  li[aria-selected='true'] {
+    a {
+      @include ong-color($blue-1);
+    }
+  }
+}
+
+// Univers "EPARGNE"
+.legacy .epargne .nav-tab {
+  border-color: $blue;
+
+  li[aria-selected='true'] {
+    a {
+      @include ong-color($blue);
+    }
+  }
+}
+
+// Univers "PRO"
+.legacy .pro .nav-tab {
+  border-color: $purple;
+
+  li[aria-selected='true'] {
+    a {
+      @include ong-color($purple);
+    }
+  }
+}
+
+/* --------------------------------------------
+   * =COULEURS DES BOUTONS
+   * -------------------------------------------- */
+
+.legacy .pro .btn-default {
+  background-color: $purple;
+}
+
+/* --------------------------------------------
+   * =COULEURS DES "PIE CHART"
+   * -------------------------------------------- */
+.legacy .pie-chart .pie {
+  background: $red;
+}
+.legacy .preference .pie-chart .pie,
+.legacy .type-credit .pie-chart .pie {
+  background: $green;
+}
+.legacy .type-epargne .pie-chart .pie {
+  background: $blue;
+}
+.legacy .type-epargne-mt .pie-chart .pie {
+  background-color: $blue-2;
+}
+.legacy .type-epargne-lt .pie-chart .pie {
+  background-color: $blue-3;
+}
+.legacy .type-pro .pie-chart .pie {
+  background-color: $purple;
+}
+.legacy .pie-chart .value {
+  color: $red;
+}
+.legacy .preference .pie-chart .value,
+.legacy .type-credit .pie-chart .value {
+  color: $green;
+}
+.legacy .type-epargne .pie-chart .value {
+  color: $blue;
+}
+.legacy .type-epargne-mt .pie-chart .value {
+  color: $blue-2;
+}
+.legacy .type-epargne-lt .pie-chart .value {
+  color: $blue-3;
+}
+.legacy .type-pro .pie-chart .value {
+  color: $purple;
+}
+.legacy .type-epargne .pie-chart .wrap,
+.legacy .type-epargne-mt .pie-chart .wrap {
+  padding-top: 15px;
+}
+.legacy .type-epargne .pie-chart .wrap::before,
+.legacy .type-epargne-mt .pie-chart .wrap::before {
+  color: $blue;
+  content: 'Rempli à ';
+  font-size: 1.2rem;
+  left: 12px;
+  line-height: 10px;
+  position: absolute;
+  top: 15px;
+}
+.legacy .type-epargne-mt .pie-chart .wrap::before {
+  color: $blue-2;
+}
+
+// mobilitebancaire/home
+// gestion z-index de l'image penchée
+.legacy .mobilite .accueil-titre figure {
+  z-index: 10 !important;
+}
+
+// cartes button flex
+
+@media (min-width: 599px) {
+  .legacy .cartes .cartes-new .wrap_btn_search .btn {
+    min-width: 0 !important;
+    flex: 1 0 0 !important;
+  }
+  .legacy
+    .cartes
+    .cartes-new
+    .wrap_btn_search.wrap_btn_search.wrap_btn_search_2p1
+    .btn {
+    margin-left: 15px !important;
+  }
+}
+
+@media (max-width: 599px) {
+  .legacy
+    .cartes
+    .cartes-new
+    .wrap_btn_search.wrap_btn_search.wrap_btn_search_2p1
+    .btn
+    + .btn {
+    margin-left: 0 !important;
+  }
+}
+
+.legacy .wrap_btn_search.wrap_btn_search_2p1 {
+  width: 100% !important;
+}
+
+// fix autre comptes line-height
+
+.legacy .comptes .listop3__amount__with-oncoming {
+  line-height: 2 !important;
+}
+
+@media (min-width: 599px) {
+  .legacy .comptes .listop3__amount__with-oncoming {
+    line-height: 1 !important;
+  }
+}
+
+@media (max-width: 599px) {
+  .legacy .btn-footer-mobile__container {
+    bottom: 60px !important;
+    margin: 0 -10px !important;
+  }
+}
+
+// BADMEPWEB-6556
+// CMX - RWD - SE - Problème de style lors du scroll
+.legacy .signature .ariane-etapes-liste {
+  z-index: 10 !important;
+}
+
+.legacy .signature .ariane-etapes-liste ol li > span > span.ariane-item-texte2,
+.legacy .signature .ariane-etapes-liste ol li.ariane-select > span::after,
+.legacy .signature .ariane-etapes-liste .ariane-ariane-chevron,
+.legacy .signature .ariane-etapes-liste ol li::before {
+  z-index: 0 !important;
+}

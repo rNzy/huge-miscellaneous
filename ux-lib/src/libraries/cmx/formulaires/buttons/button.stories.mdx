@@ -1,0 +1,53 @@
+import { Meta, Props, Story, Preview } from '@storybook/addon-docs/blocks';
+import * as stories from './button.stories.js';
+import './button.component.js';
+
+# Buttons
+
+<Meta title="Components|Formulaires/Buttons" />
+
+## Présentation
+
+Composant permettant d'afficher un bouton.
+
+## Propriétés
+
+<Props of="ux-btn" />
+
+## Stories
+
+### Primary button
+
+<Preview withSource="none">
+  <Story name="Primary" height="60px">
+    {stories.primary()}
+  </Story>
+</Preview>
+
+```html
+<ux-btn model="primary">Primary</ux-btn>
+```
+
+### Secondary button
+
+<Preview withSource="none">
+  <Story name="Secondary" height="60px">
+    {stories.secondary()}
+  </Story>
+</Preview>
+
+```html
+<ux-btn model="secondary">Secondary</ux-btn>
+```
+
+### Disabled button
+
+<Preview withSource="none">
+  <Story name="Disabled" height="60px">
+    {stories.disabled()}
+  </Story>
+</Preview>
+
+```html
+<ux-btn model="primary" disabled>Disabled</ux-btn>
+```

@@ -1,0 +1,57 @@
+@if ($uxEfs==azb) {
+  /* ==========================================================================
+   LAYER / #table.styles.scss
+   ========================================================================== */
+
+  // Settings
+  $table-margin-bottom: $global-spacing-unit;
+
+  $table-header-padding: $global-spacing-unit-small;
+  $table-header-background-color: color(text);
+  $table-header-color: color(white);
+  $table-cont-background-color: color(grey-90);
+
+  /* Table
+  =========================================== */
+
+  .c-table {
+    margin-bottom: $table-margin-bottom;
+    width: calc(100% + 20px);
+    margin-left: -10px;
+
+    @include mq($from: medium) {
+      width: 100%;
+      margin-left: 0;
+      box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+    }
+  }
+
+  .c-table__header {
+    display: block;
+    padding: $table-header-padding;
+    background-color: var(--brand-deco);
+    color: var(--white);
+  }
+
+  .c-table__footer {
+    position: relative;
+    padding: $global-spacing-unit-tiny $global-spacing-unit-small;
+    background-color: $table-cont-background-color;
+  }
+
+  .c-table__footer-arrow {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+  }
+
+  .c-table__footer-anchor {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+  }
+}

@@ -1,0 +1,25 @@
+import { Meta, Props, Story, Preview } from '@storybook/addon-docs/blocks';
+
+import './parametrage.component.js';
+
+# Parametrage
+
+<Meta title="Components|Navigations/parametrage" />
+
+## Présentation
+
+### Props
+
+<Props of="ux-parametrage" />
+
+### Exemple
+
+<Preview withSource="none" withToolbar>
+  <Story name="login" height="260px">
+    {() => `<ux-parametrage lib-link="/param/url"></ux-parametrage>`}
+  </Story>
+</Preview>
+
+```html
+<ux-parametrage lib-link="/param/url"></ux-parametrage>
+```

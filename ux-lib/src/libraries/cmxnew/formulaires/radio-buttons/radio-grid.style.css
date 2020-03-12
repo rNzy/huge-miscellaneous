@@ -1,0 +1,61 @@
+:host {
+  --radio-button-height: 2rem;
+  --radio-button-inside-height: 1.2rem;
+
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  line-height: var(--radio-button-height);
+  box-sizing: border-box;
+  outline: none;
+}
+
+.c-grid {
+  width: 100%;
+  padding: 1rem;
+  padding-left: 4rem;
+}
+
+.c-radio-grid {
+  display: flex;
+  flex-flow: row nowrap;
+  border: 1px solid #ccc;
+  border-radius: var(--border-radius-md);
+  max-width: 100%;
+}
+
+.c-radio-grid::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 1rem;
+  transform: translateY(-50%);
+  display: block;
+  height: var(--radio-button-height);
+  width: var(--radio-button-height);
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  background-color: #fff;
+}
+
+.c-radio-grid::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  border-radius: 50%;
+  height: var(--radio-button-inside-height);
+  width: var(--radio-button-inside-height);
+  transform: translateY(-50%) scale(0.8);
+  left: 1.5rem;
+  transition: all 0.2s ease-out;
+}
+
+.c-radio-grid.c-radio-grid--checked {
+  border: 1px solid var(--color-primary);
+}
+
+.c-radio-grid.c-radio-grid--checked::after {
+  opacity: 1;
+  transform: translateY(-50%) scale(1);
+  background-color: #6f6f6f;
+}

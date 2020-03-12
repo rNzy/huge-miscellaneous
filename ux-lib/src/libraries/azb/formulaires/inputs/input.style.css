@@ -1,0 +1,44 @@
+.c-input-wrap.error {
+  border-color: var(--color-error);
+}
+
+.c-input-error {
+  color: var(--color-error);
+}
+
+.c-input-wrap {
+  position: relative;
+}
+
+.c-input-wrap > ux-btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.c-input {
+  height: 32px;
+  letter-spacing: 0.2px;
+  padding-bottom: 8px;
+  border: 0;
+  border-bottom: 1px solid;
+  width: 100%;
+  font-family: Allianz Light;
+  font-size: 2rem;
+  background-color: transparent;
+  box-sizing: border-box;
+}
+
+.c-input:hover,
+.c-input:focus {
+  border-color: var(--brand);
+}
+
+.c-input:focus {
+  font-family: Allianz Bold;
+  color: var(--brand);
+}
+
+.c-input.error {
+  color: var(--color-error);
+}

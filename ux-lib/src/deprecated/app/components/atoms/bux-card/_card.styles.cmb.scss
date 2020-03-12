@@ -1,0 +1,39 @@
+@if (
+  $uxEfs==cmb or
+    $uxEfs==cmso or
+    $uxEfs==cmmc or
+    $uxEfs==cmbpro or
+    $uxEfs==cmsopro or
+    $uxEfs==cmmcpro
+) {
+  /* ==========================================================================
+   LAYER / #card.styles.scss
+   ========================================================================== */
+
+  // Settings
+  $card-margin-bottom-mobile: $global-spacing-unit-small;
+  $card-margin-bottom-desktop: $global-spacing-unit;
+
+  $card-background-color: color(white);
+  $card-border: 1px solid color(grey-80);
+  $card-border-radius: $global-border-radius;
+  $card-box-shadow: 0 0 6px -2px #999;
+
+  /* Base
+  ============================================ */
+
+  .c-card {
+    margin-bottom: $card-margin-bottom-mobile;
+    background-color: $card-background-color;
+    border: $card-border;
+    border-radius: $card-border-radius;
+    break-inside: avoid;
+    // display: inline-block;
+    width: 100%;
+
+    @include mq($from: medium) {
+      margin-bottom: $card-margin-bottom-desktop;
+      box-shadow: $card-box-shadow;
+    }
+  }
+}

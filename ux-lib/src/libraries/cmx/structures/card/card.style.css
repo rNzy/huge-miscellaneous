@@ -1,0 +1,9 @@
+.c-card {
+  position: relative;
+  padding: var(--spacing-sm) var(--spacing-md);
+  background: #fff;
+  border-radius: var(--border-radius-md);
+  border: 1px solid var(--color-secondary-light);
+  overflow: hidden;
+  box-shadow: 0 0 5px 0 #999;
+}

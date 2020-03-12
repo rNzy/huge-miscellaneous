@@ -1,0 +1,11 @@
+.c-endprocess {
+  padding: var(--spacing-lg) var(--spacing-md);
+  background-color: #fff;
+  border-radius: var(--border-radius-sm);
+}
+
+@media (min-width: 74rem) {
+  .c-endprocess {
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+  }
+}

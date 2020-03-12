@@ -1,0 +1,104 @@
+:host {
+  --modal-background: #fff;
+  --modal-border-radius: var(--border-radius-md);
+  --modal-max-width: 63rem;
+  --modal-min-height: 10rem;
+  --modal-padding-top: var(--spacing-sm);
+  --modal-padding-bottom: var(--spacing-sm);
+  --modal-padding-right: var(--spacing-sm);
+  --modal-padding-left: var(--spacing-sm);
+  --modal-overlay-color: rgba(0, 0, 0, 0.8);
+  --modal-heading-margin-bottom: var(--spacing-md);
+}
+
+.c-modal {
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 100;
+}
+
+.c-modal__overlay {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  visibility: hidden;
+  opacity: 0;
+  background-color: var(--modal-overlay-color);
+}
+
+.c-modal__inner {
+  display: block;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -60%) scale(1.1);
+  width: calc(100% - 30px);
+  max-width: var(--modal-max-width);
+  min-height: var(--modal-min-height);
+  visibility: hidden;
+  opacity: 0;
+  padding-top: var(--modal-padding-top);
+  padding-right: var(--modal-padding-right);
+  padding-bottom: var(--modal-padding-bottom);
+  padding-left: var(--modal-padding-left);
+  background-color: var(--modal-background);
+  border-radius: var(--modal-border-radius);
+  z-index: 110;
+}
+
+.c-modal__header {
+  margin-bottom: var(--modal-heading-margin-bottom);
+  margin-right: 15px;
+}
+
+.c-modal__header h1 {
+  margin: 0;
+  text-align: center;
+  color: var(--color-primary);
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.c-modal__close-btn {
+  position: absolute;
+  top: var(--modal-padding-top);
+  right: var(--modal-padding-top);
+  --size-svg: 15px;
+}
+
+.c-modal.c-modal--open,
+.c-modal.c-modal--open .c-modal__overlay,
+.c-modal.c-modal--open .c-modal__inner {
+  transition: visibility 0s linear 0s, opacity 0.25s 0s;
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.c-modal.c-modal--open .c-modal__inner {
+  transition: transform 0.25s;
+  transform: translate(-50%, -60%) scale(1);
+}
+
+@media (min-width: 740px) {
+  :host {
+    --modal-padding-top: var(--spacing-md);
+    --modal-padding-bottom: var(--spacing-md);
+    --modal-padding-right: var(--spacing-md);
+    --modal-padding-left: var(--spacing-md);
+  }
+
+  .c-modal__header h1 {
+    font-size: 1.6rem;
+  }
+}

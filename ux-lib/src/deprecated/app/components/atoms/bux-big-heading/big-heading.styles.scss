@@ -1,0 +1,29 @@
+/* ==========================================================================
+   LAYER / #big-heading.styles.scss
+   ========================================================================== */
+
+// Settings
+
+/* Heading
+  =========================================== */
+
+/* Sub-heading
+  ---------------------------------- */
+
+/**
+ * Long-form comment.
+ *
+ * 1. Provide line-comments like this.
+ */
+.c-big-heading {
+  font-size: 2.9rem;
+  line-height: 3.2rem;
+  font-weight: 400;
+  margin: 0;
+}
+
+// Modifiers
+
+.c-big-heading--center {
+  text-align: center;
+}
