@@ -41,6 +41,12 @@
 	# Show files ignored by git:
 	ign = ls-files -o -i --exclude-standard
 ```
+## bash aliases
+```bash
+# nvm
+alias n12="nvm use 12"
+alias n10="nvm use 10"
+```
 
 ## deb VM screen resolution 
 
