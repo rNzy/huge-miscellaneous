@@ -66,3 +66,12 @@ sudo update-alternatives --config editor
 ```bash
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.31.3/install.sh | bash
 ```
+
+## debug options
+
+If ```Error: Command failed: /bin/sh -c autoreconf -ivf``` is encountered.
+Try and install autoconf package.
+
+```bash
+sudo apt install autoconf
+```
