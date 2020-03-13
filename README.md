@@ -54,3 +54,9 @@ xrandr --addmode Virtual1 2560x1440_60.00
 ```bash
 sudo update-alternatives --config editor
 ```
+
+## nvm install
+
+```bash
+curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.31.3/install.sh | bash
+```
