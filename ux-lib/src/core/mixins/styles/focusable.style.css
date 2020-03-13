@@ -1,5 +1,0 @@
-.m-focusable:focus-within,
-.m-focusable:focus,
-.m-focusable:hover {
-  border: var(--m-border-focus);
-}

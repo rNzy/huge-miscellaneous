@@ -1,7 +1,0 @@
-:host {
-  --verticalalign-spacing: var(--spacing-md);
-}
-
-::slotted(div) {
-  margin-right: var(--verticalalign-spacing);
-}

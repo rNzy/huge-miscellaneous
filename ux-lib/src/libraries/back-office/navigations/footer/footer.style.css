@@ -1,8 +1,0 @@
-:host {
-  --background-color: var(--footer-background-color);
-  --border: 1px solid #f7f7f7;
-
-  grid-area: Footer;
-  background-color: var(--background-color);
-  border-top: var(--border);
-}

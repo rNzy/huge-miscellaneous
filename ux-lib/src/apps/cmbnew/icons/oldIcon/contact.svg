@@ -1,9 +1,0 @@
-<svg width="50" height="50" version="1.1" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg">
- <g id="Contact" transform="matrix(1.5165 0 0 1.5165 2.3086 1.1662)" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10">
-  <path transform="translate(-281.76 -2033.1)" d="m301 2061.5 8.981 3.027c-0.841-5.754-1.278-8.615-1.278-8.615" data-name="Tracé 67"/>
-  <path transform="translate(-243.8,-1987.4)" d="m263.04 2015.8a14.523 14.523 0 1 1 10.159-13.837 14.353 14.353 0 0 1-2.556 8.216" data-name="Tracé 68"/>
-  <ellipse transform="translate(12.951,12.806)" cx="1.749" cy="1.73" rx="1.749" ry="1.73" data-name="Ellipse 8"/>
-  <ellipse transform="translate(7.064,12.806)" cx="1.749" cy="1.73" rx="1.749" ry="1.73" data-name="Ellipse 9"/>
-  <ellipse transform="translate(18.804,12.806)" cx="1.749" cy="1.73" rx="1.749" ry="1.73" data-name="Ellipse 10"/>
- </g>
-</svg>

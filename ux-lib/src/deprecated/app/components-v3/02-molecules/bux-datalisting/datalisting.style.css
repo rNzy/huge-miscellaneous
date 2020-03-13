@@ -1,9 +1,0 @@
-.c-datalisting {
-  width: 100%;
-}
-
-.c-datalisting__row {
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: space-around;
-}

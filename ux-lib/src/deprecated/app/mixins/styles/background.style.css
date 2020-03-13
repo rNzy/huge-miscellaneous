@@ -1,7 +1,0 @@
-.m-background-hover {
-  transition: background-color 250ms ease-in-out;
-}
-
-.m-background-hover:hover {
-  background-color: var(--color-background-hover);
-}

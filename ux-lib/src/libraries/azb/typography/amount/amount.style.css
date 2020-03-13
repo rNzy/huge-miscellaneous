@@ -1,9 +1,0 @@
-.c-amount--negative {
-  color: var(--color-error) !important;
-}
-
-.c-amount--background,
-.c-amount--background-light {
-  padding: 5px 10px;
-  border-radius: 3px;
-}
