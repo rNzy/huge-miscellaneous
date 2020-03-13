@@ -41,3 +41,10 @@
 	# Show files ignored by git:
 	ign = ls-files -o -i --exclude-standard
 ```
+
+## deb VM screen resolution 
+
+```bash
+xrandr --newmode "2560x1440_60.00" 311.83  2560 2744 3024 3488  1440 1441 1444 1490  -HSync +Vsync
+xrandr --addmode Virtual1 2560x1440_60.00
+```
