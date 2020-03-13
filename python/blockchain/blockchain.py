@@ -92,11 +92,11 @@ def mine():
 
 
 @app.route('/transactions/new', methods=['POST'])
-def new_transaction():
+def add_transaction():
     values = request.get_json()
 
     required = ['sender', 'recipient', 'amount']
-    if not all(item in values for item in required):
+    if not all(key in values for key in required):
         return 'Missing values', 400
 
     index = blockchain.new_transaction(
