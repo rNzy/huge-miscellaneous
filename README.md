@@ -41,14 +41,16 @@
 	# Show files ignored by git:
 	ign = ls-files -o -i --exclude-standard
 ```
+
 ## bash aliases
+
 ```bash
 # nvm
 alias n12="nvm use 12"
 alias n10="nvm use 10"
 ```
 
-## deb VM screen resolution 
+## deb VM screen resolution
 
 ```bash
 xrandr --newmode "2560x1440_60.00" 311.83  2560 2744 3024 3488  1440 1441 1444 1490  -HSync +Vsync
@@ -69,9 +71,15 @@ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.31.3/install.sh | b
 
 ## debug options
 
-If ```Error: Command failed: /bin/sh -c autoreconf -ivf``` is encountered.
+If `Error: Command failed: /bin/sh -c autoreconf -ivf` is encountered.
 Try and install autoconf package.
 
 ```bash
 sudo apt install autoconf
+```
+
+## never forget vscode
+
+```json
+"editor.formatOnSave": true
 ```
