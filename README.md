@@ -48,6 +48,11 @@
 # nvm
 alias n12="nvm use 12"
 alias n10="nvm use 10"
+alias n8="nvm use 8"
+
+# python
+alias p3="python3"
+alias sourcev="source .venv/bin/activate"
 ```
 
 ## deb VM screen resolution
