@@ -85,6 +85,25 @@ sudo apt install autoconf
 
 ## never forget vscode
 
+### format on save
+
 ```json
 "editor.formatOnSave": true
+```
+
+### watch files for a large workspace
+
+```bash
+sudo vi /etc/sysctl.conf
+# add this line to the file : fs.inotify.max_user_watches=524288
+sudo sysctl -p
+```
+
+**File : files.watcherExclude**
+
+```json
+"files.watcherExclude": {
+    "**/.git/objects/**": true,
+    "**/.git/subtree-cache/**": true
+}
 ```
