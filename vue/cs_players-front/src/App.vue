@@ -46,5 +46,9 @@ h1
 
 h2
   text-align: left
+
+img
+  width: 100%
+  height: auto
 </style>
 

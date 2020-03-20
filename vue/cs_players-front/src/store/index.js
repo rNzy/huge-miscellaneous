@@ -10,13 +10,15 @@ export default new Vuex.Store({
         id: 0,
         name: "GeT_RiGhT",
         image: require("@/assets/img/get_right.jpg"),
-        team: "Dignitas"
+        team: "Dignitas",
+        birth_year: 1990
       },
       {
         id: 1,
         name: "Olofmeister",
         image: require("@/assets/img/olofmeister.jpg"),
-        team: "Faze"
+        team: "Faze",
+        birth_year: 1992
       }
     ]
   },

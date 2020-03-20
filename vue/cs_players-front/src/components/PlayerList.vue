@@ -5,8 +5,9 @@
         <img :src="player.image" />
       </div>
       <div class="column">
-        <p>{{ player.name }}</p>
-        <p>{{ player.team }}</p>
+        <p>Name : {{ player.name }}</p>
+        <p>Team : {{ player.team }}</p>
+        <p>Age : {{ new Date().getFullYear() - player.birth_year }}</p>
       </div>
     </div>
   </div>
@@ -15,6 +16,6 @@
 <script>
 export default {
   name: "PlayerList",
-  props: ["player"]
+  props: ["player", "data"]
 };
 </script>
