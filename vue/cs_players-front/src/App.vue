@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import SinglePage from "./components/SinglePage.vue";
+import SinglePage from "./views/SinglePage.vue";
 
 export default {
   name: "App",
