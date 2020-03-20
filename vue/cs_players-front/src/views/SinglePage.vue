@@ -8,13 +8,11 @@
 
 <script>
 import PlayerList from "../components/PlayerList.vue";
+import { mapState } from "vuex";
 export default {
   name: "SinglePage",
   components: { PlayerList },
-  computed: {
-    players() {
-      return this.$store.state.players;
-    }
-  }
+
+  computed: mapState(["players"])
 };
 </script>

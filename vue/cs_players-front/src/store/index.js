@@ -9,12 +9,14 @@ export default new Vuex.Store({
       {
         id: 0,
         name: "GeT_RiGhT",
-        image: "../assets/img/get-right.jpg"
+        image: require("@/assets/img/get_right.jpg"),
+        team: "Dignitas"
       },
       {
         id: 1,
         name: "Olofmeister",
-        image: "../assets/img/olofmeister.jpg"
+        image: require("@/assets/img/olofmeister.jpg"),
+        team: "Faze"
       }
     ]
   },
