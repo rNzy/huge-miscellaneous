@@ -7,7 +7,11 @@ from marshmallow_jsonapi import fields
 from flask_rest_jsonapi import Api, ResourceDetail, ResourceList, \
     ResourceRelationship
 
+from flask_cors import CORS
+
 app = Flask(__name__)
+
+cors = CORS(app)
 
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///players.db'
 
