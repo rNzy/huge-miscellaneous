@@ -30,6 +30,7 @@
 	st = status
 	br = branch
 	fe = fetch
+	fta = fetch --all --tags
 	rb = rebase
 	dc = diff --cached
 	df = diff
@@ -53,6 +54,31 @@ alias n8="nvm use 8"
 # python
 alias p3="python3"
 alias sourcev="source .venv/bin/activate"
+```
+
+### switched to zsh + ohmyzsh recently
+
+```
+plugins=(git z)
+
+# use node_modules bin
+alias nodepath="export PATH=./node_modules/.bin:$PATH"
+
+# npm commands
+alias rdev="npm run dev"
+alias serve="npm run serve"
+alias start="npm run start"
+alias devpub="npm run devpublish"
+alias dev='f() { npm run dev:$1 };f'
+alias test='f() { npm run test:$1 };f'
+
+# ohmyzsh ll is fucking trash
+alias ll='ls -alF'
+
+# grep colors
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
 ```
 
 ## deb VM screen resolution
