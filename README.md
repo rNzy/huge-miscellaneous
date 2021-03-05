@@ -62,6 +62,12 @@ xrandr --newmode "2560x1440_60.00" 311.83  2560 2744 3024 3488  1440 1441 1444 1
 xrandr --addmode Virtual1 2560x1440_60.00
 ```
 
+### finding out monitor names
+
+```bash
+xrandr | grep -e " connected [^(]" | sed -e "s/\([A-Z0-9]\+\) connected.*/\1/"
+```
+
 ## deb VM change default editor
 
 ```bash
