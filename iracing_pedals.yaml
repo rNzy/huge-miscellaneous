@@ -1,0 +1,29 @@
+---
+CalibrationInfo:
+ DeviceList:
+ - DeviceName: 'FANATEC ClubSport Pedals V3'
+   AxisList:
+   - Axis: 1
+     AxisName: 'Axe Z'
+     CalibMin: 0
+     CalibCenter: 0
+     CalibMax: 4095
+   - Axis: 2
+     AxisName: 'Axe Y'
+     CalibMin: 0
+     CalibCenter: 0
+     CalibMax: 5318
+   - Axis: 3
+     AxisName: 'Axe X'
+     CalibMin: 0
+     CalibCenter: 0
+     CalibMax: 4095
+ - DeviceName: 'Thrustmaster T300RS Racing Wheel'
+   InstanceGUID: '{05CE7D20-722F-11EB-8001-444553540000}'
+   AxisList:
+   - Axis: 0
+     AxisName: 'X Axis'
+     CalibMin: 0
+     CalibCenter: 32768
+     CalibMax: 65535
+...
