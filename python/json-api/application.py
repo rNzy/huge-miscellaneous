@@ -87,7 +87,7 @@ class RoleOne(ResourceDetail):
 
 class PlayerRole(ResourceRelationship):
     schema = PlayerSchema
-    daata_layer = {'session': db.session, 'model': Player}
+    data_layer = {'session': db.session, 'model': Player}
 
 
 api = Api(app)
