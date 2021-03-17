@@ -27,6 +27,7 @@
 	cm = commit -m
 	co = checkout
 	cb = checkout -b
+	cp = cherry-pick
 	st = status
 	br = branch
 	fe = fetch
