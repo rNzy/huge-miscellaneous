@@ -54,6 +54,10 @@ alias n8="nvm use 8"
 # python
 alias p3="python3"
 alias sourcev="source .venv/bin/activate"
+
+# Django aliases
+alias pym="python manage.py"
+alias dja="django-admin"
 ```
 
 ### switched to zsh + ohmyzsh recently
