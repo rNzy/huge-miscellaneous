@@ -12,6 +12,7 @@ CalibrationInfo:
      AxisName: 'Axe Y'
      CalibMin: 0
      CalibCenter: 0
+    #  Set higher break pedal max calibration to correct bad iRacing implementation
      CalibMax: 5318
    - Axis: 3
      AxisName: 'Axe X'
